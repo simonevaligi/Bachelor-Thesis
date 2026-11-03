@@ -1,0 +1,19 @@
+# Ignora l'intera cartella misc
+misc/
+
+# Ignora tutti i file di compilazione di LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Altri file temporanei comuni di LaTeX (utili se aggiungerai bibliografia o indici)
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.lof
+*.lot
