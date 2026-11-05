@@ -3,309 +3,309 @@
 In questo capitolo si introducono le fondamenta concettuali della geometria differenziale per la trattazione della geometria di contatto e la sua applicazione alla termodinamica.
 
 \section{Varietà topologiche e varietà lisce}
-    % \subsection{Spazi topologici}
-    Si consideri la struttura di topologia $\tau$ come collezione di sottoinsiemi, detti \emph{aperti}, di un insieme $X$, detto \emph{supporto della topologia}.
-    Questa collezione, per essere una topologia, è formata dal supporto, dal vuoto e dagli aperti; dovrà contenere l'unione arbitraria di aperti e l'intersezione \textit{finita} di aperti.
-    La coppia $(X, \tau)$ è detta \emph{spazio topologico}.
-    
-    L'idea di una topologia e degli aperti è quella di fornire una nozione più spendibile di distanza e distinguibilità tra oggetti di un insieme.
+% \subsection{Spazi topologici}
+Si consideri la struttura di topologia $\tau$ come collezione di sottoinsiemi, detti \emph{aperti}, di un insieme $X$, detto \emph{supporto della topologia}.
+Questa collezione, per essere una topologia, è formata dal supporto, dal vuoto e dagli aperti; dovrà contenere l'unione arbitraria di aperti e l'intersezione \textit{finita} di aperti.
+La coppia $(X, \tau)$ è detta \emph{spazio topologico}.
 
-    Notare come la nozione di una topologia contiene la definizione assiomatica di aperto che non è una caratteristica intrinseca di un insieme.
-    Inoltre, un'ipotetica descrizione di una specifica topologia dovrebbe comprendere tutti gli aperti che la compongono: risulta immediato che se l'insieme ne contiene "molti" o infiniti, questa descrizione diventa difficoltosa o impossibile.
-    
-    Da ciò si introduce la nozione di \textit{base per una topologia}: l'idea è quella di trovare una sotto-collezione $\beta$ che garantisca che per ogni aperto e per ogni elemento dell'aperto di $\tau$, esista un aperto di $\beta$ che contenga il punto (l'elemento dell'aperto) e sia contenuto nell'aperto generico della topologia.
-    Esiste un metodo che verifica e garantisce che una sotto-collezione sia di fatto una base di una topologia: il supporto deve essere dato dall'unione di tutti gli elementi della sotto-collezione candidata e, per ogni coppia di aperti e un punto nella loro intersezione, esiste un elemento della base che contenga il punto.
+L'idea di una topologia e degli aperti è quella di fornire una nozione più spendibile di distanza e distinguibilità tra oggetti di un insieme.
 
-    Definita una base, definiamo uno spazio topologico \emph{secondo numerabile} se esiste una base per la topologia che sia numerabile.
-    Oltre a ciò, vogliamo dotarci di una \emph{nozione di separabilità} tra punti: diciamo che uno spazio topologico è \emph{di Hausdorff} o \emph{separato} se la scelta della topologia fornisce la capacità di distinguere \emph{topologicamente} punti distinti. Più formalmente, se per ogni coppia di elementi dello spazio possiamo trovare una coppia di aperti \emph{disgiunti} associati rispettivamente ai due punti.
+Notare come la nozione di una topologia contiene la definizione assiomatica di aperto che non è una caratteristica intrinseca di un insieme.
+Inoltre, un'ipotetica descrizione di una specifica topologia dovrebbe comprendere tutti gli aperti che la compongono: risulta immediato che se l'insieme ne contiene "molti" o infiniti, questa descrizione diventa difficoltosa o impossibile.
 
-    % \subsection{Varietà topologiche}
-    Si cerca ora di formalizzare la nozione di "somiglianza" locale allo spazio euclideo $(\mathbb{R}^n, \langle \cdot, \cdot \rangle_e)$, dove $\langle \cdot, \cdot \rangle_e$ è la metrica euclidea standard.
-    Si prenda la nozione di continuità per funzioni su spazi topologici emulando quella dell'analisi matematica: $f: X_1 \rightarrow X_2$ è continua in $x \in X_1$ se, per ogni intorno $U_2$ di $f(x)$, (i.e. un aperto contenente $f(x)$) esiste un aperto $U_1 \in X_1$ tale che $f(U_1) \subset U_2$.
-    Da ciò si può formalizzare l'equivalenza topologica tra insiemi tramite omeomorfismi.
-    \begin{definition}
-        Dati due spazi topologici $X$ e $Y$, si dicono \textbf{omeomorfi} se esiste una funzione tra essi che sia $\mathcal{C}^0$ (nel senso definito sopra), biettiva e con inversa $\mathcal{C}^0$. \\
+Da ciò si introduce la nozione di \textit{base per una topologia}: l'idea è quella di trovare una sotto-collezione $\beta$ che garantisca che per ogni aperto e per ogni elemento dell'aperto di $\tau$, esista un aperto di $\beta$ che contenga il punto (l'elemento dell'aperto) e sia contenuto nell'aperto generico della topologia.
+Esiste un metodo che verifica e garantisce che una sotto-collezione sia di fatto una base di una topologia: il supporto deve essere dato dall'unione di tutti gli elementi della sotto-collezione candidata e, per ogni coppia di aperti e un punto nella loro intersezione, esiste un elemento della base che contenga il punto.
+
+Definita una base, definiamo uno spazio topologico \emph{secondo numerabile} se esiste una base per la topologia che sia numerabile.
+Oltre a ciò, vogliamo dotarci di una \emph{nozione di separabilità} tra punti: diciamo che uno spazio topologico è \emph{di Hausdorff} o \emph{separato} se la scelta della topologia fornisce la capacità di distinguere \emph{topologicamente} punti distinti. Più formalmente, se per ogni coppia di elementi dello spazio possiamo trovare una coppia di aperti \emph{disgiunti} associati rispettivamente ai due punti.
+
+% \subsection{Varietà topologiche}
+Si cerca ora di formalizzare la nozione di "somiglianza" locale allo spazio euclideo $(\mathbb{R}^n, \langle \cdot, \cdot \rangle_e)$, dove $\langle \cdot, \cdot \rangle_e$ è la metrica euclidea standard.
+Si prenda la nozione di continuità per funzioni su spazi topologici emulando quella dell'analisi matematica: $f: X_1 \rightarrow X_2$ è continua in $x \in X_1$ se, per ogni intorno $U_2$ di $f(x)$, (i.e. un aperto contenente $f(x)$) esiste un aperto $U_1 \in X_1$ tale che $f(U_1) \subset U_2$.
+Da ciò si può formalizzare l'equivalenza topologica tra insiemi tramite omeomorfismi.
+\begin{definition}
+    Dati due spazi topologici $X$ e $Y$, si dicono \textbf{omeomorfi} se esiste una funzione tra essi che sia $\mathcal{C}^0$ (nel senso definito sopra), biettiva e con inversa $\mathcal{C}^0$. \\
     La funzione così definita è detta \textbf{omeomorfismo}.
-    \end{definition}
-    \begin{definition}[Spazio localmente Euclideo]
-        Sia $M$ spazio topologico, esso è detto \textbf{localmente euclideo} di dimensione $n$, se $\forall p \in M$, $\exists U $ intorno di $p$ omeomorfo a un aperto di $\mathbb{R}^n$.
-    \end{definition}
-    \begin{definition}
-        La coppia $(U, \varphi)$, con $\varphi$ l'omeomorfismo $M \rightarrow \mathbb{R}^n$, è detta \textbf{carta} (di coordinate).
-        Se $\varphi(p) = 0$, si dice che la carta è centrata in $p$.
-    \end{definition}
-    Si può, finalmente, dare la definizione di varietà topologica.
-    \begin{definition}[Varietà topologica]
-        Sia $\mathcal{M}$ uno spazio topologico. $\mathcal{M}$ si dice \textbf{varietà topologica} se è: di Hausdorff, secondo numerabile e localmente euclideo.
-    \end{definition}
-    Alcuni esempi che possiedono la struttura di varietà topologica sono la sfera $S^n$ immersa in $\mathbb{R}^{n+1}$ e lo spazio proiettivo $\mathbb{RP}^n$ (insieme delle rette passanti per l'origine in $\mathbb{R}^{n+1}$).
+\end{definition}
+\begin{definition}[Spazio localmente Euclideo]
+    Sia $M$ spazio topologico, esso è detto \textbf{localmente euclideo} di dimensione $n$, se $\forall p \in M$, $\exists U $ intorno di $p$ omeomorfo a un aperto di $\mathbb{R}^n$.
+\end{definition}
+\begin{definition}
+    La coppia $(U, \varphi)$, con $\varphi$ l'omeomorfismo $M \rightarrow \mathbb{R}^n$, è detta \textbf{carta} (di coordinate).
+    Se $\varphi(p) = 0$, si dice che la carta è centrata in $p$.
+\end{definition}
+Si può, finalmente, dare la definizione di varietà topologica.
+\begin{definition}[Varietà topologica]
+    Sia $\mathcal{M}$ uno spazio topologico. $\mathcal{M}$ si dice \textbf{varietà topologica} se è: di Hausdorff, secondo numerabile e localmente euclideo.
+\end{definition}
+Alcuni esempi che possiedono la struttura di varietà topologica sono la sfera $S^n$ immersa in $\mathbb{R}^{n+1}$ e lo spazio proiettivo $\mathbb{RP}^n$ (insieme delle rette passanti per l'origine in $\mathbb{R}^{n+1}$).
 
-    % \subsection{Varietà lisce}
-    Si prova ora a dare un'idea di funzione liscia: si potrebbe ingenuamente definire $f : \mathcal{M} \rightarrow \mathbb{R}$ \emph{liscia} in $p \in \mathcal{M}$ se
-    \[
+% \subsection{Varietà lisce}
+Si prova ora a dare un'idea di funzione liscia: si potrebbe ingenuamente definire $f : \mathcal{M} \rightarrow \mathbb{R}$ \emph{liscia} in $p \in \mathcal{M}$ se
+\[
     \hat f_\varphi \coloneqq f \circ \varphi^{-1} : \mathbb{R}^n \rightarrow \mathbb{R}
-    \]
-    è liscia in $\hat p = \varphi(p)$.
-    Questa definizione dipende però troppo dalla scelta della carta di coordinate.
-    La funzione composta tra un omeomorfismo e l'inverso di un altro potrebbe non "agire bene" nell'intersezione dei due aperti che questi omeomorfismi rendono localmente euclidei.
+\]
+è liscia in $\hat p = \varphi(p)$.
+Questa definizione dipende però troppo dalla scelta della carta di coordinate.
+La funzione composta tra un omeomorfismo e l'inverso di un altro potrebbe non "agire bene" nell'intersezione dei due aperti che questi omeomorfismi rendono localmente euclidei.
 
-    Per ovviare a questa dipendenza si introducono gli \emph{atlanti}.
-    \begin{definition}
-        Un \textbf{diffeomorfismo} è una mappa $U \subset \mathbb{R}^n \rightarrow V \subset \mathbb{R}^m$ liscia, biettiva e con inversa liscia.
-    \end{definition}
-    Due carte di coordinate $(U_i, \varphi_i)$ e $(U_j, \varphi_j)$ si dicono \emph{$\mathcal{C}^\infty$-compatibili} se \mbox{$U_{ij} = U_i \bigcap U_j = \emptyset$} o se la \emph{mappa di transizione} $\varphi_{ij}$ è un diffeomorfismo, dove la mappa di transizione è la mappa composta
-    \[
-    \varphi_{ij} \coloneqq \varphi_j \circ \varphi_i^{-1} : \varphi_i (U_{ij}) \rightarrow \varphi_j (U_{ij}) 
-    \]
-    \begin{definition}
-        Si definisce \textbf{atlante} $A$ per una varietà topologica $\mathcal{M}$ una collezione di carte $\mathcal{C}^\infty$-compatibili che ricopre $\mathcal{M}$. \\
-        Se non esiste un atlante più generale relativo alla stessa varietà topologica, allora $A$ sarà massimale ($A = A^{max}$) e verrà detto \textbf{struttura liscia}.
-    \end{definition}
-    La struttura di atlante, verificata tramite la regolarità delle funzioni di transizione, rimuove l'ambiguità della definizione di funzione liscia su $\mathcal{M}$: $f$ sarà liscia se le sue composizioni con le inverse degli omeomorfismi dell'atlante sono tutte lisce.
-    
-    Adesso si ha tutto ciò che serve per definire le varietà lisce.
-    \begin{definition}[Varietà lisce]
-        Data $\mathcal{M}$ varietà topologica dotata di un atlante massimale, allora $\mathcal{M}$ è detta \textbf{varietà liscia} o \textbf{differenziabile}.
-    \end{definition}
-    Allora risulta immediato che una funzione su $\mathcal{M}$ sarà liscia se, per ogni carta dell'atlante massimale, vale che $f \circ \varphi^{-1}$ è liscia.
-    In realtà, un lemma garantisce che questa verifica effettuata per una qualsiasi scelta di un sotto-atlante numerabile del massimale garantisce la struttura di varietà liscia.
+Per ovviare a questa dipendenza si introducono gli \emph{atlanti}.
+\begin{definition}
+    Un \textbf{diffeomorfismo} è una mappa $U \subset \mathbb{R}^n \rightarrow V \subset \mathbb{R}^m$ liscia, biettiva e con inversa liscia.
+\end{definition}
+Due carte di coordinate $(U_i, \varphi_i)$ e $(U_j, \varphi_j)$ si dicono \emph{$\mathcal{C}^\infty$-compatibili} se \mbox{$U_{ij} = U_i \bigcap U_j = \emptyset$} o se la \emph{mappa di transizione} $\varphi_{ij}$ è un diffeomorfismo, dove la mappa di transizione è la mappa composta
+\[
+    \varphi_{ij} \coloneqq \varphi_j \circ \varphi_i^{-1} : \varphi_i (U_{ij}) \rightarrow \varphi_j (U_{ij})
+\]
+\begin{definition}
+    Si definisce \textbf{atlante} $A$ per una varietà topologica $\mathcal{M}$ una collezione di carte $\mathcal{C}^\infty$-compatibili che ricopre $\mathcal{M}$. \\
+    Se non esiste un atlante più generale relativo alla stessa varietà topologica, allora $A$ sarà massimale ($A = A^{max}$) e verrà detto \textbf{struttura liscia}.
+\end{definition}
+La struttura di atlante, verificata tramite la regolarità delle funzioni di transizione, rimuove l'ambiguità della definizione di funzione liscia su $\mathcal{M}$: $f$ sarà liscia se le sue composizioni con le inverse degli omeomorfismi dell'atlante sono tutte lisce.
+
+Adesso si ha tutto ciò che serve per definire le varietà lisce.
+\begin{definition}[Varietà lisce]
+    Data $\mathcal{M}$ varietà topologica dotata di un atlante massimale, allora $\mathcal{M}$ è detta \textbf{varietà liscia} o \textbf{differenziabile}.
+\end{definition}
+Allora risulta immediato che una funzione su $\mathcal{M}$ sarà liscia se, per ogni carta dell'atlante massimale, vale che $f \circ \varphi^{-1}$ è liscia.
+In realtà, un lemma garantisce che questa verifica effettuata per una qualsiasi scelta di un sotto-atlante numerabile del massimale garantisce la struttura di varietà liscia.
 
 % ORSO
-    % esempi di varietà liscie: li metto?
-    % \textbf{Esempi:} $\mathbb{R}^n$ dotato di carta standard $(\mathbb{R}^n, \operatorname{id})$; un qualsiasi aperto di $\mathbb{R}^n$; su uno spazio vettoriale $\mathbb{V}$ la scelta di una scelta di una base $\mathcal{B}$
+% esempi di varietà liscie: li metto?
+% \textbf{Esempi:} $\mathbb{R}^n$ dotato di carta standard $(\mathbb{R}^n, \operatorname{id})$; un qualsiasi aperto di $\mathbb{R}^n$; su uno spazio vettoriale $\mathbb{V}$ la scelta di una scelta di una base $\mathcal{B}$
 
-    Con questa struttura si può generalizzare l'idea di regolarità anche a funzioni tra varietà: siano $\mathcal{M}$ e $\mathcal{N}$ varietà lisce e $F : \mathcal{M} \rightarrow \mathcal{N}$, con atlanti rispettivamente $(U_i, \varphi_i)$ e $(V_j, \psi_j)$; $F$ è liscia se, la composizione di una carta con $F$ e con l'inversa della carta dell'altra varietà è liscia. L'idea è quella di verificare la regolarità da $\mathbb{R}^m$ a $\mathbb{R}^n$, richiesta ben definita, passando tra le due varietà tramite $F$ e gli omeomorfismi che rendono le varietà localmente euclidee.
+Con questa struttura si può generalizzare l'idea di regolarità anche a funzioni tra varietà: siano $\mathcal{M}$ e $\mathcal{N}$ varietà lisce e $F : \mathcal{M} \rightarrow \mathcal{N}$, con atlanti rispettivamente $(U_i, \varphi_i)$ e $(V_j, \psi_j)$; $F$ è liscia se, la composizione di una carta con $F$ e con l'inversa della carta dell'altra varietà è liscia. L'idea è quella di verificare la regolarità da $\mathbb{R}^m$ a $\mathbb{R}^n$, richiesta ben definita, passando tra le due varietà tramite $F$ e gli omeomorfismi che rendono le varietà localmente euclidee.
 
-    Inoltre, se $F$ è un diffeomorfismo tra $\mathcal{M}$ e $\mathcal{N}$, si dice che le varietà sono \emph{diffeomorfe}.
+Inoltre, se $F$ è un diffeomorfismo tra $\mathcal{M}$ e $\mathcal{N}$, si dice che le varietà sono \emph{diffeomorfe}.
 
-    \section{Derivazioni, spazio tangente}
-    Ci si concentri, ora, sulle derivate rispetto alle coordinate della carta e la relazione con i vettori tangenti ad una varietà differenziabile.
-    Si mostra come compongono una base per la struttura fondamentale di spazio tangente ad una varietà. %: esso è [SPIEGAZIONE DEL PERCHÈ È IMPORTANTE PER LA GEOMETRIA DI CONTATTO] ORSO
+\section{Derivazioni, spazio tangente}
+Ci si concentri, ora, sulle derivate rispetto alle coordinate della carta e la relazione con i vettori tangenti ad una varietà differenziabile.
+Si mostra come compongono una base per la struttura fondamentale di spazio tangente ad una varietà. %: esso è [SPIEGAZIONE DEL PERCHÈ È IMPORTANTE PER LA GEOMETRIA DI CONTATTO] ORSO
 
-    Si consideri $\mathbb{R}^n$ dotato di base canonica $\{ \mathbf{e}_i\}_{i=1}^n$ e origine; si definisce lo \emph{spazio dei vettori applicati al punto} $p \in \mathbb{R}^n$, chiamato $\mathbb{R}^n_p$: il suo generico elemento sarà il vettore $\mathbf{v}_p = \sum_i^n v_i\mathbf{e}_i$ applicato in $p$.
+Si consideri $\mathbb{R}^n$ dotato di base canonica $\{ \mathbf{e}_i\}_{i=1}^n$ e origine; si definisce lo \emph{spazio dei vettori applicati al punto} $p \in \mathbb{R}^n$, chiamato $\mathbb{R}^n_p$: il suo generico elemento sarà il vettore $\mathbf{v}_p = \sum_i^n v_i\mathbf{e}_i$ applicato in $p$.
 
-    \begin{definition}
-        Si definisce \textbf{derivazione} al punto $p$ una mappa \underline{lineare} $X_p : \mathcal{C}^\infty(\mathbb{R}^n) \rightarrow \mathbb{R}$ tale che
-        \begin{equation} \label{eq:leibniz}
+\begin{definition}
+    Si definisce \textbf{derivazione} al punto $p$ una mappa \underline{lineare} $X_p : \mathcal{C}^\infty(\mathbb{R}^n) \rightarrow \mathbb{R}$ tale che
+    \begin{equation} \label{eq:leibniz}
         X_p \cdot (f g) = f(p) X_p \cdot g + g(p) X_p \cdot f \tag*{Formula di Leibniz}
-        \end{equation}
-    \end{definition}
-    
-    \begin{property} Proprietà delle derivazioni:
-        \begin{itemize}
-            \item $f = \mathrm{cost.} \quad \Longrightarrow \quad X_p \cdot f = 0$
-            \begin{proof}
-                Sia $f = 1$, dalla \ref{eq:leibniz} si ottiene
-                \[
-                X_p \cdot f = X_p \cdot (f^2) = 2 f(p) X_p \cdot f = 2 X_p \cdot f \quad \Longrightarrow \quad X_p \cdot f = 0
-                \]
-            \end{proof}
-            \item $f(p) = g(p) = 0 \quad \Longrightarrow \quad X_p \cdot (f g) = 0$
-        \end{itemize}
-    \end{property}
-    \begin{definition}
-        Si dice \textbf{spazio tangente} $T_p\mathbb{R}^n$ ad un punto $p \in \mathbb{R}^n$, lo spazio di tutte le derivazioni in $p$ di funzioni lisce su $\mathbb{R}^n$.
-    \end{definition}
-    \begin{proposition}
-        $T_p\mathbb{R}^n$ è uno spazio vettoriale ed è isomorfo a $\mathbb{R}^n$:
-        \[
-        T_p\mathbb{R}^n \sim \mathbb{R}^n
-        \]
-    \end{proposition}
-    % \begin{proof} ORSO
-        % Il primo asserto è ovvio.
-        % Il secondo richiede di verificare 
-    % \end{proof}
-    \begin{corollary}
-        $\{ \left.\partial_i \right|_{p} \}$ è una base per $T_p\mathbb{R}^n$.
-    \end{corollary}
-    Si può quindi fornire una definizione di spazio vettoriale "alternativa" a quella standard: un campo vettoriale liscio $X$ su $U \in \mathbb{R}^n$ una funzione $p \in U \rightarrow X_p \in T_p\mathbb{R}^n$, ogni elemento è rappresentabile da $X = a^i(\mathbf{x}) \partial_i$.
-    In particolare vale che:
+    \end{equation}
+\end{definition}
+
+\begin{property} Proprietà delle derivazioni:
+    \begin{itemize}
+        \item $f = \mathrm{cost.} \quad \Longrightarrow \quad X_p \cdot f = 0$
+              \begin{proof}
+                  Sia $f = 1$, dalla \ref{eq:leibniz} si ottiene
+                  \[
+                      X_p \cdot f = X_p \cdot (f^2) = 2 f(p) X_p \cdot f = 2 X_p \cdot f \quad \Longrightarrow \quad X_p \cdot f = 0
+                  \]
+              \end{proof}
+        \item $f(p) = g(p) = 0 \quad \Longrightarrow \quad X_p \cdot (f g) = 0$
+    \end{itemize}
+\end{property}
+\begin{definition}
+    Si dice \textbf{spazio tangente} $T_p\mathbb{R}^n$ ad un punto $p \in \mathbb{R}^n$, lo spazio di tutte le derivazioni in $p$ di funzioni lisce su $\mathbb{R}^n$.
+\end{definition}
+\begin{proposition}
+    $T_p\mathbb{R}^n$ è uno spazio vettoriale ed è isomorfo a $\mathbb{R}^n$:
     \[
-    \forall p \in U, \quad (X \cdot f)(p) = X_p \cdot f = a^i(p) \left.\partial_i \right|_p f
+        T_p\mathbb{R}^n \sim \mathbb{R}^n
     \]
-    Risulta immediata la generalizzazione della derivazione alle varietà.
-    \begin{definition}
-        Una mappa lineare $X_p : \mathcal{C}^\infty \rightarrow \mathbb{R}$, detta $X_p \cdot f$ che soddisfi la \ref{eq:leibniz}, è chiamata \textbf{derivazione} in $p$.
-    \end{definition}
+\end{proposition}
+% \begin{proof} ORSO
+% Il primo asserto è ovvio.
+% Il secondo richiede di verificare 
+% \end{proof}
+\begin{corollary}
+    $\{ \left.\partial_i \right|_{p} \}$ è una base per $T_p\mathbb{R}^n$.
+\end{corollary}
+Si può quindi fornire una definizione di spazio vettoriale "alternativa" a quella standard: un campo vettoriale liscio $X$ su $U \in \mathbb{R}^n$ una funzione $p \in U \rightarrow X_p \in T_p\mathbb{R}^n$, ogni elemento è rappresentabile da $X = a^i(\mathbf{x}) \partial_i$.
+In particolare vale che:
+\[
+    \forall p \in U, \quad (X \cdot f)(p) = X_p \cdot f = a^i(p) \left.\partial_i \right|_p f
+\]
+Risulta immediata la generalizzazione della derivazione alle varietà.
+\begin{definition}
+    Una mappa lineare $X_p : \mathcal{C}^\infty \rightarrow \mathbb{R}$, detta $X_p \cdot f$ che soddisfi la \ref{eq:leibniz}, è chiamata \textbf{derivazione} in $p$.
+\end{definition}
 
-    Proviamo ora a dare una formulazione più geometrica della struttura descritta finora.
-    \begin{definition}
-        Supponiamo $F : \mathcal{M} \rightarrow \mathcal{N}$, allora $\forall p \in \mathcal{M}$ essa induce la mappa $F_* : T_p\mathcal{M} \rightarrow T_{F(p)}\mathcal{N}$ chiamata \textbf{push forward} di $F$, tramite
-        \begin{equation}
+Proviamo ora a dare una formulazione più geometrica della struttura descritta finora.
+\begin{definition}
+    Supponiamo $F : \mathcal{M} \rightarrow \mathcal{N}$, allora $\forall p \in \mathcal{M}$ essa induce la mappa $F_* : T_p\mathcal{M} \rightarrow T_{F(p)}\mathcal{N}$ chiamata \textbf{push forward} di $F$, tramite
+    \begin{equation}
         (F_* X_p)_{F(p)} \cdot f \coloneqq X_p \cdot (f \circ F)
-        \end{equation}
-    \end{definition}
-    In pratica il push forward è una funzione che prende una relazione tra varietà e la sposta ad una relazione tra gli spazi tangenti relativi.
-    \'E una sorta di differenziale di una funzione tra varietà, può essere compresa pensando che fin'ora si è pensato agli spazi tangenti come a \emph{span} di derivate; infatti, occasionalmente sarà utile esprimerla come $dF_p$ o $F_*|_p$.
-    \begin{property} Proprietà del push forward:
-        \begin{itemize}
-            \item $(G \circ F)_* = G_* \circ F_*$
-            \item $F$ diffeomorfismo \quad $\Longrightarrow \quad F_*$ isomorfismo
-        \end{itemize}
-    \end{property}
-    \begin{lemma}
-        Se $f, g \in \mathcal{C}^\infty (\mathcal{M})$ coincidono su un qualche intorno $U$ di $p \in \mathcal{M}$, allora
-        \[
+    \end{equation}
+\end{definition}
+In pratica il push forward è una funzione che prende una relazione tra varietà e la sposta ad una relazione tra gli spazi tangenti relativi.
+\'E una sorta di differenziale di una funzione tra varietà, può essere compresa pensando che fin'ora si è pensato agli spazi tangenti come a \emph{span} di derivate; infatti, occasionalmente sarà utile esprimerla come $dF_p$ o $F_*|_p$.
+\begin{property} Proprietà del push forward:
+    \begin{itemize}
+        \item $(G \circ F)_* = G_* \circ F_*$
+        \item $F$ diffeomorfismo \quad $\Longrightarrow \quad F_*$ isomorfismo
+    \end{itemize}
+\end{property}
+\begin{lemma}
+    Se $f, g \in \mathcal{C}^\infty (\mathcal{M})$ coincidono su un qualche intorno $U$ di $p \in \mathcal{M}$, allora
+    \[
         X_p \cdot f = X_p \cdot g
-        \]
-    \end{lemma}
-    Nonostante la struttura di spazio tangente sia definita localmente tramite il punto sulla varietà scelto, anche una definizione globale porta con sé una problematica: la definizione di una derivazione in un punto non dovrebbe dipendere dalla forma in un altro.
-    Il lemma ci viene in aiuto: funzioni differenti globalmente ma coincidenti su un intorno del punto garantiscono lo stesso vettore tangente.
-    Quindi, la definizione globale di derivazione con funzioni su varietà risulta locale.
+    \]
+\end{lemma}
+Nonostante la struttura di spazio tangente sia definita localmente tramite il punto sulla varietà scelto, anche una definizione globale porta con sé una problematica: la definizione di una derivazione in un punto non dovrebbe dipendere dalla forma in un altro.
+Il lemma ci viene in aiuto: funzioni differenti globalmente ma coincidenti su un intorno del punto garantiscono lo stesso vettore tangente.
+Quindi, la definizione globale di derivazione con funzioni su varietà risulta locale.
 
-    Proviamo ora a dare una rappresentazione delle derivazioni nella carta scelta: data la carta $\varphi$ per $\mathcal{M}$, abbiamo $\{ \left.\partial_i \right|_{\hat p} \}$ base canonica per $T_{\hat p}\mathbb{R}^n$.
-    Sapendo che $\varphi$ è un diffeomorfismo, la seconda proprietà del push forward garantisce che $\varphi_*$ è un isomorfismo, il che garantisce che $T_{\hat p}\mathbb{R}^n \sim T_p\mathcal{M}$, $\forall p \in V$.
-    Finalmente abbiamo una base per $T_p\mathcal{M}$, definita come
-    \begin{equation}
+Proviamo ora a dare una rappresentazione delle derivazioni nella carta scelta: data la carta $\varphi$ per $\mathcal{M}$, abbiamo $\{ \left.\partial_i \right|_{\hat p} \}$ base canonica per $T_{\hat p}\mathbb{R}^n$.
+Sapendo che $\varphi$ è un diffeomorfismo, la seconda proprietà del push forward garantisce che $\varphi_*$ è un isomorfismo, il che garantisce che $T_{\hat p}\mathbb{R}^n \sim T_p\mathcal{M}$, $\forall p \in V$.
+Finalmente abbiamo una base per $T_p\mathcal{M}$, definita come
+\begin{equation}
     \left.\partial_i \right|_{p} \coloneqq (\varphi^{-1} )_* \left.\partial_i \right|_{\hat p}
-    \end{equation}
-    Rimane però una definizione molto astratta; vediamo però come eseguire il push forward di questa base.
-    \begin{proof}
-        Siano $(U, \varphi)$ e $(V, \psi)$ carte rispettivamente per $\mathcal{M}$ e $\mathcal{N}$ e siano le coordinate $\hat p = \varphi(p) = x^i$ e $\hat q = \psi(q) = z^j$.
-        Sia $f \in \mathcal{C}^\infty (\mathcal{N})$
-        \begin{align*}
-            (F_*(\partial_{x^i}|_p))f &= (\partial_{x^i}|_p)(F \circ f) \\
-            \footnotesize\text{passando alle coordinate $\hat p$ nello spazio euclideo}&= (\partial_{x^i}|_{\hat{p}})(f \circ F \circ \varphi^{-1}) \\
-            \footnotesize\text{inseriamo un'identità}&= (\partial_{x^i}|_{\hat{p}})( \underbrace{f \circ \psi^{-1}}_{\hat{f}} \circ \underbrace{\psi \circ F \circ \varphi^{-1}}_{\hat{F}} ) \\
-            &= (\partial_{x^i}|_{\hat{p}})(\hat f \circ \hat F) \\
-            \footnotesize\text{regola della catena}  &=  (\partial_{z^j} \hat{f})(\hat{F}(p)) \cdot \frac{\partial \hat{F}^j}{\partial x^i}(\hat{p}) \\
-            &= \partial_{z^j}|_{F(p)} f \cdot \pdv{\hat{F}^j}{x^i}(\hat{p})
-        \end{align*}
-        \begin{equation}
-            \Longrightarrow \quad (F_*(\partial_{x^i}|_p))f = \partial_{z^j}|_{F(p)} f \cdot \pdv{\hat{F}^j}{x^i}(\hat{p})
-        \end{equation}
-    \end{proof}
-    Da questo collegamento con le derivate parziali rispetto alle coordinate, si vede che abbiamo una base ovvia per $T_p\mathcal{M}$:
-    \begin{equation}
-    X_p = a^i \left.\partial_i \right|_{p} = a^i \left.\frac{\partial}{\partial x^i} \right|_{p}
-    \end{equation}
-    Ora, data una curva liscia (mappa liscia $\gamma : J \subset \mathbb{R} \rightarrow \mathcal{M}$), possiamo trovare un vettore tangente a $p_0 = \gamma(t_0)$, detto $\dot \gamma^i(t_0) \left.\partial_i \right|_{p_0}$.
-    Vediamo come fare: presa $f(\gamma(t))$ con $f$ liscia su $\mathcal{M}$ e una carta contenente $\gamma (t_0)$
+\end{equation}
+Rimane però una definizione molto astratta; vediamo però come eseguire il push forward di questa base.
+\begin{proof}
+    Siano $(U, \varphi)$ e $(V, \psi)$ carte rispettivamente per $\mathcal{M}$ e $\mathcal{N}$ e siano le coordinate $\hat p = \varphi(p) = x^i$ e $\hat q = \psi(q) = z^j$.
+    Sia $f \in \mathcal{C}^\infty (\mathcal{N})$
     \begin{align*}
-    \left.\odv{}{t}(f \circ \gamma)\right|_{t_0} &= (\gamma_* \left.\partial_t\right|_{t_0})f= \\
-    &= \left.\pdv{}{t}(f \circ \gamma)\right|_{t_0} = \\
-    &= \left.\odv{}{t}(\underbrace{f \circ \varphi^{-1}}_{\hat f} \circ \underbrace{\varphi \circ \gamma}_{\hat \gamma})\right|_{t_0} = \\
-    &= \left.\odv{}{t}[\hat f (\hat \gamma (t))] \right|_{t_0}
+        (F_*(\partial_{x^i}|_p))f                                                   & = (\partial_{x^i}|_p)(F \circ f)                                                                                                       \\
+        \footnotesize\text{passando alle coordinate $\hat p$ nello spazio euclideo} & = (\partial_{x^i}|_{\hat{p}})(f \circ F \circ \varphi^{-1})                                                                            \\
+        \footnotesize\text{inseriamo un'identità}                                   & = (\partial_{x^i}|_{\hat{p}})( \underbrace{f \circ \psi^{-1}}_{\hat{f}} \circ \underbrace{\psi \circ F \circ \varphi^{-1}}_{\hat{F}} ) \\
+                                                                                    & = (\partial_{x^i}|_{\hat{p}})(\hat f \circ \hat F)                                                                                     \\
+        \footnotesize\text{regola della catena}                                     & =  (\partial_{z^j} \hat{f})(\hat{F}(p)) \cdot \frac{\partial \hat{F}^j}{\partial x^i}(\hat{p})                                         \\
+                                                                                    & = \partial_{z^j}|_{F(p)} f \cdot \pdv{\hat{F}^j}{x^i}(\hat{p})
     \end{align*}
     \begin{equation}
+        \Longrightarrow \quad (F_*(\partial_{x^i}|_p))f = \partial_{z^j}|_{F(p)} f \cdot \pdv{\hat{F}^j}{x^i}(\hat{p})
+    \end{equation}
+\end{proof}
+Da questo collegamento con le derivate parziali rispetto alle coordinate, si vede che abbiamo una base ovvia per $T_p\mathcal{M}$:
+\begin{equation}
+    X_p = a^i \left.\partial_i \right|_{p} = a^i \left.\frac{\partial}{\partial x^i} \right|_{p}
+\end{equation}
+Ora, data una curva liscia (mappa liscia $\gamma : J \subset \mathbb{R} \rightarrow \mathcal{M}$), possiamo trovare un vettore tangente a $p_0 = \gamma(t_0)$, detto $\dot \gamma^i(t_0) \left.\partial_i \right|_{p_0}$.
+Vediamo come fare: presa $f(\gamma(t))$ con $f$ liscia su $\mathcal{M}$ e una carta contenente $\gamma (t_0)$
+\begin{align*}
+    \left.\odv{}{t}(f \circ \gamma)\right|_{t_0} & = (\gamma_* \left.\partial_t\right|_{t_0})f=                                                                                       \\
+                                                 & = \left.\pdv{}{t}(f \circ \gamma)\right|_{t_0} =                                                                                   \\
+                                                 & = \left.\odv{}{t}(\underbrace{f \circ \varphi^{-1}}_{\hat f} \circ \underbrace{\varphi \circ \gamma}_{\hat \gamma})\right|_{t_0} = \\
+                                                 & = \left.\odv{}{t}[\hat f (\hat \gamma (t))] \right|_{t_0}
+\end{align*}
+\begin{equation}
     \Longrightarrow \quad \dot \gamma^i(t_0) \left.\partial_i \right|_{\hat \gamma (t_0)} \hat f = \dot \gamma^i(t_0) \left.\partial_i \right|_{\gamma (t_0)} f
+\end{equation}
+Un lemma chiarisce la natura geometrica dei vettori tangenti:
+\begin{lemma}
+    Sia $p \in \mathcal{M}$, allora ogni $X_p \in T_p\mathcal{M}$ è tangente a qualche curva $\gamma$ in $\mathcal{M}$.
+\end{lemma}
+
+\section{Fibrati vettoriali: fibrati tangente e cotangente}
+Vogliamo estendere la nozione di campo vettoriale su $\mathbb{R}^n$ a una varietà differenziabile generica $\mathcal{M}$ ovvero una mappa liscia che prenda un qualsiasi elemento $p \in \mathcal{M}$ e restituisca un elemento di $T_p\mathcal{M}$. Possiamo realizzarlo tramite la nozione di \emph{fibrato vettoriale}. L'idea di fondo è che la varietà in esame può avere globalmente una geometria "strana", ma localmente è appiattibile in un intorno.
+\begin{definition} % ORSO: la definizione di fibrato vettoriale suona male, occhio al SE
+    Siano $\mathcal{M}$ e $\mathcal{E}$ varietà differenziabili e sia $\pi : \mathcal{E} \rightarrow \mathcal{M}$ una mappa suriettiva liscia. Se:
+    \begin{itemize}
+        \item $\mathcal{E}_p \coloneqq \pi^{-1}(p)$, detta \textbf{fibra} su $p$, è uno \underline{spazio vettoriale reale $k$-dimensionale}
+        \item $\forall p \in \mathcal{M}, \quad \exists U$ intorno di $p$ e il \underline{diffeomorfismo} $\Phi : \mathcal{E}_U \coloneqq \pi^{-1}(U) \rightarrow U \times \mathbb{R}^k$
+    \end{itemize}
+    tale che \emph{(1)} $\left.\Phi\right|_{\pi^{-1}(p)} : \mathcal{E}_p \rightarrow \{ p \} \times \mathbb{R}^k \ \sim \ \mathbb{R}^k$ è \underline{isomorfismo lineare} e \emph{(2)} $pr_1 \circ \Phi = \pi$, dove $pr_1$ è detta \underline{proiezione sul primo fattore}, definita come $(a,b) \mapsto a$.
+    La funzione $\Phi$ così definita, è detta \textbf{trivializzazione locale}; l'insieme di oggetti $(\mathcal{E}, \mathcal{M}, \pi, \{ (U, \Phi)\})$ è detto \textbf{fibrato vettoriale} liscio di rango $k$.
+\end{definition}
+$\{ p \} \times \mathbb{R}^k$ è lo spazio vettoriale, banalmente, dato dal prodotto cartesiano tra il punto $p$ e $\mathbb{R}^k$, quindi $\Phi$ prende tutte le \emph{fibre} ($\pi^{-1}(U)$) che stanno su una piccola parte ($U$) della varietà e la mappa in una zona più semplificata mantenendo l'etichetta su $U$. Poi, $pr_1$ manda tutti questi vettori in $\mathcal{M}$.
+Notare come l'emergere dell'isomorfismo tra $\{ p \} \times \mathbb{R}^k$ e $\mathbb{R}^k$ è immediato: intuitivamente, fissando $p$ non aggiungiamo alcuna dimensione alla natura di spazio vettoriale di $\mathcal{E}_p$.
+\begin{definition}
+    Una \textbf{sezione} locale di un fibrato vettoriale è una mappa liscia $\sigma : U \subset \mathcal{M} \rightarrow \mathcal{E}$ tale che $\pi \circ \sigma = \operatorname{id}_U$.
+    Se $U=\mathcal{M}$ viene detta sezione \textbf{globale} $\Gamma(\mathcal{E})$.\\
+    Un set di sezioni locali (globali) $\{ \sigma_1, \dots, \sigma_k \}$ è detto \textbf{riferimento} locale (globale) se $\forall p \in U$ (o $\mathcal{M}$) esso è una base per $\mathcal{E}_p$.
+\end{definition}
+Ingenuamente si potrebbe pensare che $\sigma$ sia l'inversa di $\pi$: la controimmagine di $\pi$ è definita come $\mathcal{E}_p$ che è uno spazio vettoriale, la \emph{fibra} appunto, per cui ad ogni $p$ viene associato un set di vettori; $\sigma$ invece restituisce un unico vettore.
+In pratica $\sigma(p) \in \pi^{-1}(p)$.
+
+\begin{definition}
+    Si definisce \textbf{fibrato tangente} $T\mathcal{M}$ l'unione disgiunta degli spazi tangenti ad ogni punto della varietà:
+    \begin{equation}
+        T\mathcal{M} \coloneqq \bigsqcup_p T_p\mathcal{M}
     \end{equation}
-    Un lemma chiarisce la natura geometrica dei vettori tangenti:
-    \begin{lemma}
-        Sia $p \in \mathcal{M}$, allora ogni $X_p \in T_p\mathcal{M}$ è tangente a qualche curva $\gamma$ in $\mathcal{M}$.
-    \end{lemma}
-
-    \section{Fibrati vettoriali: fibrati tangente e cotangente}
-    Vogliamo estendere la nozione di campo vettoriale su $\mathbb{R}^n$ a una varietà differenziabile generica $\mathcal{M}$ ovvero una mappa liscia che prenda un qualsiasi elemento $p \in \mathcal{M}$ e restituisca un elemento di $T_p\mathcal{M}$. Possiamo realizzarlo tramite la nozione di \emph{fibrato vettoriale}. L'idea di fondo è che la varietà in esame può avere globalmente una geometria "strana", ma localmente è appiattibile in un intorno.
-    \begin{definition}
-        Siano $\mathcal{M}$ e $\mathcal{E}$ varietà differenziabili e sia $\pi : \mathcal{E} \rightarrow \mathcal{M}$ una mappa suriettiva liscia. Se:
-        \begin{itemize}
-            \item $\mathcal{E}_p \coloneqq \pi^{-1}(p)$, detta \textbf{fibra} su $p$, è uno \underline{spazio vettoriale reale $k$-dimensionale}
-            \item $\forall p \in \mathcal{M}, \quad \exists U$ intorno di $p$ e il \underline{diffeomorfismo} $\Phi : \mathcal{E}_U \coloneqq \pi^{-1}(U) \rightarrow U \times \mathbb{R}^k$
-        \end{itemize}
-        tale che \emph{(1)} $\left.\Phi\right|_{\pi^{-1}(p)} : \mathcal{E}_p \rightarrow \{ p \} \times \mathbb{R}^k \ \sim \ \mathbb{R}^k$ è \underline{isomorfismo lineare} e \emph{(2)} $pr_1 \circ \Phi = \pi$, dove $pr_1$ è detta \underline{proiezione sul primo fattore}, definita come $(a,b) \mapsto a$.
-        La funzione $\Phi$ così definita, è detta \textbf{trivializzazione locale}; l'insieme di oggetti $(\mathcal{E}, \mathcal{M}, \pi, \{ (U, \Phi)\})$ è detto \textbf{fibrato vettoriale} liscio di rango $k$.
-    \end{definition}
-    $\{ p \} \times \mathbb{R}^k$ è lo spazio vettoriale, banalmente, dato dal prodotto cartesiano tra il punto $p$ e $\mathbb{R}^k$, quindi $\Phi$ prende tutte le \emph{fibre} ($\pi^{-1}(U)$) che stanno su una piccola parte ($U$) della varietà e la mappa in una zona più semplificata mantenendo l'etichetta su $U$. Poi, $pr_1$ manda tutti questi vettori in $\mathcal{M}$.
-    Notare come l'emergere dell'isomorfismo tra $\{ p \} \times \mathbb{R}^k$ e $\mathbb{R}^k$ è immediato: intuitivamente, fissando $p$ non aggiungiamo alcuna dimensione alla natura di spazio vettoriale di $\mathcal{E}_p$.
-    \begin{definition}
-        Una \textbf{sezione} locale di un fibrato vettoriale è una mappa liscia $\sigma : U \subset \mathcal{M} \rightarrow \mathcal{E}$ tale che $\pi \circ \sigma = \operatorname{id}_U$.
-        Se $U=\mathcal{M}$ viene detta sezione \textbf{globale} $\Gamma(\mathcal{E})$.\\
-        Un set di sezioni locali (globali) $\{ \sigma_1, \dots, \sigma_k \}$ è detto \textbf{riferimento} locale (globale) se $\forall p \in U$ (o $\mathcal{M}$) esso è una base per $\mathcal{E}_p$.
-    \end{definition}
-    Ingenuamente si potrebbe pensare che $\sigma$ sia l'inversa di $\pi$: la controimmagine di $\pi$ è definita come $\mathcal{E}_p$ che è uno spazio vettoriale, la \emph{fibra} appunto, per cui ad ogni $p$ viene associato un set di vettori; $\sigma$ invece restituisce un unico vettore.
-    In pratica $\sigma(p) \in \pi^{-1}(p)$.
-
-    \begin{definition}
-        Si definisce \textbf{fibrato tangente} $T\mathcal{M}$ l'unione disgiunta degli spazi tangenti ad ogni punto della varietà:
-        \begin{equation}
-            T\mathcal{M} \coloneqq \bigsqcup_p T_p\mathcal{M}
-        \end{equation}
-    \end{definition}
-    \textbf{Nota:} L'unione disgiunta è un unione che tiene conto della provenienza degli elementi dell'insieme risultante, quindi distingue elementi coincidenti ma provenienti da insiemi diversi. \'E definita rispetto all'unione standard come
-    \[
+\end{definition}
+\textbf{Nota:} L'unione disgiunta è un unione che tiene conto della provenienza degli elementi dell'insieme risultante, quindi distingue elementi coincidenti ma provenienti da insiemi diversi. \'E definita rispetto all'unione standard come
+\[
     \bigsqcup_i A_i \coloneqq \bigcup_i (A_i \times \{ i \} )
-    \]
+\]
 
-    Il fibrato tangente, quindi, ha la struttura di fibrato vettoriale e di varietà liscia.
-    \begin{definition}
-        Un \textbf{campo vettoriale} liscio è una sezione di $T\mathcal{M}$, chiamata \\ $\Gamma(\mathcal{E}) = \mathcal{X}(\mathcal{M})$.
-    \end{definition}
-    \begin{lemma}
-        Per qualsiasi scelta della carta di coordinate, le funzioni che compongono $X \in \mathcal{X}(\mathcal{M})$ sono lisce. Inoltre, per una qualsiasi $f \in \mathcal{C}^\infty(\mathcal{M})$, un campo vettoriale definisce la mappa liscia $X \cdot f : \mathcal{M} \rightarrow \mathbb{R}$ definita come
-        \begin{equation}
-            (X \cdot f)(p) = X_p \cdot f
-        \end{equation}
-    \end{lemma}
+Il fibrato tangente, quindi, ha la struttura di fibrato vettoriale e di varietà liscia.
+\begin{definition}
+    Un \textbf{campo vettoriale} liscio è una sezione di $T\mathcal{M}$, chiamata \\ $\Gamma(\mathcal{E}) = \mathcal{X}(\mathcal{M})$.
+\end{definition}
+\begin{lemma}
+    Per qualsiasi scelta della carta di coordinate, le funzioni che compongono $X \in \mathcal{X}(\mathcal{M})$ sono lisce. Inoltre, per una qualsiasi $f \in \mathcal{C}^\infty(\mathcal{M})$, un campo vettoriale definisce la mappa liscia $X \cdot f : \mathcal{M} \rightarrow \mathbb{R}$ definita come
+    \begin{equation}
+        (X \cdot f)(p) = X_p \cdot f
+    \end{equation}
+\end{lemma}
 
-    Abbiamo visto come $T_p\mathcal{M}$ è uno spazio vettoriale, per cui possiamo prenderne il duale $T^*_p\mathcal{M}$ definito come lo spazio di tutti i funzionali lineari a valori nel campo: 
-    \[
+Abbiamo visto come $T_p\mathcal{M}$ è uno spazio vettoriale, per cui possiamo prenderne il duale $T^*_p\mathcal{M}$ definito come lo spazio di tutti i funzionali lineari a valori nel campo:
+\[
     \omega_p : T_p\mathcal{M} \rightarrow \mathbb{K} = \mathbb{R}
-    \]
-    \begin{definition}
-        Chiameremo \textbf{spazio cotangente} lo spazio duale $T^*_p\mathcal{M}$ dello spazio tangente ad una varietà differenziabile.
-        I suoi elementi $\omega_p$ si chiameranno \textbf{vettori cotangenti} o \textbf{covettori}.
-    \end{definition}
-    Si consideri, quindi, la base $\{ \left.\partial_i\right|_p\}$ di $ T_p\mathcal{M}$: chiameremo $\{ \left.\odif{x^i}\right|_p\}$. Grazie a ciò, gli elementi di $T^*_p\mathcal{M}$ saranno espressi secondo $\omega_p = \omega_i \left.\odif{x^i}\right|_p$; inoltre, dovrà essere che
+\]
+\begin{definition}
+    Chiameremo \textbf{spazio cotangente} lo spazio duale $T^*_p\mathcal{M}$ dello spazio tangente ad una varietà differenziabile.
+    I suoi elementi $\omega_p$ si chiameranno \textbf{vettori cotangenti} o \textbf{covettori}.
+\end{definition}
+Si consideri, quindi, la base $\{ \left.\partial_i\right|_p\}$ di $ T_p\mathcal{M}$: chiameremo $\{ \left.\odif{x^i}\right|_p\}$. Grazie a ciò, gli elementi di $T^*_p\mathcal{M}$ saranno espressi secondo $\omega_p = \omega_i \left.\odif{x^i}\right|_p$; inoltre, dovrà essere che
+\begin{equation}
+    \left.\odif{x^i}\right|_p (\left.\partial_j\right|_p) = \delta^i_j \qquad \Longrightarrow \qquad \omega_i = \omega_p (\left.\partial_j\right|_p)
+\end{equation}
+Ora si prova a dare un'interpretazione geometrica della nozione di covettore. Si veda il manuale \emph{Gravitation, Chapter 2, Foundations of Special Relativity - Misner, Thorne, Wheeler}: si può pensare ad un covettore come ad un fascio di iperpiani ortogonali al vettore relativo, più "fitti" quanto maggiore è il valore del numero reale quando vengono applicati ad un vettore tangente; in particolare, gli autori usano l'idea di una campana associata ad ogni iperpiano che suona ogni volta che il vettore in input della forma differenziale ne attraversa uno. %ORSO: figura???
+\begin{definition}
+    Si definisce \textbf{fibrato cotangente} $T^*\mathcal{M}$ l'unione disgiunta degli spazi cotangenti ad ogni punto della varietà:
     \begin{equation}
-        \left.\odif{x^i}\right|_p (\left.\partial_j\right|_p) = \delta^i_j \qquad \Longrightarrow \qquad \omega_i = \omega_p (\left.\partial_j\right|_p)
+        T^*\mathcal{M} \coloneqq \bigsqcup_p T^*_p\mathcal{M}
     \end{equation}
-    Ora si prova a dare un'interpretazione geometrica della nozione di covettore. Si veda il manuale \emph{Gravitation, Chapter 2, Foundations of Special Relativity - Misner, Thorne, Wheeler}: si può pensare ad un covettore come ad un fascio di iperpiani ortogonali al vettore relativo, più "fitti" quanto maggiore è il valore del numero reale quando vengono applicati ad un vettore tangente; in particolare, gli autori usano l'idea di una campana associata ad ogni iperpiano che suona ogni volta che il vettore in input della forma differenziale ne attraversa uno. %ORSO: figura???
-    \begin{definition}
-        Si definisce \textbf{fibrato cotangente} $T^*\mathcal{M}$ l'unione disgiunta degli spazi cotangenti ad ogni punto della varietà:
-        \begin{equation}
-            T^*\mathcal{M} \coloneqq \bigsqcup_p T^*_p\mathcal{M}
-        \end{equation}
-    \end{definition}
-    \begin{proposition}
-        $T^*\mathcal{M}$ possiede la caratteristica di fibrato vettoriale di rango $n$ su $\mathcal{M}$
-    \end{proposition}
-    \begin{definition}
-        Si definiscono \textbf{campi covettoriali} o \textbf{1-forme differenziali} le sezioni lisce $\Gamma(T^*\mathcal{M})$ di $T^*\mathcal{M}$. L'insieme di campi covettoriali è rappresentato da $\Omega^1(\mathcal{M)}$.
-        Dato un campo covettoriale $\omega_p$ e una funzione liscia $f$, allora $f \omega$ è anch'esso un campo covettoriale definito immediatamente tramite
-        \begin{equation}
-            (f \omega)_p = f(p) \omega_p
-        \end{equation}
-    \end{definition}
-    \begin{lemma}
-        Sia $\omega \in \Omega^1(\mathcal{M})$, allora
-        \begin{itemize}
-            \item in qualsiasi carta di $\mathcal{M}$ e nella base di coordinate per $T^*_p\mathcal{M}$, scriveremo $\omega \coloneqq \omega_i \odif{x^i}$; le componenti $\omega_i$ della rappresentazione in coordinate di $\omega$ sono funzioni lisce
-            \item dato un campo vettoriale liscio $X$, vale che $\omega(X)(p)=\omega_p(X_p)$
-        \end{itemize}
-    \end{lemma}
-    Data una funzione liscia, si può definire un campo \emph{covettoriale} liscio $\odif{f}$, detto \emph{differenziale} di $f$, definito tale che 
+\end{definition}
+\begin{proposition}
+    $T^*\mathcal{M}$ possiede la caratteristica di fibrato vettoriale di rango $n$ su $\mathcal{M}$
+\end{proposition}
+\begin{definition}
+    Si definiscono \textbf{campi covettoriali} o \textbf{1-forme differenziali} le sezioni lisce $\Gamma(T^*\mathcal{M})$ di $T^*\mathcal{M}$. L'insieme di campi covettoriali è rappresentato da $\Omega^1(\mathcal{M)}$.
+    Dato un campo covettoriale $\omega_p$ e una funzione liscia $f$, allora $f \omega$ è anch'esso un campo covettoriale definito immediatamente tramite
     \begin{equation}
-        \odif{f_p}(X_p) = X_p \cdot f
+        (f \omega)_p = f(p) \omega_p
     \end{equation}
-    Scelta una carta,
-    \begin{equation}
-        \odif{f_p}(\left.\partial_i\right|_p) = (\partial_i f)(p) \qquad \Longrightarrow \qquad \odif{f} = \partial_i f \odif{x^i}
-    \end{equation}
-    \textbf{Nota:} per costruzione, $\odif{f}$ è una mappa liscia $\mathcal{M} \rightarrow T^*\mathcal{M}$
+\end{definition}
+\begin{lemma}
+    Sia $\omega \in \Omega^1(\mathcal{M})$, allora
+    \begin{itemize}
+        \item in qualsiasi carta di $\mathcal{M}$ e nella base di coordinate per $T^*_p\mathcal{M}$, scriveremo $\omega \coloneqq \omega_i \odif{x^i}$; le componenti $\omega_i$ della rappresentazione in coordinate di $\omega$ sono funzioni lisce
+        \item dato un campo vettoriale liscio $X$, vale che $\omega(X)(p)=\omega_p(X_p)$
+    \end{itemize}
+\end{lemma}
+Data una funzione liscia, si può definire un campo \emph{covettoriale} liscio $\odif{f}$, detto \emph{differenziale} di $f$, definito tale che
+\begin{equation}
+    \odif{f_p}(X_p) = X_p \cdot f
+\end{equation}
+Scelta una carta,
+\begin{equation}
+    \odif{f_p}(\left.\partial_i\right|_p) = (\partial_i f)(p) \qquad \Longrightarrow \qquad \odif{f} = \partial_i f \odif{x^i}
+\end{equation}
+\textbf{Nota:} per costruzione, $\odif{f}$ è una mappa liscia $\mathcal{M} \rightarrow T^*\mathcal{M}$
 
-    Si enuncia, adesso, la versione duale del push forward:
-    \begin{definition}
-        Data la funzione tra varietà $F : \mathcal{M} \rightarrow \mathcal{N}$ liscia, si definisce \textbf{pull back} di F, come
-        \[
+Si enuncia, adesso, la versione duale del push forward:
+\begin{definition}
+    Data la funzione tra varietà $F : \mathcal{M} \rightarrow \mathcal{N}$ liscia, si definisce \textbf{pull back} di F, come
+    \[
         F^* : T^*_{F(p)}\mathcal{N} \rightarrow T^*_p\mathcal{M}
-        \]
-        tale che
-        \begin{equation}
-            (F^* \omega_{F(p)})(X_p) = \omega_{F(p)}(F_* X_p)
-        \end{equation}
-    \end{definition}
-    % ORSO figura necessaria come il push forward
-    \textbf{Nota:} se $F : \mathcal{M} \rightarrow \mathcal{N}$ è, come al solito, una mappa liscia e $\omega \in \Omega^1(\mathcal{N})$, allora 
+    \]
+    tale che
     \begin{equation}
-        F^* \omega \in \Omega^1(\mathcal{M})
+        (F^* \omega_{F(p)})(X_p) = \omega_{F(p)}(F_* X_p)
     \end{equation}
-    \begin{property}
-        Sia $F : \mathcal{M} \rightarrow \mathcal{N}$ mappa liscia, $f \in \mathcal{C}^\infty (\mathcal{M})$ e $\omega \in \Omega^1(\mathcal{N})$. Allora:
-        \begin{tasks}[label=\arabic*.](2)
-            \task $F^* \odif{f} = \odif{(f \circ F)}$
-            \task $F^* (f \omega ) = (f \circ F) F^* \omega$
-        \end{tasks}
-    \end{property}
-    % ORSO: dimostrazione ???? ma non ho capito il diagramma
+\end{definition}
+% ORSO figura necessaria come il push forward
+\textbf{Nota:} se $F : \mathcal{M} \rightarrow \mathcal{N}$ è, come al solito, una mappa liscia e $\omega \in \Omega^1(\mathcal{N})$, allora
+\begin{equation}
+    F^* \omega \in \Omega^1(\mathcal{M})
+\end{equation}
+\begin{property}
+    Sia $F : \mathcal{M} \rightarrow \mathcal{N}$ mappa liscia, $f \in \mathcal{C}^\infty (\mathcal{M})$ e $\omega \in \Omega^1(\mathcal{N})$. Allora:
+    \begin{tasks}[label=\arabic*.](2)
+        \task $F^* \odif{f} = \odif{(f \circ F)}$
+        \task $F^* (f \omega ) = (f \circ F) F^* \omega$
+    \end{tasks}
+\end{property}
+% ORSO: dimostrazione ???? ma non ho capito il diagramma

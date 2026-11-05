@@ -2,270 +2,270 @@
 Avendo appurato le strutture di varietà e fibrati tangenti e cotangenti, si può introdurre il formalismo che tratterà le grandezze.
 % ORSO: specifica le grandezze
 \section{Tensori}
-    Si introducono i tensori come funzionali multilineari (lineari su tutte le entrate) su uno spazio vettoriale e sul suo duale.
-    \begin{definition}
+Si introducono i tensori come funzionali multilineari (lineari su tutte le entrate) su uno spazio vettoriale e sul suo duale.
+\begin{definition}
     \footnote{
-    in questa definizione si farà uso della notazione "$\mathbb{V} \times \cdots \times \mathbb{V}$" sottolineata dalla graffa che esprime il numero (k) di spazi moltiplicati cartesianamente, solo per chiarire esplicitamente l'idea di prodotto cartesiano ripetuto tante volte quanto il rango del tensore; da qui in avanti verrà usata la notazione più stringata $\bigtimes^k \mathbb{V}$
+        in questa definizione si farà uso della notazione "$\mathbb{V} \times \cdots \times \mathbb{V}$" sottolineata dalla graffa che esprime il numero (k) di spazi moltiplicati cartesianamente, solo per chiarire esplicitamente l'idea di prodotto cartesiano ripetuto tante volte quanto il rango del tensore; da qui in avanti verrà usata la notazione più stringata $\bigtimes^k \mathbb{V}$
     }
-        Sia $\mathbb{V}$ spazio vettoriale reale finito-dimensionale, allora:
-        \begin{itemize}
-            \item un \textbf{tensore covariante} di \textbf{rango} $k$ è una mappa multilineare \\
-            $\tau : \underbrace{\mathbb{V} \times \cdots \times \mathbb{V}}_{k \mathrm{-volte}} \longrightarrow \mathbb{R},$ l'insieme di tutti i tensori covarianti è indicato da $T^k\mathbb{V};$
-            \item un \textbf{tensore controvariante} di \textbf{rango} $p$ è una mappa multilineare \\ 
-            $Y : \underbrace{\mathbb{V^*} \times \cdots \times \mathbb{V^*}}_{p \mathrm{-volte}} \longrightarrow \mathbb{R},$ l'insieme di tutti i tensori controvarianti è \mbox{indicato da $T_p\mathbb{V};$}
-            \item un \textbf{tensore misto} di \textbf{rango} $(k, p)$ è una mappa multilineare \\
-            $ F : \underbrace{\mathbb{V} \times \cdots \times \mathbb{V}}_{k \mathrm{-volte}} \times \underbrace{\mathbb{V^*} \times \cdots \times \mathbb{V^*}}_{p \mathrm{-volte}} \longrightarrow \mathbb{R},$ l'insieme di tutti i tensori misti è \mbox{indicato da $T^k_p\mathbb{V}$.}
-        \end{itemize}
-    \end{definition}
-    
-    Notare che $T^k\mathbb{V}, T^k\mathbb{V}$ e $T^k_p\mathbb{V}$ possono essere dotati della struttura di spazio vettoriale reale.
-    Facciamo un esempio per chiarire: siano $\alpha, \beta \in \mathbb{V}^*$, definiamo $\tau_{\alpha, \beta} : \mathbb{V} \times \mathbb{V} \longrightarrow \mathbb{R}$ tale che $(\mathbf{v}_1, \mathbf{v}_2) \mapsto \alpha(\mathbf{v}_1) \beta(\mathbf{v}_2)$, allora ovviamente $\tau_{\alpha, \beta} \in T^2\mathbb{V}$. Inoltre, dato $a \in \mathbb{R},$ avremo che sarà ovviamente multilineare:
-    \begin{align}
-     &a \tau_{\alpha, \beta} = \tau_{a \alpha, \beta} = \tau_{\alpha, a \beta}
-    &\begin{cases}
-        \tau_{\alpha + \alpha', \beta} = \tau_{\alpha, \beta} + \tau_{\alpha', \beta} \\
-        \tau_{\alpha, \beta + \beta'} = \tau_{\alpha, \beta} + \tau_{\alpha, \beta'}
-    \end{cases}
-    \end{align}
-    Siano, ora, $\tau \in T^k\mathbb{V}$ e $\rho \in T^m\mathbb{V}$; definiamo un elemento di $T^{k+m}\mathbb{V}$ come
-    \[
+    Sia $\mathbb{V}$ spazio vettoriale reale finito-dimensionale, allora:
+    \begin{itemize}
+        \item un \textbf{tensore covariante} di \textbf{rango} $k$ è una mappa multilineare \\
+              $\tau : \underbrace{\mathbb{V} \times \cdots \times \mathbb{V}}_{k \mathrm{-volte}} \longrightarrow \mathbb{R},$ l'insieme di tutti i tensori covarianti è indicato da $T^k\mathbb{V};$
+        \item un \textbf{tensore controvariante} di \textbf{rango} $p$ è una mappa multilineare \\
+              $Y : \underbrace{\mathbb{V^*} \times \cdots \times \mathbb{V^*}}_{p \mathrm{-volte}} \longrightarrow \mathbb{R},$ l'insieme di tutti i tensori controvarianti è \mbox{indicato da $T_p\mathbb{V};$}
+        \item un \textbf{tensore misto} di \textbf{rango} $(k, p)$ è una mappa multilineare \\
+              $ F : \underbrace{\mathbb{V} \times \cdots \times \mathbb{V}}_{k \mathrm{-volte}} \times \underbrace{\mathbb{V^*} \times \cdots \times \mathbb{V^*}}_{p \mathrm{-volte}} \longrightarrow \mathbb{R},$ l'insieme di tutti i tensori misti è \mbox{indicato da $T^k_p\mathbb{V}$.}
+    \end{itemize}
+\end{definition}
+
+Notare che $T^k\mathbb{V}, T^k\mathbb{V}$ e $T^k_p\mathbb{V}$ possono essere dotati della struttura di spazio vettoriale reale.
+Facciamo un esempio per chiarire: siano $\alpha, \beta \in \mathbb{V}^*$, definiamo $\tau_{\alpha, \beta} : \mathbb{V} \times \mathbb{V} \longrightarrow \mathbb{R}$ tale che $(\mathbf{v}_1, \mathbf{v}_2) \mapsto \alpha(\mathbf{v}_1) \beta(\mathbf{v}_2)$, allora ovviamente $\tau_{\alpha, \beta} \in T^2\mathbb{V}$. Inoltre, dato $a \in \mathbb{R},$ avremo che sarà ovviamente multilineare:
+\begin{align}
+     & a \tau_{\alpha, \beta} = \tau_{a \alpha, \beta} = \tau_{\alpha, a \beta}
+     & \begin{cases}
+           \tau_{\alpha + \alpha', \beta} = \tau_{\alpha, \beta} + \tau_{\alpha', \beta} \\
+           \tau_{\alpha, \beta + \beta'} = \tau_{\alpha, \beta} + \tau_{\alpha, \beta'}
+       \end{cases}
+\end{align}
+Siano, ora, $\tau \in T^k\mathbb{V}$ e $\rho \in T^m\mathbb{V}$; definiamo un elemento di $T^{k+m}\mathbb{V}$ come
+\[
     (\tau \otimes \rho)(\mathbf{v}_1, \dots, \mathbf{v}_{k+m}) = \tau(\mathbf{v}_1, \dots, \mathbf{v}_{k}) \rho(\mathbf{v}_{k+1}, \dots, \mathbf{v}_{m})
-    \]
-    da cui è immediato vedere che il \textbf{prodotto tensore} è \emph{associativo}: $(\tau \otimes \rho) \otimes \sigma = \tau \otimes (\rho \otimes \sigma)$.
+\]
+da cui è immediato vedere che il \textbf{prodotto tensore} è \emph{associativo}: $(\tau \otimes \rho) \otimes \sigma = \tau \otimes (\rho \otimes \sigma)$.
 
 \section{Tensori e pseudo-simmetrie}
-    Prendiamo ora in considerazione una classe molto importante di tensori: sia $\sigma \in S_k$ una permutazione di $k$ oggetti e $\operatorname{sgn}(\sigma)$ il segno della permutazione;
-    \begin{definition}
-        $\rho \in T^k\mathbb{V}$ è detto \textbf{simmetrico} se
-        \[
+Prendiamo ora in considerazione una classe molto importante di tensori: sia $\sigma \in S_k$ una permutazione di $k$ oggetti e $\operatorname{sgn}(\sigma)$ il segno della permutazione;
+\begin{definition}
+    $\rho \in T^k\mathbb{V}$ è detto \textbf{simmetrico} se
+    \[
         \rho(\mathbf{v}_1, \dots, \mathbf{v}_k) = \rho(\sigma(\mathbf{v}_1), \dots, \sigma(\mathbf{v}_k)),
-        \]oppure, se 
-        \[
+    \]oppure, se
+    \[
         \rho(\mathbf{v}_1, \dots, \mathbf{v}_k) = \operatorname{sgn}(\sigma)\rho(\sigma(\mathbf{v}_1), \dots, \sigma(\mathbf{v}_k))
-        \]
-        sarà detto \textbf{a simmetria alterna}.
-        Gli insiemi di tensori simmetrici e a simmetria alterna saranno rispettivamente indicati da $\Sigma^k\mathbb{R}$ e $\Lambda^k\mathbb{V}$.
-    \end{definition}
-    Dato un generico tensore covariante $\rho \in T^k\mathbb{V}$, esistono due mappe per ottenerne uno simmetrico o alternante simmetrico:
-    \begin{align}
+    \]
+    sarà detto \textbf{a simmetria alterna}.
+    Gli insiemi di tensori simmetrici e a simmetria alterna saranno rispettivamente indicati da $\Sigma^k\mathbb{R}$ e $\Lambda^k\mathbb{V}$.
+\end{definition}
+Dato un generico tensore covariante $\rho \in T^k\mathbb{V}$, esistono due mappe per ottenerne uno simmetrico o alternante simmetrico:
+\begin{align}
     \operatorname{Symm} : T^k\mathbb{V} \longrightarrow \Sigma^k\mathbb{R}, \qquad \operatorname{Symm}(\rho)(\mathbf{v}_1, \dots, \mathbf{v}_k) = \frac{1}{k!}\sum_{\sigma \in S_k}\rho(\sigma(\mathbf{v}_1), \dots, \sigma(\mathbf{v}_k)) \\
     \operatorname{Alt} : T^k\mathbb{V} \longrightarrow \Lambda^k\mathbb{V}, \qquad \operatorname{Alt}(\rho)(\mathbf{v}_1, \dots, \mathbf{v}_k) = \frac{1}{k!}\sum_{\sigma \in S_k}\operatorname{sgn}(\sigma)\rho(\sigma(\mathbf{v}_1), \dots, \sigma(\mathbf{v}_k))
-    \end{align}
-    \begin{definition}
+\end{align}
+\begin{definition}
     Dati due tensori a simmetria alterna $\tau \in \Lambda^k\mathbb{V}$ e $\rho \in \Lambda^m\mathbb{V}$, possiamo definire il \textbf{prodotto wedge} come
     \begin{equation}
         \tau \wedge \rho = \frac{(k+m)!}{k! \; m!}\operatorname{Alt}(\tau \otimes \rho)
     \end{equation}
-    \end{definition}
-    Sostituendo la definizione di $\operatorname{Alt}(\tau \otimes \rho)$:
-    \[
+\end{definition}
+Sostituendo la definizione di $\operatorname{Alt}(\tau \otimes \rho)$:
+\[
     \tau \wedge \rho = \frac{1}{k! \; m!} \sum_{\sigma \in S_k}\operatorname{sgn}(\sigma) \; \tau(\sigma(\mathbf{v}_1), \dots, \sigma(\mathbf{v}_k)) \; \rho(\sigma(\mathbf{v}_{k+1}), \dots, \sigma(\mathbf{v}_{k+m}))
-    \]
-    \begin{property}
-        Dati $\rho, \tau, \pi$ rispettivamente $\in \Lambda^{k_\rho, k_\tau, k_\pi} \mathbb{V}$, valgono:
-        \begin{itemize}
-            \item associativa $\qquad \quad \qquad (\rho \wedge \tau) \wedge \pi = \rho \wedge (\tau \wedge \pi)$ 
-            \item pseudo-simmetria $\qquad \: \tau \wedge \rho = (-1)^{km}(\rho \wedge \tau)$ 
-        \end{itemize}
-    \end{property}
-    Si enunciano, ora, una serie di risultati che specificano le caratteristiche dei tensori e gli insiemi di cui essi fanno parte.
-    \begin{proposition}
-        Siano $\{ \mathbf{b}_i\}$ e $\{ \bm{\beta}_i\}$ basi duali rispettivamente per $\mathbf{V}$ e $\mathbf{V}^*$:
-        \begin{itemize}
-            \item allora il set di tutti i tensori covarianti di rango $k$ della forma $\bm{\beta}^{i_1} \otimes \cdots \otimes \bm{\beta}^{i_k}$ forma una base per $T^k\mathbb{V}$;
-            \item l'insieme $\{ \bm{\beta}_{i_1} \wedge \cdots \wedge \bm{\beta}_{i_k} \}$, con $i_1 < i_2 < \dots < i_k$, è base per $\Lambda^k\mathbb{V}$
-        \end{itemize}
-    \end{proposition}
-    Potrà essere utile scrivere un elemento di $\Lambda^k\mathbb{V}$ come
-    \[
+\]
+\begin{property}
+    Dati $\rho, \tau, \pi$ rispettivamente $\in \Lambda^{k_\rho, k_\tau, k_\pi} \mathbb{V}$, valgono:
+    \begin{itemize}
+        \item associativa $\qquad \quad \qquad (\rho \wedge \tau) \wedge \pi = \rho \wedge (\tau \wedge \pi)$
+        \item pseudo-simmetria $\qquad \: \tau \wedge \rho = (-1)^{km}(\rho \wedge \tau)$
+    \end{itemize}
+\end{property}
+Si enunciano, ora, una serie di risultati che specificano le caratteristiche dei tensori e gli insiemi di cui essi fanno parte.
+\begin{proposition}
+    Siano $\{ \mathbf{b}_i\}$ e $\{ \bm{\beta}_i\}$ basi duali rispettivamente per $\mathbf{V}$ e $\mathbf{V}^*$:
+    \begin{itemize}
+        \item allora il set di tutti i tensori covarianti di rango $k$ della forma $\bm{\beta}^{i_1} \otimes \cdots \otimes \bm{\beta}^{i_k}$ forma una base per $T^k\mathbb{V}$;
+        \item l'insieme $\{ \bm{\beta}_{i_1} \wedge \cdots \wedge \bm{\beta}_{i_k} \}$, con $i_1 < i_2 < \dots < i_k$, è base per $\Lambda^k\mathbb{V}$
+    \end{itemize}
+\end{proposition}
+Potrà essere utile scrivere un elemento di $\Lambda^k\mathbb{V}$ come
+\[
     \omega = \frac{1}{k!}\omega_{i_1, \dots, i_k} \bm{\beta}_{i_1} \wedge \cdots \wedge \bm{\beta}_{i_k}
-    \]
-    in cui non è più importante l'ordinamento degli indici richiesto alla proposizione precedente, a causa del quale compare il fattore $1/k!$ e i coefficienti $\omega_{i_1, \dots, i_k}$ sono completamente \emph{antisimmetrici}. La struttura che abbiamo dato fin'ora di tensori simmetrici e simmetrici alternanti è una generalizzazione delle matrici simmetriche e antisimmetriche.
+\]
+in cui non è più importante l'ordinamento degli indici richiesto alla proposizione precedente, a causa del quale compare il fattore $1/k!$ e i coefficienti $\omega_{i_1, \dots, i_k}$ sono completamente \emph{antisimmetrici}. La struttura che abbiamo dato fin'ora di tensori simmetrici e simmetrici alternanti è una generalizzazione delle matrici simmetriche e antisimmetriche.
 
-    Consideriamo ora un esempio per chiarire: sia $\Lambda^2\mathbb{R}^3$ con $\{ \mathbf{e}_i \}$ base canonica e $\{ \bm{\epsilon}^j \}$ base duale. Sia $\omega \in \Lambda^2\mathbb{R}^3$
-    \[
+Consideriamo ora un esempio per chiarire: sia $\Lambda^2\mathbb{R}^3$ con $\{ \mathbf{e}_i \}$ base canonica e $\{ \bm{\epsilon}^j \}$ base duale. Sia $\omega \in \Lambda^2\mathbb{R}^3$
+\[
     \omega = \omega_{12} \bm{\epsilon}^1 \wedge \bm{\epsilon}^2 + \omega_{13} \bm{\epsilon}^1 \wedge \bm{\epsilon}^3 + \omega_{23} \bm{\epsilon}^2 \wedge \bm{\epsilon}^3
-    \]
-    ora usiamo l'antisimmetria dei coefficienti $\omega_{ij}$:
-    \[
+\]
+ora usiamo l'antisimmetria dei coefficienti $\omega_{ij}$:
+\[
     \omega_{ij} = -\omega_{ji} \qquad \Longrightarrow \qquad \omega = \frac{1}{2}\omega_{ij} \bm{\epsilon}^i \wedge \bm{\epsilon}^j
-    \]
-    inoltre,
-    \[
+\]
+inoltre,
+\[
     \omega(\mathbf{e}_1, \mathbf{e}_2) = 2 \omega_{12} \operatorname{Alt}(\bm{\epsilon}^1 \otimes \bm{\epsilon}^2) (\mathbf{e}_1, \mathbf{e}_2) = \omega_{12}
-    \]
+\]
 
-    \section{Prodotto tensore}
-    Dato l'esempio della sezione precedente, si potrebbe pensare di poter scrivere
-    \[
+\section{Prodotto tensore}
+Dato l'esempio della sezione precedente, si potrebbe pensare di poter scrivere
+\[
     T^k\mathbb{V} = \bigotimes^k \mathbb{V}^*
-    \]
-    ma stiamo tralasciando una particolarità importante: riprendiamo l'esempio del tensore $\tau_{\alpha, \beta} : \mathbb{V} \times \mathbb{V} \longrightarrow \mathbb{R}$ tale che $(\mathbf{v}_1, \mathbf{v}_2) \mapsto \alpha(\mathbf{v}_1) \beta(\mathbf{v}_2)$. Questo è un esempio di tensore \emph{decomponibile}:
-    \[
+\]
+ma stiamo tralasciando una particolarità importante: riprendiamo l'esempio del tensore $\tau_{\alpha, \beta} : \mathbb{V} \times \mathbb{V} \longrightarrow \mathbb{R}$ tale che $(\mathbf{v}_1, \mathbf{v}_2) \mapsto \alpha(\mathbf{v}_1) \beta(\mathbf{v}_2)$. Questo è un esempio di tensore \emph{decomponibile}:
+\[
     \alpha \otimes \beta \coloneqq \alpha_i \beta_j \bm{\beta}^i \otimes \bm{\beta}^j
-    \]
-    cioè di un tensore scrivibile come combinazione lineare dei prodotti tensoriali tra covettori diversi della base duale.
-    Ma non tutti i tensori sono decomponibili, e.g.
-    \[
+\]
+cioè di un tensore scrivibile come combinazione lineare dei prodotti tensoriali tra covettori diversi della base duale.
+Ma non tutti i tensori sono decomponibili, e.g.
+\[
     \bm{\epsilon}^1 \otimes \bm{\epsilon}^2 + 2 \bm{\epsilon}^2 \otimes \bm{\epsilon}^2 \quad \in T^2\mathbb{R}^2
-    \]
-    non è rappresentabile nella forma $\alpha \otimes \beta$ con $\alpha, \beta \in (\mathbb{R}^2)^*$.
+\]
+non è rappresentabile nella forma $\alpha \otimes \beta$ con $\alpha, \beta \in (\mathbb{R}^2)^*$.
 
-    Diamo ora una trattazione più formale: sia $S$ un generico insieme di elementi; cerchiamo di creare una sorta di combinazione lineare a prescindere dalla natura dei suoi elementi.
-    Prendiamo le \emph{combinazioni lineari formali} di elementi di $S$, i.e. $\sum_i a_i x_i$ con $a_i \in \mathbb{R}, x_i \in S$.
-    Formalmente diremo che una combinazione lineare formale è una funzione $f : S \longrightarrow \mathbb{R}$ nulla dappertutto a meno di un sottoinsieme \emph{finito} di $S$.
-    Identifichiamo con $x^*$ la funzione nulla su tutto $S - \{ x_i \}$ con $x_i$ insieme dei punti di $S$ in cui $f \neq 0$, e poniamo $x^* (x_i)= 1$ vale allora che $f= \sum_i a_i x_i^*$.
-    La struttura qua descritta rappresenta la nozione di \emph{spazio vettoriale libero}, detto $\mathbb{R} \langle S \rangle$, ossia l'insieme di tutte le combinazioni lineari formali da elementi di un insieme $S$.
+Diamo ora una trattazione più formale: sia $S$ un generico insieme di elementi; cerchiamo di creare una sorta di combinazione lineare a prescindere dalla natura dei suoi elementi.
+Prendiamo le \emph{combinazioni lineari formali} di elementi di $S$, i.e. $\sum_i a_i x_i$ con $a_i \in \mathbb{R}, x_i \in S$.
+Formalmente diremo che una combinazione lineare formale è una funzione $f : S \longrightarrow \mathbb{R}$ nulla dappertutto a meno di un sottoinsieme \emph{finito} di $S$.
+Identifichiamo con $x^*$ la funzione nulla su tutto $S - \{ x_i \}$ con $x_i$ insieme dei punti di $S$ in cui $f \neq 0$, e poniamo $x^* (x_i)= 1$ vale allora che $f= \sum_i a_i x_i^*$.
+La struttura qua descritta rappresenta la nozione di \emph{spazio vettoriale libero}, detto $\mathbb{R} \langle S \rangle$, ossia l'insieme di tutte le combinazioni lineari formali da elementi di un insieme $S$.
 
-    Adesso possiamo dare una nozione di prodotto tensore tra spazi più rigorosa.
-    Siano $\mathbb{V}$ e $\mathbb{W}$ spazi vettoriali finito-dimensionali e ne costruiamo un altro fatto dalle combinazioni lineari formali di oggetti del tipo $(\alpha, \mu) \in \mathbb{V}^* \times \mathbb{W}^*$, visti come mappe multilineari $\mathbb{V}^* \times \mathbb{W}^* \longrightarrow \mathbb{R}$.
-    Sia $I$ il sottospazio \emph{spannato} da tutti gli elementi del tipo
-    \begin{align*}
-        a(\alpha, \mu) - (&a \alpha, \mu) \\
-        a(\alpha, \mu) - (&\alpha, a \mu) \\
-        (\alpha + \alpha', \mu) - (\alpha, &\mu) - (\alpha', \mu) \\
-        (\alpha, \mu + \mu') - (\alpha, &\mu) - (\alpha, \mu')
-    \end{align*}
-    Notare che questi elementi a priori non sono uguali fra loro, perché non è garantita la bilinearità non sapendo la natura degli oggetti presenti in negli spazi duali.
-    \begin{definition}
-        Ora definiamo il \textbf{prodotto tensore} tra $\mathbb{V}^*$ e $\mathbb{W}^*$ come
-        \begin{equation}
-            \mathbb{V}^* \otimes \mathbb{W}^* \coloneqq \mathbb{R}\left \langle \mathbb{V}^* \times \mathbb{W}^* \right \rangle / I
-        \end{equation}
-    \end{definition}
-    Dove $A/B$ è l'operazione insiemistica del quoziente con la quale si chiede di creare un insieme di elementi di $A$ in cui gli elementi di $B$ sono considerati \emph{nulli}.
-    Infatti, abbiamo chiesto che il prodotto tensore sia lo spazio vettoriale libero di elementi di $\mathbb{V}^* \times \mathbb{W}^*$, prendendo nulli gli elementi che spannano $I$: quindi, otteniamo automaticamente le formule di bilinearità
-    \begin{align}
-        a(\alpha \otimes \mu) = (a \alpha) \otimes \mu = \alpha \otimes (a \beta) \\
-        \begin{cases}
-            \alpha \otimes \mu + \alpha' \otimes \mu = (\alpha + \alpha') \otimes \mu \\
-            \alpha \otimes \mu + \alpha \otimes \mu' = \alpha \otimes (\mu + \mu') \\
-        \end{cases}
-    \end{align}
-    \begin{corollary}
-        Sia $\mathbb{V}$ spazio vettoriale finito-dimensionale, allora
-        \[
+Adesso possiamo dare una nozione di prodotto tensore tra spazi più rigorosa.
+Siano $\mathbb{V}$ e $\mathbb{W}$ spazi vettoriali finito-dimensionali e ne costruiamo un altro fatto dalle combinazioni lineari formali di oggetti del tipo $(\alpha, \mu) \in \mathbb{V}^* \times \mathbb{W}^*$, visti come mappe multilineari $\mathbb{V}^* \times \mathbb{W}^* \longrightarrow \mathbb{R}$.
+Sia $I$ il sottospazio \emph{spannato} da tutti gli elementi del tipo
+\begin{align*}
+    a(\alpha, \mu) - (                 & a \alpha, \mu)        \\
+    a(\alpha, \mu) - (                 & \alpha, a \mu)        \\
+    (\alpha + \alpha', \mu) - (\alpha, & \mu) - (\alpha', \mu) \\
+    (\alpha, \mu + \mu') - (\alpha,    & \mu) - (\alpha, \mu')
+\end{align*}
+Notare che questi elementi a priori non sono uguali fra loro, perché non è garantita la bilinearità non sapendo la natura degli oggetti presenti in negli spazi duali.
+\begin{definition}
+    Ora definiamo il \textbf{prodotto tensore} tra $\mathbb{V}^*$ e $\mathbb{W}^*$ come
+    \begin{equation}
+        \mathbb{V}^* \otimes \mathbb{W}^* \coloneqq \mathbb{R}\left \langle \mathbb{V}^* \times \mathbb{W}^* \right \rangle / I
+    \end{equation}
+\end{definition}
+Dove $A/B$ è l'operazione insiemistica del quoziente con la quale si chiede di creare un insieme di elementi di $A$ in cui gli elementi di $B$ sono considerati \emph{nulli}.
+Infatti, abbiamo chiesto che il prodotto tensore sia lo spazio vettoriale libero di elementi di $\mathbb{V}^* \times \mathbb{W}^*$, prendendo nulli gli elementi che spannano $I$: quindi, otteniamo automaticamente le formule di bilinearità
+\begin{align}
+    a(\alpha \otimes \mu) = (a \alpha) \otimes \mu = \alpha \otimes (a \beta) \\
+    \begin{cases}
+        \alpha \otimes \mu + \alpha' \otimes \mu = (\alpha + \alpha') \otimes \mu \\
+        \alpha \otimes \mu + \alpha \otimes \mu' = \alpha \otimes (\mu + \mu')    \\
+    \end{cases}
+\end{align}
+\begin{corollary}
+    Sia $\mathbb{V}$ spazio vettoriale finito-dimensionale, allora
+    \[
         T^k_r \mathbb{V} = \left(\bigotimes^k \mathbb{V}^*\right) \otimes \left(\bigotimes^r \mathbb{V}\right)
-        \]
-    \end{corollary}
-    % ORSO
-    % Alcuni esempi banali per capire questa struttura appena descritta sono:
-    % \begin{itemize}
-        % \item $T^0_0 \mathbb{V} = \mathbb{R}$;
-        % \item $T^1 \mathbb{V} = \mathbb{V}^*$;
-        % \item $T_1 \mathbb{V} = \mathbb{V}$;
-        % \item
-    % \end{itemize}
-    Si enunciano, ora, un paio di risultati che mostrano come uno spazio tensoriale abbia proprietà di isomorfismo molto precise.
-    In particolare, si può trovare un \emph{isomorfismo canonico}, detto anche \emph{naturale}, cioè un isomorfismo che relaziona esattamente gli oggetti di due spazi distinti, ma indipendentemente dalla scelta delle basi che li descrivono.
-    Un isomorfismo generico cambierebbe la sua forma esplicita al variare delle basi dei due spazi, quello canonico no, per cui risulta che i due spazi sono intrinsecamente identici.
-    Da un punto di vista simbolico, si passa da $\simeq$ a $=$ tra i due spazi.
-    \begin{proposition}
-        \begin{enumerate} Isomorfismi canonici tra spazi tensoriali e forme bi- o multi-lineari:
-            \item Lo spazio vettoriale $\mathbb{V}^* \otimes \mathbb{W}^*$ è \textbf{canonicamente isomorfo} a $\operatorname{Bil}(\mathbb{V}, \mathbb{W})$, spazio delle funzioni bilineari $\mathbb{V} \times \mathbb{W} \longrightarrow \mathbb{R}$;
-            \item $T^k_{p+1} \mathbb{V}$ è \textbf{canonicamente isomorfo} allo spazio delle mappe multilineari
-            \[
-            \left(\bigtimes^k \mathbb{V}\right) \times \left(\bigtimes^p \mathbb{V}^*\right) \longrightarrow \mathbb{V}
-            \]
-        \end{enumerate}
-    \end{proposition}
-    La corrispondenza nel rango tra $T^k_{p+1}$ e le mappe multilineari definite sopra può sembrare a prima vista errata.
-    In realtà bisogna prestare attenzione all'output delle funzioni: esse restituiscono un vettore, mentre un tensore è definito come una mappa che mappa nel campo dei reali.
-    In questo modo stiamo creando una corrispondenza tra quelle mappe e uno spazio tensoriale che contiene un covettore in più (il "+1") che manderà l'output delle mappe in uno scalare.
-    Per esempio un endomorfismo su uno spazio vettoriale è una matrice $\mathbb{V} \longrightarrow \mathbb{V}$.
-    Per renderla un tensore dovrà restituire uno scalare, quindi apparterrà allo spazio tensoriale $T^1_1\mathbb{V}$, i.e. avrà rango totale 2.
-    
-    \section{Fibrati tensoriali}
-    Cerchiamo ora di rendere le strutture di spazi tensoriali covarianti, controvarianti e misti, dei fibrati \emph{tensoriali}.
-    \begin{definition}
-        Sia $\mathcal{M}$ una varietà differenziabile e $\Gamma(\cdot)$ la sezione locale del fibrato vettoriale in input:
-        \begin{enumerate}
-            \item il \textbf{fibrato tensoriale covariante} di rango $k$ sarà $T^k\mathcal{M} \coloneqq \bigsqcup_{p \in \mathcal{M}} T^k(T_p\mathcal{M})$, il corrispondente \textbf{campo tensoriale covariante} sarà $\mathcal{T}^k(\mathcal{M}) \coloneqq \Gamma (T^k\mathcal{M})$;
-            \item il \textbf{fibrato tensoriale controvariante} di rango $r$ sarà $T_r\mathcal{M} \coloneqq \bigsqcup_{p \in \mathcal{M}} T^k(T_p\mathcal{M})$, il corrispondente \textbf{campo tensoriale controvariante} sarà $\mathcal{T}_r(\mathcal{M}) \coloneqq \Gamma (T_r\mathcal{M})$;
-            \item il \textbf{fibrato tensoriale misto} di rango $(k,r)$ sarà $T_r^k\mathcal{M} \coloneqq \bigsqcup_{p \in \mathcal{M}} T_r^k(T_p\mathcal{M})$, il corrispondente \textbf{campo tensoriale misto} sarà $\mathcal{T}_r^k(\mathcal{M}) \coloneqq \Gamma (T_r^k\mathcal{M})$.
-        \end{enumerate}
-    \end{definition}
-    Diamo adesso l'interpretazione \emph{pratica} assumendo una carta di coordinate, descritte dalle funzioni $x^i$, sulla varietà.
-    Un qualsiasi tensore $T \in \mathcal{T}^k_r(\mathcal{M})$ sarà rappresentabile localmente come
-    \begin{equation}
-        T = 
-        T^{j_1, \dots, j_r}_{i_1, \dots, i_k} \odif{x^{i_1}} \otimes \cdots \otimes \odif{x^{i_k}} \otimes \partial_{j_1} \otimes \cdots \otimes \partial_{j_r} =
-        T^{j_1, \dots, j_r}_{i_1, \dots, i_k} \left( \bigotimes_{m=1}^k \odif{x^{i_m}} \right) \otimes \left( \bigotimes_{n=1}^r \partial_{j_n} \right)
-    \end{equation}
-    dove $T^{j_1, \dots, j_r}_{i_1, \dots, i_k}$ sono le funzioni lisce che rappresentano le coordinate del tensore $T$ rispetto alle basi duali degli spazi tangente e cotangente $\{ \odif{x^i} \}_{i_1}^{i_k}$ e $\{ \partial_j \}_{j_1}^{j_r}$.
-    Diremo che $T_p \in T_r^k(T_p \mathcal{M})$ è il valore del campo tensoriale nel punto $p \in \mathcal{M}$, definito come
-    \begin{equation}
-        T_p(X_{1_p}, \dots, X_{2_p}, \omega_{1_p}, \dots, \omega_{2_p}) = T(X_{1}, \dots, X_{k}, \omega_{1}, \dots, \omega_{2}) (p)
-    \end{equation}
-    Vediamolo di nuovo in coordinate, più esplicitamente: sia ora $S \in \mathcal{T}_1^1(\mathcal{M})$; nella carta di coordinate sarà $S= S^j_i \odif{x^i} \otimes \partial_j$.
-    Facendolo agire su un vettore $\mathbf{v}= v^i \partial_i$ e un covettore $\omega = \omega_i \odif{x^i}$, otterremo
-    \begin{align*}
-    S(\mathbf{v}, \omega) &= S^j_i v^k \omega_l \odif{x^i} (\partial_k) \odif{x^l} (\partial_j) \\
-    \text{usando } \odif{x^\sigma}(\partial_\rho)=\delta_\rho^\sigma \quad \longrightarrow \quad &= S_i^j v^i \omega_j
-    \end{align*}
-    Risulta ovvio che la mappa trovata sia lineare e $\mathcal{C}^\infty (\mathcal{M})$.
-    Questo risultato è generalizzabile a un generico campo tensoriale, per cui un campo tensoriale (1, 1) è una mappa multilineare $\mathcal{C}^\infty (\mathcal{M})$ da $\mathcal{X}(\mathcal{M}) \times \Omega^1(\mathcal{M}) \longrightarrow \mathcal{C}^\infty (\mathcal{M})$.
-    Possiamo dare un risultato ancora più generale:
-    \begin{lemma}
-        Una mappa che sia o $\left( \bigtimes^k \mathcal{X}(\mathcal{M}) \right) \times \left( \bigtimes^r \Omega^1(\mathcal{M}) \right) \longrightarrow \mathcal{C}^\infty (\mathcal{M})$ \\
-        oppure $\left(\bigtimes^k \mathcal{X}(\mathcal{M})\right) \times \left(\bigtimes^{r-1} \Omega^1(\mathcal{M})\right) \longrightarrow \mathcal{X}(\mathcal{M}),$ è indotta da un campo tensoriale misto di rango (k,r) \textbf{se e solo se} essa è \textbf{multilineare} su $\mathcal{C}^\infty (\mathcal{M})$.
-    \end{lemma}
-    Prestare attenzione a come si ripropone la questione degli indici tra un numero e il successivo ($r-1$ e $r$) a seconda della definizione della funzione e della natura del suo output: la prima mappa in una funzione reale liscia sulla varietà, la seconda mappa nello spazio vettoriale dato dalla sezione globale della varietà.
-    %ORSO: lo spazio vettoriale X(M) è una sorta di covettore che mangia le funzioni lisce?
-    
-    Dati il tensore covariante di rango $k, \; \rho \in \mathcal{T}^k(\mathcal{N})$, e la mappa  liscia tra varietà $F : \mathcal{M} \longrightarrow \mathcal{N}$, si può effettuare il \emph{pull back} del tensore:
-    \[
+    \]
+\end{corollary}
+% ORSO
+% Alcuni esempi banali per capire questa struttura appena descritta sono:
+% \begin{itemize}
+% \item $T^0_0 \mathbb{V} = \mathbb{R}$;
+% \item $T^1 \mathbb{V} = \mathbb{V}^*$;
+% \item $T_1 \mathbb{V} = \mathbb{V}$;
+% \item
+% \end{itemize}
+Si enunciano, ora, un paio di risultati che mostrano come uno spazio tensoriale abbia proprietà di isomorfismo molto precise.
+In particolare, si può trovare un \emph{isomorfismo canonico}, detto anche \emph{naturale}, cioè un isomorfismo che relaziona esattamente gli oggetti di due spazi distinti, ma indipendentemente dalla scelta delle basi che li descrivono.
+Un isomorfismo generico cambierebbe la sua forma esplicita al variare delle basi dei due spazi, quello canonico no, per cui risulta che i due spazi sono intrinsecamente identici.
+Da un punto di vista simbolico, si passa da $\simeq$ a $=$ tra i due spazi.
+\begin{proposition}
+    \begin{enumerate} Isomorfismi canonici tra spazi tensoriali e forme bi- o multi-lineari:
+        \item Lo spazio vettoriale $\mathbb{V}^* \otimes \mathbb{W}^*$ è \textbf{canonicamente isomorfo} a $\operatorname{Bil}(\mathbb{V}, \mathbb{W})$, spazio delle funzioni bilineari $\mathbb{V} \times \mathbb{W} \longrightarrow \mathbb{R}$;
+        \item $T^k_{p+1} \mathbb{V}$ è \textbf{canonicamente isomorfo} allo spazio delle mappe multilineari
+              \[
+                  \left(\bigtimes^k \mathbb{V}\right) \times \left(\bigtimes^p \mathbb{V}^*\right) \longrightarrow \mathbb{V}
+              \]
+    \end{enumerate}
+\end{proposition}
+La corrispondenza nel rango tra $T^k_{p+1}$ e le mappe multilineari definite sopra può sembrare a prima vista errata.
+In realtà bisogna prestare attenzione all'output delle funzioni: esse restituiscono un vettore, mentre un tensore è definito come una mappa che mappa nel campo dei reali.
+In questo modo stiamo creando una corrispondenza tra quelle mappe e uno spazio tensoriale che contiene un covettore in più (il "+1") che manderà l'output delle mappe in uno scalare.
+Per esempio un endomorfismo su uno spazio vettoriale è una matrice $\mathbb{V} \longrightarrow \mathbb{V}$.
+Per renderla un tensore dovrà restituire uno scalare, quindi apparterrà allo spazio tensoriale $T^1_1\mathbb{V}$, i.e. avrà rango totale 2.
+
+\section{Fibrati tensoriali}
+Cerchiamo ora di rendere le strutture di spazi tensoriali covarianti, controvarianti e misti, dei fibrati \emph{tensoriali}.
+\begin{definition}
+    Sia $\mathcal{M}$ una varietà differenziabile e $\Gamma(\cdot)$ la sezione locale del fibrato vettoriale in input:
+    \begin{enumerate}
+        \item il \textbf{fibrato tensoriale covariante} di rango $k$ sarà $T^k\mathcal{M} \coloneqq \bigsqcup_{p \in \mathcal{M}} T^k(T_p\mathcal{M})$, il corrispondente \textbf{campo tensoriale covariante} sarà $\mathcal{T}^k(\mathcal{M}) \coloneqq \Gamma (T^k\mathcal{M})$;
+        \item il \textbf{fibrato tensoriale controvariante} di rango $r$ sarà $T_r\mathcal{M} \coloneqq \bigsqcup_{p \in \mathcal{M}} T^k(T_p\mathcal{M})$, il corrispondente \textbf{campo tensoriale controvariante} sarà $\mathcal{T}_r(\mathcal{M}) \coloneqq \Gamma (T_r\mathcal{M})$;
+        \item il \textbf{fibrato tensoriale misto} di rango $(k,r)$ sarà $T_r^k\mathcal{M} \coloneqq \bigsqcup_{p \in \mathcal{M}} T_r^k(T_p\mathcal{M})$, il corrispondente \textbf{campo tensoriale misto} sarà $\mathcal{T}_r^k(\mathcal{M}) \coloneqq \Gamma (T_r^k\mathcal{M})$.
+    \end{enumerate}
+\end{definition}
+Diamo adesso l'interpretazione \emph{pratica} assumendo una carta di coordinate, descritte dalle funzioni $x^i$, sulla varietà.
+Un qualsiasi tensore $T \in \mathcal{T}^k_r(\mathcal{M})$ sarà rappresentabile localmente come
+\begin{equation}
+    T =
+    T^{j_1, \dots, j_r}_{i_1, \dots, i_k} \odif{x^{i_1}} \otimes \cdots \otimes \odif{x^{i_k}} \otimes \partial_{j_1} \otimes \cdots \otimes \partial_{j_r} =
+    T^{j_1, \dots, j_r}_{i_1, \dots, i_k} \left( \bigotimes_{m=1}^k \odif{x^{i_m}} \right) \otimes \left( \bigotimes_{n=1}^r \partial_{j_n} \right)
+\end{equation}
+dove $T^{j_1, \dots, j_r}_{i_1, \dots, i_k}$ sono le funzioni lisce che rappresentano le coordinate del tensore $T$ rispetto alle basi duali degli spazi tangente e cotangente $\{ \odif{x^i} \}_{i_1}^{i_k}$ e $\{ \partial_j \}_{j_1}^{j_r}$.
+Diremo che $T_p \in T_r^k(T_p \mathcal{M})$ è il valore del campo tensoriale nel punto $p \in \mathcal{M}$, definito come
+\begin{equation}
+    T_p(X_{1_p}, \dots, X_{2_p}, \omega_{1_p}, \dots, \omega_{2_p}) = T(X_{1}, \dots, X_{k}, \omega_{1}, \dots, \omega_{2}) (p)
+\end{equation}
+Vediamolo di nuovo in coordinate, più esplicitamente: sia ora $S \in \mathcal{T}_1^1(\mathcal{M})$; nella carta di coordinate sarà $S= S^j_i \odif{x^i} \otimes \partial_j$.
+Facendolo agire su un vettore $\mathbf{v}= v^i \partial_i$ e un covettore $\omega = \omega_i \odif{x^i}$, otterremo
+\begin{align*}
+    S(\mathbf{v}, \omega)                                                                        & = S^j_i v^k \omega_l \odif{x^i} (\partial_k) \odif{x^l} (\partial_j) \\
+    \text{usando } \odif{x^\sigma}(\partial_\rho)=\delta_\rho^\sigma \quad \longrightarrow \quad & = S_i^j v^i \omega_j
+\end{align*}
+Risulta ovvio che la mappa trovata sia lineare e $\mathcal{C}^\infty (\mathcal{M})$.
+Questo risultato è generalizzabile a un generico campo tensoriale, per cui un campo tensoriale (1, 1) è una mappa multilineare $\mathcal{C}^\infty (\mathcal{M})$ da $\mathcal{X}(\mathcal{M}) \times \Omega^1(\mathcal{M}) \longrightarrow \mathcal{C}^\infty (\mathcal{M})$.
+Possiamo dare un risultato ancora più generale:
+\begin{lemma}
+    Una mappa che sia o $\left( \bigtimes^k \mathcal{X}(\mathcal{M}) \right) \times \left( \bigtimes^r \Omega^1(\mathcal{M}) \right) \longrightarrow \mathcal{C}^\infty (\mathcal{M})$ \\
+    oppure $\left(\bigtimes^k \mathcal{X}(\mathcal{M})\right) \times \left(\bigtimes^{r-1} \Omega^1(\mathcal{M})\right) \longrightarrow \mathcal{X}(\mathcal{M}),$ è indotta da un campo tensoriale misto di rango (k,r) \textbf{se e solo se} essa è \textbf{multilineare} su $\mathcal{C}^\infty (\mathcal{M})$.
+\end{lemma}
+Prestare attenzione a come si ripropone la questione degli indici tra un numero e il successivo ($r-1$ e $r$) a seconda della definizione della funzione e della natura del suo output: la prima mappa in una funzione reale liscia sulla varietà, la seconda mappa nello spazio vettoriale dato dalla sezione globale della varietà.
+%ORSO: lo spazio vettoriale X(M) è una sorta di covettore che mangia le funzioni lisce?
+
+Dati il tensore covariante di rango $k, \; \rho \in \mathcal{T}^k(\mathcal{N})$, e la mappa  liscia tra varietà $F : \mathcal{M} \longrightarrow \mathcal{N}$, si può effettuare il \emph{pull back} del tensore:
+\[
     (F^* \rho)_p (X_1, \dots, X_k) = \rho_{F(p)} (F_*X_1, \dots, F_*X_k)
-    \]
-    con $X_1, \dots, X_k$ campi vettoriali su $\mathcal{M}$.
-    \begin{property} Si elencano alcune proprietà del pull back di funzioni applicate a tensori:
-        \begin{tasks}[label=\arabic*.](2)
-            \task $F^*$ è lineare in $\mathbb{R}$
-            \task $F^*(f \rho) = (f \circ F) F^* \rho$
-            \task $F^* (\rho \otimes \omega) = F^* \rho \otimes F^* \omega$
-            \task $(G \circ F)^* = F^* \circ G^*$
-        \end{tasks}
-    \end{property}
+\]
+con $X_1, \dots, X_k$ campi vettoriali su $\mathcal{M}$.
+\begin{property} Si elencano alcune proprietà del pull back di funzioni applicate a tensori:
+    \begin{tasks}[label=\arabic*.](2)
+        \task $F^*$ è lineare in $\mathbb{R}$
+        \task $F^*(f \rho) = (f \circ F) F^* \rho$
+        \task $F^* (\rho \otimes \omega) = F^* \rho \otimes F^* \omega$
+        \task $(G \circ F)^* = F^* \circ G^*$
+    \end{tasks}
+\end{property}
 
-    \section{Forme differenziali}
-    \begin{definition}
-        Dato $\Lambda^k \mathcal{M} = \bigsqcup_{p \in \mathcal{M}} \Lambda^k(T_p \mathcal{M})$, le sezioni globali $\Gamma(\Lambda^k \mathcal{M})$ sono dette \textbf{$k$-forme differenziali} o forme differenziali di rango k. L'insieme di queste ultime è detto $\Omega^k(\mathcal{M})$.
-        Data una carta, si può scrivere
-        \[
-        \omega = \frac{1}{k!} \omega_{i_1, \dots, i_k} \odif{x^{i_1}} \wedge \cdots \wedge \odif{x^{i_k}} = \frac{1}{k!} \omega_{i_1, \dots, i_k} \left(\bigwedge_{j=1}^k \odif{x^{i_j}}\right)
-        \]
-    \end{definition}
-    \begin{lemma}
-        Sia $F : \mathcal{M} \longrightarrow \mathcal{N}$ una mappa liscia tra varietà e siano $(\mathbf{x})$ e $(\mathbf{y})$ le funzioni delle coordinate per $\mathcal{M}$ e $\mathcal{N}$. Allora
-        \begin{equation}
-        F^*\left(\omega_{i_1, \dots, i_k} \bigwedge_{j=1}^k \odif{y^{i_j}}\right) = \left( \omega_{i_1, \dots, i_k} \circ F\right) \bigwedge_{j=1}^k \odif{\left( y^{i_j} \circ F \right)}
-        \end{equation}
-        \begin{proof}
-            \begin{align*}
-                F^*\left(\omega_{i_1, \dots, i_k} \bigwedge_{j=1}^k \odif{y^{i_j}}\right) &= \left( \omega_{i_1, \dots, i_k} \circ F \right) F^* \left( \bigwedge_{j=1}^k \odif{y^{i_j}} \right) \qquad \footnotesize\text{(dalla proprietà 2.4.3.2)} \\
-                \footnotesize\text{(dalla proprietà 2.4.3.3)} \qquad &= \left( \omega_{i_1, \dots, i_k} \circ F \right) \bigwedge_{j=1}^k F^*\odif{y^{i_j}} \\
-                \footnotesize\text{(dalla proprietà 1.3.12.1)} \qquad &= \left( \omega_{i_1, \dots, i_k} \circ F \right) \bigwedge_{j=1}^k \odif{y^{i_j} \circ F}
-            \end{align*}
-        \end{proof}
-    \end{lemma}
-
-    Per una qualsiasi varità liscia, esiste un \emph{operatore differenziale}
+\section{Forme differenziali}
+\begin{definition}
+    Dato $\Lambda^k \mathcal{M} = \bigsqcup_{p \in \mathcal{M}} \Lambda^k(T_p \mathcal{M})$, le sezioni globali $\Gamma(\Lambda^k \mathcal{M})$ sono dette \textbf{k-forme differenziali} o forme differenziali di rango k. L'insieme di queste ultime è detto $\Omega^k(\mathcal{M})$.
+    Data una carta, si può scrivere
     \[
-    d : \Omega^k (\mathcal{M}) \longrightarrow \Omega^{k+1}(\mathcal{M})
+        \omega = \frac{1}{k!} \omega_{i_1, \dots, i_k} \odif{x^{i_1}} \wedge \cdots \wedge \odif{x^{i_k}} = \frac{1}{k!} \omega_{i_1, \dots, i_k} \left(\bigwedge_{j=1}^k \odif{x^{i_j}}\right)
     \]
+\end{definition}
+\begin{lemma}
+    Sia $F : \mathcal{M} \longrightarrow \mathcal{N}$ una mappa liscia tra varietà e siano $(\mathbf{x})$ e $(\mathbf{y})$ le funzioni delle coordinate per $\mathcal{M}$ e $\mathcal{N}$. Allora
     \begin{equation}
-        \odif{\omega} \coloneqq \frac{1}{k!}\odif{\omega_{i_1, \dots, i_k}} \bigwedge_{j=1}^k \odif{x^{i_j}}
+        F^*\left(\omega_{i_1, \dots, i_k} \bigwedge_{j=1}^k \odif{y^{i_j}}\right) = \left( \omega_{i_1, \dots, i_k} \circ F\right) \bigwedge_{j=1}^k \odif{\left( y^{i_j} \circ F \right)}
     \end{equation}
-    o alternativamente
-    \begin{equation}
-        \odif{\omega} \coloneqq \frac{1}{(k+1)!} \left( \partial_{[j} \omega_{i_1, \dots, i_k]} \right) \odif{x^j} \wedge \left(\bigwedge_{l=1}^k \odif{x^{i_l}}\right)
-    \end{equation}
-    dove con $[j, i_1, \dots, i_k]$ si intende che si prendono gli indici completamente antisimmetrici.
-    \begin{property} Si elencano le proprietà di questo operatore, detto anche \emph{derivata esterna}
-        \begin{itemize}
-            \item d è ben definita indipendentemente dalla scelta delle coordinate
-            \item d è lineare su $\mathbb{R}$
-            \item d$^2 = 0$
-            \item dati $\omega \in \Omega^k(\mathcal{M})$ e $\rho \in \Omega^n(\mathcal{M})$, vale che $\odif{(\omega \wedge \rho)} = \odif{\omega} \wedge \rho + (-1)^k \omega \wedge \odif{\rho}$
-        \end{itemize}
-    \end{property}
+    \begin{proof}
+        \begin{align*}
+            F^*\left(\omega_{i_1, \dots, i_k} \bigwedge_{j=1}^k \odif{y^{i_j}}\right) & = \left( \omega_{i_1, \dots, i_k} \circ F \right) F^* \left( \bigwedge_{j=1}^k \odif{y^{i_j}} \right) \qquad \footnotesize\text{(dalla proprietà 2.4.3.2)} \\
+            \footnotesize\text{(dalla proprietà 2.4.3.3)} \qquad                      & = \left( \omega_{i_1, \dots, i_k} \circ F \right) \bigwedge_{j=1}^k F^*\odif{y^{i_j}}                                                                      \\
+            \footnotesize\text{(dalla proprietà 1.3.12.1)} \qquad                     & = \left( \omega_{i_1, \dots, i_k} \circ F \right) \bigwedge_{j=1}^k \odif{y^{i_j} \circ F}
+        \end{align*}
+    \end{proof}
+\end{lemma}
+
+Per una qualsiasi varità liscia, esiste un \emph{operatore differenziale}
+\[
+    d : \Omega^k (\mathcal{M}) \longrightarrow \Omega^{k+1}(\mathcal{M})
+\]
+\begin{equation}
+    \odif{\omega} \coloneqq \frac{1}{k!}\odif{\omega_{i_1, \dots, i_k}} \bigwedge_{j=1}^k \odif{x^{i_j}}
+\end{equation}
+o alternativamente
+\begin{equation}
+    \odif{\omega} \coloneqq \frac{1}{(k+1)!} \left( \partial_{[j} \omega_{i_1, \dots, i_k]} \right) \odif{x^j} \wedge \left(\bigwedge_{l=1}^k \odif{x^{i_l}}\right)
+\end{equation}
+dove con $[j, i_1, \dots, i_k]$ si intende che si prendono gli indici completamente antisimmetrici.
+\begin{property} Si elencano le proprietà di questo operatore, detto anche \emph{derivata esterna}
+    \begin{itemize}
+        \item d è ben definita indipendentemente dalla scelta delle coordinate
+        \item d è lineare su $\mathbb{R}$
+        \item d$^2 = 0$
+        \item dati $\omega \in \Omega^k(\mathcal{M})$ e $\rho \in \Omega^n(\mathcal{M})$, vale che $\odif{(\omega \wedge \rho)} = \odif{\omega} \wedge \rho + (-1)^k \omega \wedge \odif{\rho}$
+    \end{itemize}
+\end{property}
