@@ -218,6 +218,7 @@ Dati il tensore covariante di rango $k, \; \rho \in \mathcal{T}^k(\mathcal{N})$,
     (F^* \rho)_p (X_1, \dots, X_k) = \rho_{F(p)} (F_*X_1, \dots, F_*X_k)
 \]
 con $X_1, \dots, X_k$ campi vettoriali su $\mathcal{M}$.
+
 \begin{property} Si elencano alcune proprietà del pull back di funzioni applicate a tensori:
     \begin{tasks}[label=\arabic*.](2)
         \task $F^*$ è lineare in $\mathbb{R}$
@@ -227,7 +228,44 @@ con $X_1, \dots, X_k$ campi vettoriali su $\mathcal{M}$.
     \end{tasks}
 \end{property}
 
-\section{Forme differenziali}
+\section{Forme esterne e forme differenziali}
+
+Come descritto in letteratura da Arnold \cite{arnold_meccanica}, definiamo le forme esterne e ne diamo alcuni esempi.
+
+\begin{definition}
+    Chiameremo \textbf{forma esterna di ordine k} o \textbf{k-forma} una funzione definita su k vettori, k-volte lineare e antisimmetrica.
+    \[
+        \omega(\lambda_1 \xi_1' + \lambda_2 \xi_1'', \xi_2, \dots, \xi_k) = \lambda_1 \omega(\xi_1', \xi_2, \dots, \xi_k) + \lambda_2 \omega(\xi_1'', \xi_2, \dots, \xi_k)
+    \]
+    \[
+        \omega(\xi_{i_1}, \dots, \xi_{i_k}) = (-1)^\nu \omega(\xi_1, \dots, \xi_k)
+    \]
+    dove
+    \[
+        \nu = \begin{cases}
+            0, & \text{se la permutazione } i_1, \dots, i_k \text{ è pari;}    \\
+            1, & \text{se la permutazione } i_1, \dots, i_k \text{ è dispari.}
+        \end{cases}
+    \]
+\end{definition}
+Prendiamo qualche esempio, sempre da \cite{arnold_meccanica}.
+Sia dato un campo di forze $\mathbf{F}$ nello spazio euclideo $\mathbb{R}^3$, il lavoro ad esso definito $W$ per uno spostamento $\mathbf{\xi}$ è un' \textit{1-forma} definita su $\xi$.
+
+Vediamo ora una \textit{2-forma}.
+Sia \textbf{v} campo uniforme di velocità di un liquido in uno spazio euclideo tridimensionale, il flusso del liquido attraverso la superficie di un parallelogramma, definito dai vettori $\xi_1$ e $\xi_2$, è una funzione bilineare, antisimmetrica su $\xi_1, \xi_2$, i.e. la 2-forma $\omega^2(\xi_1, \xi_2) = (v, \xi_1, \xi_2)$.
+
+Sia dato un parallelepipedo di lati $\xi_1, \dots, \xi_n$ in $\mathbb{R}^n$ euclideo. Per tale oggetto si può definire il suo \textit{volume orientato} come una \textit{n-forma}
+\[
+    V(\xi_1, \dots, \xi_n) =
+    \begin{vmatrix}
+        \xi_{11} & \cdots & \xi_{1n} \\
+        \vdots   & \ddots & \vdots   \\
+        \xi_{n1} & \cdots & \xi_{nn}
+    \end{vmatrix}
+\]
+dove $\xi_{ij}$ sono le coordinate del generico $\xi_i$ rispetto alla base $\{\mathbf{e}^j\}_{j=1}^n$ di $\mathbb{R}^n $.
+
+
 \begin{definition}
     Dato $\Lambda^k \mathcal{M} = \bigsqcup_{p \in \mathcal{M}} \Lambda^k(T_p \mathcal{M})$, le sezioni globali $\Gamma(\Lambda^k \mathcal{M})$ sono dette \textbf{k-forme differenziali} o forme differenziali di rango k. L'insieme di queste ultime è detto $\Omega^k(\mathcal{M})$.
     Data una carta, si può scrivere
@@ -235,16 +273,17 @@ con $X_1, \dots, X_k$ campi vettoriali su $\mathcal{M}$.
         \omega = \frac{1}{k!} \omega_{i_1, \dots, i_k} \odif{x^{i_1}} \wedge \cdots \wedge \odif{x^{i_k}} = \frac{1}{k!} \omega_{i_1, \dots, i_k} \left(\bigwedge_{j=1}^k \odif{x^{i_j}}\right)
     \]
 \end{definition}
+
 \begin{lemma}
-    Sia $F : \mathcal{M} \longrightarrow \mathcal{N}$ una mappa liscia tra varietà e siano $(\mathbf{x})$ e $(\mathbf{y})$ le funzioni delle coordinate per $\mathcal{M}$ e $\mathcal{N}$. Allora
+    Sia $F : \mathcal{M} \longrightarrow \mathcal{N}$ una mappa liscia tra varietà e siano (\textbf{x}) e (\textbf{y}) le funzioni delle coordinate per $\mathcal{M}$ e $\mathcal{N}$. Allora
     \begin{equation}
         F^*\left(\omega_{i_1, \dots, i_k} \bigwedge_{j=1}^k \odif{y^{i_j}}\right) = \left( \omega_{i_1, \dots, i_k} \circ F\right) \bigwedge_{j=1}^k \odif{\left( y^{i_j} \circ F \right)}
     \end{equation}
     \begin{proof}
         \begin{align*}
-            F^*\left(\omega_{i_1, \dots, i_k} \bigwedge_{j=1}^k \odif{y^{i_j}}\right) & = \left( \omega_{i_1, \dots, i_k} \circ F \right) F^* \left( \bigwedge_{j=1}^k \odif{y^{i_j}} \right) \qquad \footnotesize\text{(dalla proprietà 2.4.3.2)} \\
-            \footnotesize\text{(dalla proprietà 2.4.3.3)} \qquad                      & = \left( \omega_{i_1, \dots, i_k} \circ F \right) \bigwedge_{j=1}^k F^*\odif{y^{i_j}}                                                                      \\
-            \footnotesize\text{(dalla proprietà 1.3.12.1)} \qquad                     & = \left( \omega_{i_1, \dots, i_k} \circ F \right) \bigwedge_{j=1}^k \odif{y^{i_j} \circ F}
+            F^*\left(\omega_{i_1, \dots, i_k} \bigwedge_{j=1}^k \odif{y^{i_j}}\right) & = \left( \omega_{i_1, \dots, i_k} \circ F \right) F^* \left( \bigwedge_{j=1}^k \odif{y^{i_j}} \right) \qquad \text{\footnotesize{(dalla proprietà 2.4.3.2)}} \\
+            \text{\footnotesize{(dalla proprietà 2.4.3.3)}} \qquad                    & = \left( \omega_{i_1, \dots, i_k} \circ F \right) \bigwedge_{j=1}^k F^*\odif{y^{i_j}}                                                                        \\
+            \text{\footnotesize{(dalla proprietà 1.3.12.1)}} \qquad                   & = \left( \omega_{i_1, \dots, i_k} \circ F \right) \bigwedge_{j=1}^k \odif{y^{i_j} \circ F}
         \end{align*}
     \end{proof}
 \end{lemma}

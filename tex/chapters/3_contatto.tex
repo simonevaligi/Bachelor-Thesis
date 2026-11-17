@@ -1,2 +1,431 @@
 \chapter{Geometria di contatto}
 
+In questo capitolo tratteremo la \emph{geometria di contatto}: essa rappresenta il cardine formale di tutta la trattazione dell'elaborato \cite{jiang_thermodynamics}.
+Daremo delle definizioni per inquadrarne la struttura rispetto alle nozioni descritte nei capitoli precedenti; si mostrerà la relazione con la sua "sorella", la \emph{geometria simplettica}, definita per varietà a dimensioni pari; si cercherà di completare la descrizione di esempi che rendano più intuitivi i concetti: si vedrà come la struttura di geometria di contatto ha applicazioni in analisi matematica e meccanica hamiltoniana.
+
+\section{Forme di contatto}
+
+\begin{definition}
+    Una \textbf{distribuzione D di Frobenius} \cite{pirola_geometria} di rango k è un \emph{sottofibrato} di rango k di $T\mathcal{M}$.
+    Un campo vettoriale $X \in \mathcal{X}(\mathcal{M})$ appartiene alla distribuzione $D$ se per ogni $p \in \mathcal{M}$, $X(p) \in D_p$. In altre parole $X$ è una sezione di D.
+\end{definition}
+\[
+    X \in D \quad \mathrm{se} \quad \forall p \in \mathcal{M}, \; \;  X(p) \in D_p
+\]
+
+\begin{definition}
+    Sia $\mathcal{M}$ una varietà liscia $(2n + 1)$-dimensionale, una \textbf{struttura di contatto} è una distribuzione liscia $\xi$ di iperpiani, $\xi \subset T \mathcal{M}$ tale che qualsiasi 1-forma differenziale $\alpha$ \emph{definente} soddisfa la condizione di \textbf{non-integrabilità massimale}.
+
+    \begin{equation}
+        \alpha \wedge (\odif{\alpha})^n \neq 0 \tag*{Condizione di non-integrabilità massimale}
+    \end{equation}
+
+    dove $ (\odif{\alpha})^n = \bigwedge^n \odif{\alpha}$.
+    Una 1-forma $\alpha$ \emph{globale} è detta \textbf{forma di contatto} e $(\mathcal{M}, \xi)$ è una \textbf{varietà di contatto}.
+\end{definition}
+
+Prestiamo attenzione a due aspetti. Con $\alpha$ \emph{definente} si intende che la 1-forma $\alpha$ determina la distribuzione di iperpiani $\xi$ nel senso che per ogni $p \in \mathcal{M}$, l'iperpiano $\xi$ è composto esclusivamente da tutti i vettori tangenti tali che $\alpha (X) = 0$, i.e. $\xi = \ker \alpha$.
+Da questo si vede che se $\mathcal{N}$ sottovarietà tangente a $\xi$, allora \( \alpha^* : T^*(\mathcal{M}) \rightarrow T^*(\mathcal{M})\)
+
+Inoltre, una forma di contatto $\alpha$ non è univocamente determinata: possiamo moltiplicare una qualsiasi $\alpha$ per una funzione liscia non-nulla e si ottene una forma di contatto.
+Ne diamo una piccola ``dimostrazione'':
+\begin{enumerate}
+    \item $\ker \alpha = \ker (f\alpha)$
+    \item Calcoliamo
+          \[
+              (f\alpha) \wedge \bigl(\odif{(f\alpha)}\bigr)^n
+              = f\alpha \wedge \bigl(f\,\odif{\alpha} + \odif{f}\wedge\alpha\bigr)^n .
+          \]
+          Usiamo il teorema binomiale, $(a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k}b^k$
+          (il che è lecito perché $f\,\odif{\alpha}$ e $\odif{f}\wedge\alpha$ sono $2$-forme, quindi commutano):
+          \begin{align*}
+              f\alpha \wedge \bigl(f\,\odif{\alpha} + \odif{f}\wedge\alpha\bigr)^n
+               & = f\alpha \wedge \Bigl[
+                  f^n \odif{\alpha}^n
+                  + \binom{n}{1} f^{n-1} (\odif{\alpha})^{n-1} \wedge \odif{f}\wedge\alpha
+              + \dots                                                                                                                  \\
+               & \hspace{4em} \dots
+                  + \binom{n}{n-1} f\,\odif{\alpha} \wedge (\odif{f}\wedge\alpha)^{n-1}
+                  + (\odif{f}\wedge\alpha)^n
+              \Bigr] =                                                                                                                 \\
+               & = f \alpha \wedge (f \odif{\alpha})^n + f \alpha \wedge \left[
+                  n (f \odif{\alpha})^{n-1} \wedge \odif{f} \wedge \alpha
+              \right] =                                                                                                                \\
+               & = f^{n+1} \alpha \wedge (\odif{\alpha})^n - f n (f \odif{\alpha})^{n-1} \wedge \odif{f} \wedge \alpha \wedge \alpha = \\
+               & = f^{n+1}\,  \alpha \wedge \odif{\alpha}^n
+          \end{align*}
+          dove è stato usato \(\alpha \wedge \alpha = 0\) per la sua antisimmetria.
+          Allora otteniamo esattamente
+          \begin{equation}
+              f \alpha \wedge (\odif{f \alpha})^n = f^{n+1} \alpha \wedge (\odif{\alpha})^n
+          \end{equation}
+\end{enumerate}
+
+\begin{lemma}
+    Sia $(\mathcal{M}, \xi)$ una varietà di contatton supponiamo \(\alpha_1, \alpha_2\) forme di contatto della distribuzione di iperpiani $\xi$, allora
+    \[
+        \alpha_1 = f \alpha_2
+    \]
+    per qualche \(f : \mathcal{M} \longrightarrow \mathbb{R}\) liscia non-nulla.
+\end{lemma}
+
+\begin{proof}
+    Poiché \(\alpha_1, \alpha_2\) son forme di contatto per $\xi$, vale che $\ker(\alpha_1) = \xi = \ker(\alpha_2)$.
+    $\alpha_1, \alpha_2$ possono essere viste come covettori nello spazio cotangente che stanno uno multiplo dell'altro tramite prodotto per scalare.
+    Costruiamo $f$: sia $p \in \mathcal{M}$, scegliamo un generico vettore non-nullo $v_p \in T_p \mathcal{M} \setminus \ker \alpha_{1}|_p$.
+    Definiamo $f : M \to \mathbb{R}$ puntuale come:
+    \begin{equation*}
+        f(P) = \frac{\alpha_{1}|_p(v_p)}{\alpha_{2}|_p(v_p)}
+    \end{equation*}
+
+    $f$ è indipendente dal vettore scelto nel sottospazio vettoriale 1-dimensionale $T_p \mathcal{M} \setminus \ker \alpha_{1}|_p$ perché qualsiasi vettore $U_p$ non-nullo nel sottospazio è risultato del riscalamento di $v_p$.
+    Il fattore di riscalamento si semplifica nella definizione di $f$ grazie alla linearità di $\alpha_1, \alpha_2$.
+    Per costruzione, $f$ è non-nulla e $\alpha_1 = f \alpha_2$.
+    Dato che $\alpha_1, \alpha_2$ sono lisce, allora $f$ è liscia.
+\end{proof}
+
+Consideriamo il seguente esempio \cite{jiang_thermodynamics}: dotiamo $\mathbb{R}^{2n+1} \ni (x^1, y^1, \dots, x^n, y^n, z)$ della 1-forma:
+\begin{equation*}
+    \alpha = \odif{z} - \sum_{i=1}^{n} y^i \odif{x^i}
+\end{equation*}
+$(\mathbb{R}^{2n+1}, \alpha)$ è una varietà di contatto.
+
+Nel caso $\mathbb{R}^3$, $\alpha = \odif{z} - y \odif{x}$ definisce la distribuzione di iperpiani:
+\begin{equation*}
+    \xi = \ker \alpha = \text{span}\{\partial_y, y \partial_z + \partial_x\}
+\end{equation*}
+
+Vediamo come ottenere la distribuzione valutando il $\ker \alpha$: cerchiamo tutti i vettori generici $V = A \partial_x + B \partial_y + C \partial_z \in T\mathbb{R}^3$ tali che $\alpha(V) = 0$.
+(Nota: $\odif{x^i} \partial_{x_j} = \delta^i_j$)
+
+\begin{align*}
+    \alpha(V) & = (\odif{z} - y \odif{x}) (A \partial_x + B \partial_y + C \partial_z)                                                                                                                                                                                                        \\
+              & = \cancelto{0}{A \odif{z} \partial_x} \quad - A y \: \cancelto{1}{\odif{x} \partial_x} \quad + \cancelto{0}{B \odif{z} \partial_y} \quad - \cancelto{0}{B y \odif{x} \partial_y} \quad + C \: \cancelto{1}{\odif{z} \partial_z} \quad - \cancelto{0}{C y \odif{x} \partial_z} \\
+              & = C - Ay
+\end{align*}
+
+\begin{equation*}
+    \alpha(V) = 0 \quad \Longrightarrow \quad C - Ay = 0 \quad \Longrightarrow \quad C = Ay
+\end{equation*}
+\begin{equation*}
+    V_0 = A \partial_x + B \partial_y + A y \partial_z = B(\partial_y) + A(\partial_x + y \partial_z) \quad \Longrightarrow \quad \ker \alpha = \text{span}\{\partial_y, y \partial_z + \partial_x\} \quad \checkmark
+\end{equation*}
+
+Verifichiamo la condiz. di max. non-integrabilità:
+\begin{align*}
+    \odif{\alpha} & = - \sum_{i=1}^{n} \odif{(y^i \odif{x^i})}      \\
+                  & = - \sum_{i=1}^{n} \odif{y^i} \wedge \odif{x^i}
+\end{align*}
+\begin{equation*}
+    \Longrightarrow \alpha \wedge (\odif{\alpha})^n = -\left(\odif{z} - \sum_{i=1}^{n} y^i \odif{x^i}\right) \wedge \left(\sum_{j=1}^{n} \odif{y^j} \wedge \odif{x^j}\right)^n
+\end{equation*}
+
+\noindent \textbf{Nota:} Teorema multinomiale
+\begin{equation*}
+    \left(\sum_{i=1}^{r} X_i\right)^n = \sum_{\sum^r k_i = n} \binom{n}{k_1, \dots, k_r} \prod_{i=1}^{r} X_i^{k_i}
+\end{equation*}
+
+\begin{equation*}
+    \left(\sum_{j=1}^{n} \odif{y^j} \wedge \odif{x^j}\right)^n = \sum_{\sum^r k_j = n} \binom{n}{k_1, \dots, k_r} \prod_{j=1}^{n} (\odif{y^j} \wedge \odif{x^j})^{k_j}
+\end{equation*}
+valutiamo il primo caso non banale e.g. $k_j = 2$: $(\odif{y^j} \wedge \odif{x^j})^2 = \odif{y^j} \wedge \odif{x^j} \wedge \odif{y^j} \wedge \odif{x^j} = - \odif{y^j} \wedge \odif{x^j} \wedge \odif{x^j} \wedge \odif{y^j} = 0$, grazie all'anticommutatività del prodotto wedge \(\omega \wedge \nu = - \nu \wedge \omega \Longrightarrow \omega \wedge \omega = 0\).
+
+Quindi per $k_j \ge 2$ il termine $(\odif{y^j} \wedge \odif{x^j})^{k_j} = 0$.
+Allora esiste una sola possibilità tale per cui non si annulla, cioè il caso $k_j = 1, \: \forall j $, da cui si vede $\sum^n_j k_j = n$.
+
+\begin{align*}
+    \left(\sum_{j=1}^{n} \odif{y^j} \wedge \odif{x^j}\right)^n & = \binom{n}{1,1,\dots,1} \prod_{j=1}^{n} (\odif{y^j} \wedge \odif{x^j})               \\
+                                                               & = m! \, \odif{y^1} \wedge \odif{x^1} \wedge \dots \wedge \odif{y^n} \wedge \odif{x^n}
+\end{align*}
+
+\begin{align*}
+    \Longrightarrow \alpha \wedge (\odif{\alpha})^n & = -\left(\odif{z} - \sum_{i=1}^{n} y^i \odif{x^i}\right) \wedge n! \bigwedge_{j=1}^{n} (\odif{y^j} \wedge \odif{x^j})                                                                          \\
+                                                    & = -n! \, \odif{z} \wedge \bigwedge_{j=1}^{n} (\odif{y^j} \wedge \odif{x^j}) + \cancelto{0}{\sum_{i=1}^{n} x^i \odif{y^i} \wedge \left(\bigwedge_{j=1}^{n} \odif{y^j} \wedge \odif{x^j}\right)}
+\end{align*}
+(L'ultimo termine si annulla poiché $\odif{y^i} \wedge \odif{y^i} = 0$)
+
+Quindi si ottiene:
+\begin{equation*}
+    \alpha \wedge (\odif{\alpha})^m = -m! \, \odif{z} \wedge \odif{x^1} \wedge \odif{y^1} \wedge \dots \wedge \odif{x^n} \wedge \odif{y^n}
+\end{equation*}
+
+in cui quest'ultima è una forma non-nulla su $\mathbb{R}^{2n+1}$. \checkmark
+
+La forma \( \alpha = \odif{z} - \sum_{i=1}^{n} y^i \odif{x^i} \) è detta \textbf{struttura di contatto standard} su $\mathbb{R}^{2n+1}$.
+
+\begin{definition}
+    Sia ($\mathcal{M}, \xi$) una varietà di contatto; una sottovarietà immersa $L$ di ($\mathcal{M}, \xi$) è detta \textbf{isotropa} se $T_p L \subset \xi_p, \; \forall p \in L \subset \mathcal{M}$, i.e. ogni spazio tangente è contenuto nella distribuzione.
+\end{definition}
+
+Possiamo ottenere un risultato molto importante sulle sottovarietà isotrope: $L$ è isotropa \(\iff i^* \alpha = 0\) dove \(i : L \longrightarrow \mathcal{M}\) è detta \emph{immersione canonica} i.e. la funzione che mappa un punto di una sottovarietà in se stesso sulla varietà madre
+\[
+    p \in L \mapsto p \in \mathcal{M}, \quad i(p) = p
+\]
+
+Se prendiamo il \emph{pushfprward} dell'immersione canonica, $\odif{i_p}$ prende un vettore $v \in T_p L$ e lo inietta formalmente in $T_p \mathcal{M}$, il che permette di passarlo in input ad $\alpha$ per riconoscerlo; il \emph{pullback} $i_p^*$ trasporta la 1-forma $\alpha : T\mathcal{M} \longrightarrow \mathbb{R}$ e ne restringe l'azione esclusivamente ad $L$. L'azione di queste due costruzioni si valuta tramite
+\[
+    (i^* \alpha )_p (v) = \alpha_p (\odif{i_p} v)
+\]
+
+Tramite quest'ultime possiamo ottenere la giustificazione della condizione necessaria e sufficiente tra isotropia e l'annullamento del pullback della forma di contatto, infatti per ogni $v \in T_p L$,
+\[
+    (i^* \alpha )_p (v) = \alpha_p (\odif{i_p} v) = 0 \quad \iff \quad v \in \xi_p
+\]
+che vale perché $\xi = \ker \alpha$, quindi l'azione di $\alpha_p ( \odif{i_p}v) = 0 \quad \checkmark$
+
+\section{Forme simplettiche}
+
+La geometria di contatto è strettamente legata alla sua controparte su dimensioni pari, detta \emph{geometria simplettica}, poiché una forma di contatto induce un \emph{tensore simplettico} su ogni iperpiano di contatto
+
+\begin{definition}
+    Un 2-covettore $\omega$ che agisce su uno spazio vettoriale finito dimensionale $\mathbb{V}$ è detto \textbf{non-degenere} o \textbf{tensore simplettico} o \textbf{forma bilineare simplettica} se
+    \begin{equation*}
+        \omega^n \neq 0 \tag*{Condizione di non-degenerazione}
+    \end{equation*}
+    $(\mathbb{V}, \omega)$ è detto \textbf{spazio vettoriale simplettico}.
+\end{definition}
+
+\begin{lemma}
+    Sia $(\mathbb{V},\omega)$ uno spazio vettoriale simplettico. Allora i seguenti enunciati sono equivalenti:
+    \begin{enumerate}
+        \renewcommand{\theenumi}{\Roman{enumi}}
+        \renewcommand{\labelenumi}{\theenumi)}
+        \item $\omega^n \neq 0$ (non-degenerazione);
+        \item la mappa lineare $\tilde{\omega}\colon \mathbb{V} \longrightarrow \mathbb{V}^*$, definita come
+              $\tilde{\omega}(v) = \omega(v,\cdot)$, è invertibile;
+        \item $\forall\, v \in V$ con $v \neq 0$, $\exists\, w \in V$ tale che $\omega(v,w) \neq 0$;
+        \item esiste una base di $\mathbb{V}$ tale che la matrice $(\omega_{ij})$ che rappresenta $\omega$
+              è non singolare.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \noindent\textbf{II) $\Leftrightarrow$ III).}
+    Per definizione,
+    \[
+        \tilde{\omega} \text{ è invertibile} \quad
+        \iff \quad \tilde{\omega} \text{ è iniettiva} \quad
+        \iff \quad \ker\tilde{\omega} = 0 ,
+    \]
+    % AGGIUNTA: motivazione dell'ultimo passaggio e dell'ipotesi di dimensione finita
+    dove la prima equivalenza usa $\dim \mathbb{V} = \dim \mathbb{V}^* < \infty$. Infine $\ker\tilde{\omega}=0$ significa
+    che per ogni $v\neq 0$ si ha $\omega(v,\cdot)\neq 0$, cioè III).
+
+    \smallskip\noindent\textbf{II) $\Leftrightarrow$ IV).}
+    Sia $\{e_i\}$ una base di $\mathbb{V}$ e $\{E^i\}$ la base duale di $\mathbb{V}^*$, cioè $E^j(e_i)=\delta^j_i$.
+    In tale base la mappa lineare si scrive come
+    \[
+        \tilde{\omega}(e_i)(e_j) = \omega(e_i,e_j) = \omega_{ij} ,
+        \qquad\text{cioè}\qquad
+        \tilde{\omega}(e_i) = \omega_{ij}\,E^j
+    \]
+    (somma sugli indici ripetuti). Allora
+    \begin{align*}
+        \tilde{\omega} \text{ è invertibile}
+         & \iff \exists\, \tilde{\omega}^{-1}\colon \mathbb{V}^*\to \mathbb{V} \text{ t.c. }
+        \tilde{\omega}^{-1}\bigl(\tilde{\omega}(v)\bigr) = v \quad \forall\, v \in V         \\
+         & \iff \tilde{\omega}^{-1}\bigl(\tilde{\omega}(e_i)\bigr) = e_i \quad \forall\, i   \\
+         & \iff \omega_{ij}\,\tilde{\omega}^{-1}(E^j) = e_i \quad \forall\, i                \\
+         & \iff \omega_{ij}\,E^k\bigl(\tilde{\omega}^{-1}(E^j)\bigr) = E^k(e_i) = \delta_i^k
+        \quad \forall\, i,k                                                                  \\
+         & \iff \exists\, \omega^{jk} \text{ t.c. } \omega_{ij}\,\omega^{jk} = \delta_i^k    \\
+         & \iff \text{la matrice } (\omega_{ij}) \text{ che rappresenta } \omega
+        \text{ è non singolare},
+    \end{align*}
+    dove si è posto $\omega^{jk} := E^k\bigl(\tilde{\omega}^{-1}(E^j)\bigr)$.
+
+    \smallskip\noindent\textbf{III) $\Leftrightarrow$ I).}
+
+    \noindent($\Rightarrow$) Costruiamo una base simplettica.
+    \begin{definition}[Base simplettica]
+        Sia $(\mathbb{V},\omega)$ uno spazio vettoriale simplettico. Una base
+        $\{A_1,B_1,\dots,A_n,B_n\}$ di $\mathbb{V}$ è detta \emph{base simplettica} se
+        \[
+            \omega = \sum_{i=1}^n A^i \wedge B^i ,
+        \]
+        % AGGIUNTA: A^i, B^i sono la base duale
+        dove $\{A^1,B^1,\dots,A^n,B^n\}$ è la base duale.
+        Equivalentemente,
+        \[
+            \omega(A_i,A_j) = \omega(B_i,B_j) = 0
+            \quad\text{e}\quad
+            \omega(A_i,B_j) = -\,\omega(B_j,A_i) = \delta_{ij} .
+        \]
+    \end{definition}
+    (Per la costruzione si veda~\cite{lee_manifolds}.)
+
+    Avendo $\omega = \sum_{i=1}^n A^i \wedge B^i$, vale
+    $\omega^n = \bigl(\sum_{i=1}^n A^i \wedge B^i\bigr)^n$.
+    Posto $x_i = A^i\wedge B^i$ (sono $2$-forme, quindi commutano tra loro), ragioniamo come nel teorema multinomiale: esiste un'unica $n$-upla $(k_1,\dots,k_n)$ con $\sum_i k_i = n$ e $k_i \le 1$ per ogni $i$,
+    cioè $(k_1,\dots,k_n) = (1,\dots,1)$. Dunque
+    \[
+        \omega^n = \Bigl(\sum_{i=1}^n A^i\wedge B^i\Bigr)^n
+        = n!\, A^1\wedge B^1\wedge \dots \wedge A^n\wedge B^n \neq 0 .
+    \]
+
+    \medskip\noindent($\Leftarrow$) Per assurdo, supponiamo che III) non valga. Allora esiste $v\neq 0$
+    tale che $\omega(v,\cdot)=0$, cioè $\ker\tilde{\omega}\neq 0$.
+    Completiamo $v$ a una base $(v,E_2,\dots,E_{2n})$ di $\mathbb{V}$. Allora
+    \[
+        \omega^n(v,E_2,\dots,E_{2n}) = (\iota_v\omega^n)(E_2,\dots,E_{2n}) = 0 ,
+    \]
+    % AGGIUNTA: perché \iota_v \omega^n = 0 e perché basta valutare su una base
+    perché $\iota_v\omega = \omega(v,\cdot) = 0$ implica
+    $\iota_v\omega^n = n\,(\iota_v\omega)\wedge\omega^{n-1} = 0$.
+    Essendo $\omega^n$ una $2n$-forma su uno spazio di dimensione $2n$, è determinata dal suo valore su una base, quindi $\omega^n = 0$, in contraddizione con I).
+    Dunque vale III), cioè I) $\Longrightarrow$ III).
+\end{proof}
+
+Tornando alla definizione di tensore simplettico, possiamo notare una cosa importante: la parità (nel senso che il numero è pari) della dimensione di $\mathbb{V}$ può essere ottenuta dalla condizione di non-degenerazione.
+Infatti un 2-covettore è un tensore covariante di rango 2 che agisce su $\mathbb{V} \times \mathbb{V}$, quindi è rappresentabile come una matrice $k \times k$.
+È importante ricordare che una $k$-forma differenziale $\omega \in \Omega^k(\mathcal{M})$ asswega ad ogni punto $p \in \mathcal{M}$ un tensore alternante $\omega_p \in \Lambda^k(T_p \mathcal{M})$.
+$\omega_p$, per definizione, è una mappa multilineare che prende due vettori dello spazio tangente $T_p \mathcal{M}$ e restituisce un numero reale la 2-forma \(\omega_p : T_p \mathcal{M} \times T_p\mathcal{M} \longrightarrow \mathbb{R}\).
+Scegliendo una base \( \{ \mathbf{e}_i \} \) per $T_p \mathcal{M}$, un generico vettore si scrive $v = v^i e_i$; calcolando l'azione della 2-forma su due vettori tangenti generici $v$ e $w$
+\[
+    \omega_p(v, w) = \omega(v^i e_i, w^j e_j) = v^i w^j \omega(e_i, e_j)
+\]
+I termini \(\omega_{ij} = \omega(e_i, e_j)\) sono i coefficienti della forma nella base scelta i.e. tale che valga
+\[
+    \omega = \frac{1}{2} \omega_{ij} e^i \wedge e^j
+\]
+e formano la matrice quadrata richiesta.
+La forma simplettica è alternante, quindi la sua rappresentazione in coordinate è una matrice $k \times k$ \emph{antisimmetrica}
+\begin{align*}
+    A^\intercal = - A \quad \Longrightarrow \quad \det A^\intercal & = \det (-A) \\
+    \det A = (-1)^k \det A
+\end{align*}
+Valutiamo i due casi: \begin{itemize}
+    \item $k$ dispari, vale che $\det A = - \det A \quad \Longrightarrow \det A = 0$; allora la matrice è singolare, ma il Lemma precedente impone la condizione di non-degenerazione (\(\omega^n \neq 0\)), da cui $\det \omega \neq 0$, quindi non è possibile;
+    \item $k$ pari, $\det A = \det A$ \checkmark
+\end{itemize}
+
+
+Adesso possiamo estendere tali definizioni delle forme bilineari simplettiche su spazi vettoriali ad una \emph{struttura simplettica} su varietà lisce.
+\begin{definition}
+    \cite{lee_manifolds} Sia $\mathcal{M}$ una varietà liscia, una 2-forma non-degenere su $\mathcal{M}$ è una 2-forma $\omega$ tale che $\omega_p$ è un 2-covettore non degenere su $T_p \mathcal{M}$ per ogni $p \in \mathcal{M}$ (che rende $T_p \mathcal{M}$ uno spazio vettoriale simplettico).
+    La 2-forma $\omega$ è detta \textbf{forma simplettica} o \textbf{struttura simplettica}.
+\end{definition}
+
+Si presentano due osservazioni: dato che i suoi spazi tangenti devono essere 2m-dim, allora anche la varietà stessa sarà 2m-dim; inoltre, su una varietà di contatto (2m+1)-dim, la struttura di contatto associa un iperpiano 2m-dim in ogni spazio tangente.
+La struttura di contatto induce una forma bilineare simplettica su ciascun iperpiano.
+
+\begin{lemma}
+    Sia $(\mathcal{M}, \xi = \ker \alpha)$ una varietà di contatto, allora $(\xi_p, \odif{\alpha}|_{\xi_p})$ è un campo vettoriale simplettico dove $\odif{\alpha}|_{\xi_p}$ è definito come $\odif{\alpha}|_{\xi_p} : \xi_p \longrightarrow \xi_p^*$ tramite $v \mapsto \odif{\alpha}(v, \cdot)$
+\end{lemma}
+\begin{proof}
+    La condizione di non-integrabilità massimale richiede che $(\odif{\alpha})^n \neq 0$ ovunque, quindi $\odif{\alpha}|_{\xi_p}$ soddisfa anch'essa la condizionedi non-degenerazione per costruzione e sarà che $(\xi_p, \odif{\alpha}|_{\xi_p})$ è un campo vettoriale simplettico.
+\end{proof}
+
+Notare che lo spazio viene equipaggiato con la \emph{restrizione} della 2-forma $\odif{\alpha}$, $\odif{\alpha}|_{\xi_p}$ che agisce prendendo $v \in \xi_p$ e mandandolo in un covettore $\xi_p$ applicando $\odif{\alpha}(v, \cdot)$.
+
+L'esistenza di una forma bilineare simplettiva su uno spazio vettoriale forniscve una nozione generalizzata di ortogonalità, come per il prodotto interno, con l'aggiunta che i tensori simplettici sono prodotti antisimmetrici.
+
+\begin{definition}
+    Dato un sottospazio vattoriale $S$ di uno spazio vettoriale simplettico ($\mathbb{V}, \omega$), si definisce il \textbf{complemento simplettico}
+    \[
+        S^\perp = \{ v \in \mathbb{V} | \omega(v, w) = 0, \; \forall w \in S\}
+    \]
+\end{definition}
+
+\section{Relazione tra le strutture simplettica e di contatto}
+\begin{proposition}
+    Sia \(
+    (\mathcal{M}^{2n+1}, \xi = \ker \alpha)
+    \) una varietà di contatto. Se $L$ è una sottovarietà isotropa di $\mathcal{M}$, allora $\dim L \leq n$.
+\end{proposition}
+
+\begin{definition}
+    Se $\dim L = n$, diremo che $L$ è una sottovarietà \textbf{Legendriana} di $\mathcal{M}$.
+\end{definition}
+
+\begin{proof}
+    \cite{geiges_contact} Per ogni $p \in L$, poiché \[
+        T_p L \subset \xi_p, \quad \Longrightarrow \quad i^* \alpha = 0
+    \]
+    inoltre \[
+        \odif{(i^*\alpha)} = 0 \quad \Longrightarrow \quad i^* (\odif{\alpha}) = 0
+    \] Quindi \( \forall u,v \in T_p L \), vale \( \odif{\alpha}|_{\xi|_p} (u,v) = 0 \). L'ultimo Lemma garantisce che, se dotato di $\odif{a}|_{\xi_p}$, $\xi_p$ è un campo vettoriale simplettico, quindi posso definire il complemento simplettico di $T_p L$:
+    \[
+        (T_p L)^\perp = \{ v \in \xi_p | \odif{a}|_{\xi_p} (u,v)= 0, \; \forall u \in T_p L \}
+    \]
+    Dato che \(  \odif{a}|_{\xi_p} (u,v)= 0, \; \forall u, v \in T_p L  \), allora
+    \[
+        T_p L \subset (T_p L)^\perp \quad \Longrightarrow \quad \dim T_p L \leq \dim (T_p L)^\perp
+    \]
+    Costruiamo una mappa lineare \( \varphi : \xi_p \longrightarrow T_p^* L \), definita tramite \( \varphi (v)(w) = \odif{\alpha} (v, w)\) dove $v \in \xi_p$ e $w \in T_p L$.
+
+    Dato che $\odif{\alpha}|_{\xi_p}$ è non-degenere, la mappa è un isomorfisomo lineare suriettivo tale che
+    \[
+        \varphi(T_p L) \simeq T_p L \quad \Longrightarrow \quad \ker \varphi = (T_p L)^\perp
+    \]
+
+    Quindi abbiamo una funzione lineare tra spazi vettoriali per la quale il Teorema del Rango garantisce
+    \begin{align*}
+        \dim \xi_p & = \dim( \operatorname{Im} \varphi) + \dim( \ker \varphi) \\
+        2 n        & = \dim T_p L + \dim (T_p L )^\perp
+    \end{align*}
+    Poiché \begin{align*}
+        \dim T_p L                 & \leq \dim (T_p L)^\perp \\
+        \Longrightarrow \dim T_p L & \leq n                  \\
+        \Longrightarrow \dim L     & \leq n
+    \end{align*}
+\end{proof}
+
+Questa proposizione e la sua dimostrazione mostrano due concetti chiave: per prima cosa, la distribuzione di iperpiani $\xi$ \emph{non} ammette una \emph{varietà integrale} dove definiamo \cite[Chapter 19]{lee_manifolds} quest'ultima come una sottovarietà $\mathcal{N} \subseteq \mathcal{M}$ non-vuota immersa tale che
+\[
+    T_p \mathcal{N} = D_p, \; \forall p \in \mathcal{N}
+\]
+in cui $D$ è la distribuzione liscia $D \subseteq T \mathcal{M}$.
+Quindi, la distribuzione di iperpiani $\xi$ non ammette una sottovarietà immersa $S$ che soddisfi $T_p S = \xi_p, \; \forall p \in S$.
+
+Infatti le sottovarietà tangenti immerse hanno dimensione alpiù metà di quella della distribuzione.
+
+Oltre a ciò, tale proposizione mostra come la geometria di contatto è strettamente legata alla geometria simplettica; si può utilizzare la nozione di varietà simplettica per creare una varietà di contatto.
+
+Vediamo più nel dettaglio come effettuare questo salto.
+
+Sia data una varietà differenziabile $\mathcal{M}$, $X$ campo vettoriale liscio su $\mathcal{M}$ e $F^X$ \emph{flusso} di $X$ nel senso \cite{latini_riemannian} che
+\[
+    F^X : \mathbb{R} \times \mathcal{M} \longrightarrow \mathcal{M} \; \text{ tale che } \; F^X(t, p) \coloneqq F^X_t(p) = \gamma_p (t)
+\]
+con $\gamma$ \emph{curva integrale} di X i.e.
+\[
+    \gamma : I \subseteq \mathbb{R} \longrightarrow \mathcal{M} \; \text{ tale che } \; X(\gamma(t_0))=\dot\gamma (t_0)
+\]
+Allora \cite{lee_manifolds}, per un generico campo vettoriale $Y$ su $\mathcal{M}$ definiamo la \textbf{derivata di Lie} di $Y$ rispetto a $X$ come
+\begin{equation}
+    \left(\mathcal{L}_X Y\right)_p = \odv{}{t} \left.\odif{(F^X Y)}\right|_{t=0}
+\end{equation}
+
+\begin{definition}
+    \cite{geiges_contact} Sia ($\mathcal{M}, \omega$) varietà simplettica (2n+2)-dim, i.e. $\omega$ è una 2-forma su $\mathcal{M}$ chiusa ($\odif{\omega} = 0$) e non-degenere ($\omega^{n+1} \neq 0$). Un campo vettoriale $X$ è detto \textbf{di Liouville} se
+    \begin{equation}
+        \mathcal{L}_X \omega = \omega
+    \end{equation}
+\end{definition}
+
+Possiamo riscrivere la condizione di Liouvile, tramite la \emph{formula di Cartan}
+\begin{equation}
+    \mathcal{L}_X = \operatorname{d} \circ \iota_X + \iota_X \circ \operatorname{d}
+\end{equation}
+dove bisogna prestare attenzione al fatto che $\iota_X$ è la \emph{contrazione} o \emph{prodotto interno}, non l'immersione canonica; da ciò otteniamo
+\begin{align*}
+    \mathcal{L}_X \omega                                                                  & = \omega \\
+    \left( \operatorname{d} \circ \iota_X + \iota_X \circ \operatorname{d} \right) \omega & = \omega \\
+    \odif{\iota_X \omega} + \iota_X \circ \; \cancelto{0}{\odif{\omega}} \quad            & = \omega \\
+    \odif{\iota_X \omega}                                                                 & = \omega
+\end{align*}
+
+Allora la 1-forma $\alpha = \iota_X \omega$ definisce una \emph{forma di contatto} su qualsiasi $\xi$ in $\mathcal{M}$ trasversa a $X$.
+Infatti, valutando la condizione di non-integrabilità massimale e sostiutendo dentro
+\[
+    \alpha \wedge (\odif{\alpha})^n = \iota_X \omega \wedge \left(\odif{(\iota_X \omega)}\right)^n = \iota_X \omega \wedge \omega^n
+\]
+Diamo adesso un paio di proprietà che saranno utili continuando.
+Date due forme differenziali $\mu, \nu$ vale che
+\[
+    \iota_X (\mu \wedge \nu) = (\iota_X \mu) \wedge \nu + (-1)^{\deg \mu} \mu \wedge (\iota_X \nu)
+\]
+\[
+    \mu \wedge \nu = (-1)^{\deg \mu \deg \nu} \nu \wedge \mu
+\]

@@ -165,12 +165,12 @@ Rimane però una definizione molto astratta; vediamo però come eseguire il push
     Siano $(U, \varphi)$ e $(V, \psi)$ carte rispettivamente per $\mathcal{M}$ e $\mathcal{N}$ e siano le coordinate $\hat p = \varphi(p) = x^i$ e $\hat q = \psi(q) = z^j$.
     Sia $f \in \mathcal{C}^\infty (\mathcal{N})$
     \begin{align*}
-        (F_*(\partial_{x^i}|_p))f                                                   & = (\partial_{x^i}|_p)(F \circ f)                                                                                                       \\
-        \footnotesize\text{passando alle coordinate $\hat p$ nello spazio euclideo} & = (\partial_{x^i}|_{\hat{p}})(f \circ F \circ \varphi^{-1})                                                                            \\
-        \footnotesize\text{inseriamo un'identità}                                   & = (\partial_{x^i}|_{\hat{p}})( \underbrace{f \circ \psi^{-1}}_{\hat{f}} \circ \underbrace{\psi \circ F \circ \varphi^{-1}}_{\hat{F}} ) \\
-                                                                                    & = (\partial_{x^i}|_{\hat{p}})(\hat f \circ \hat F)                                                                                     \\
-        \footnotesize\text{regola della catena}                                     & =  (\partial_{z^j} \hat{f})(\hat{F}(p)) \cdot \frac{\partial \hat{F}^j}{\partial x^i}(\hat{p})                                         \\
-                                                                                    & = \partial_{z^j}|_{F(p)} f \cdot \pdv{\hat{F}^j}{x^i}(\hat{p})
+        (F_*(\partial_{x^i}|_p))f                                                     & = (\partial_{x^i}|_p)(F \circ f)                                                                                                       \\
+        \text{\footnotesize{passando alle coordinate $\hat p$ nello spazio euclideo}} & = (\partial_{x^i}|_{\hat{p}})(f \circ F \circ \varphi^{-1})                                                                            \\
+        \text{\footnotesize{inseriamo un'identità}}                                   & = (\partial_{x^i}|_{\hat{p}})( \underbrace{f \circ \psi^{-1}}_{\hat{f}} \circ \underbrace{\psi \circ F \circ \varphi^{-1}}_{\hat{F}} ) \\
+                                                                                      & = (\partial_{x^i}|_{\hat{p}})(\hat f \circ \hat F)                                                                                     \\
+        \text{\footnotesize{regola della catena}}                                     & =  (\partial_{z^j} \hat{f})(\hat{F}(p)) \cdot \frac{\partial \hat{F}^j}{\partial x^i}(\hat{p})                                         \\
+                                                                                      & = \partial_{z^j}|_{F(p)} f \cdot \pdv{\hat{F}^j}{x^i}(\hat{p})
     \end{align*}
     \begin{equation}
         \Longrightarrow \quad (F_*(\partial_{x^i}|_p))f = \partial_{z^j}|_{F(p)} f \cdot \pdv{\hat{F}^j}{x^i}(\hat{p})
