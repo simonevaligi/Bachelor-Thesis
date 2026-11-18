@@ -412,7 +412,7 @@ dove bisogna prestare attenzione al fatto che $\iota_X$ è la \emph{contrazione}
 \begin{align*}
     \mathcal{L}_X \omega                                                                  & = \omega \\
     \left( \operatorname{d} \circ \iota_X + \iota_X \circ \operatorname{d} \right) \omega & = \omega \\
-    \odif{\iota_X \omega} + \iota_X \circ \; \cancelto{0}{\odif{\omega}} \quad            & = \omega \\
+    \odif{\iota_X \omega} + \iota_X \; (\cancelto{0}{\odif{\omega}} ) \quad               & = \omega \\
     \odif{\iota_X \omega}                                                                 & = \omega
 \end{align*}
 
@@ -421,11 +421,106 @@ Infatti, valutando la condizione di non-integrabilità massimale e sostiutendo d
 \[
     \alpha \wedge (\odif{\alpha})^n = \iota_X \omega \wedge \left(\odif{(\iota_X \omega)}\right)^n = \iota_X \omega \wedge \omega^n
 \]
-Diamo adesso un paio di proprietà che saranno utili continuando.
-Date due forme differenziali $\mu, \nu$ vale che
+Diamo adesso un paio di proprietà che saranno utili a seguire.
+\begin{property}
+    Date due forme differenziali $\mu, \nu$ vale che
+    \begin{equation}
+        \mu \wedge \nu = (-1)^{\deg \mu \deg \nu} \nu \wedge \mu
+    \end{equation}
+    \begin{equation}
+        \iota_X (\mu \wedge \nu) = (\iota_X \mu) \wedge \nu + (-1)^{\deg \mu} \mu \wedge (\iota_X \nu)
+    \end{equation}
+\end{property}
+Prendiamo la forma \( \iota_X (\omega \wedge \omega^n) = (\iota_X \omega) \wedge \omega^n + \omega \wedge (\iota_X \omega^n) \), usando la prima proprietà appena espressa e unita al fatto che $\omega$ è una 2-forma (\( \deg \omega = 2 \)), otteniamo
+\begin{align*}
+    \omega \wedge (\iota_X \omega)   & = (\iota_X \omega) \wedge \omega   \\
+    \omega^n \wedge (\iota_X \omega) & = (\iota_X \omega) \wedge \omega^n
+\end{align*}
+usiamo la seconda proprietà
+\begin{align*}
+    \iota_X (\omega^{n+1}) & = \iota_X (\omega \wedge \omega^n) =                                                                                                         \\
+                           & = (\iota_X \omega) \wedge \omega^n + (-1)^{\deg \omega} \omega \wedge \iota_X \omega^n =                                                     \\
+                           & = (\iota_X \omega) \wedge \omega^n + \omega \wedge \iota_X(\omega^n) =                                                                       \\
+                           & = (\iota_X \omega) \wedge \omega^n + \omega \wedge \iota_X (\omega \wedge \omega^{n-1}) =                                                    \\
+                           & = (\iota \omega) \wedge \omega^n + \omega \wedge \left[ (\iota_X \omega) \wedge \omega^{n-1} + \omega \wedge \iota_X (\omega^{n-2})\right] = \\
+                           & = (\iota_X \omega) \wedge \omega^n + \omega \wedge (\iota_X \omega) \wedge \omega^{n-1} + \omega \wedge \omega \wedge \iota_X (\omega^{n-2})
+\end{align*}
+notiamo che nell'ultima espressione vale che
 \[
-    \iota_X (\mu \wedge \nu) = (\iota_X \mu) \wedge \nu + (-1)^{\deg \mu} \mu \wedge (\iota_X \nu)
+    \omega \wedge (\iota_X \omega) \wedge \omega^{n-1} = (\iota_X \omega) \wedge \omega \wedge \omega^{n-1} = (\iota_X \omega) \wedge \omega^n
 \]
+Quindi
+\begin{align*}
+    \iota_X (\omega^{n+1})                                 & = 2(\iota_X \omega) \wedge \omega^n + \omega^2 \wedge \iota_X (\omega^{n-2}) = \\
+    \text{\footnotesize{(iterando)}} \quad                 & = (n + 1) (\iota_X \omega \wedge \omega^n)                                     \\
+    \Longrightarrow \qquad \iota_X \omega \wedge \omega^n  & = \frac{1}{n+1} \iota_X (\omega^{n+1})                                         \\
+    \Longrightarrow \qquad \alpha \wedge (\odif{\alpha})^n & = \frac{1}{n+1} \iota_X (\omega^{n+1}) \neq 0 \checkmark                       \\
+\end{align*}
+
+\section{Applicazioni delle strutture}
+
+Forniamo un metodo per confrontare due strutture e valutare se sono o meno la stessa:
+\begin{definition}
+    \cite{geiges_contact} Siano $\mathcal{M}_1, \alpha_1$ e $\mathcal{M}_2, \alpha_2$ due varietà di contatto: saranno dette \textbf{contattomorfe} se esiste un \emph{diffeomorfismo} $f : \mathcal{M}_1 \longrightarrow \mathcal{M}_2 $ tale che
+    \[
+        \odif{f}(\xi_1) = \xi_2 \quad \text{dove} \quad \odif{f} \coloneqq f_* : T\mathcal{M}_1 \longrightarrow T\mathcal{M}_2
+    \]
+    Se $ \xi_i = \ker \alpha $ per $ i = 1, 2 $, allora $f$ è detta \textbf{trasformazione di contatto} o \textbf{contattomorfismo}, e ciò equivale all'esistenza di una funzione liscia non-nulla $\lambda : \mathcal{M}_1 : \longrightarrow \mathbb{R}$ tale che
+    \[
+        f^* \alpha_2 = \lambda \alpha_1 \quad \text{dove} \quad f^* : T^*\mathcal{M}_1 \longrightarrow T^*\mathcal{M}_2
+    \]
+    Infine, se $\lambda = 1$, diremo che il contattomorfismo è \textbf{esatto}.
+\end{definition}
+
+\subsection{i-jets e 1-grafici}
+Introduciamo un paio di esempi che chiariscano l'utilità delle strutture simplettica e di contatto discusse fin qua.
+
+Possiamo usare le funzioni lisce su una varietà per creare una varietà di contatto: poniamo ci nello spazio Euclideo per semplicità, ma potremmo generalizzarlo a varietà lisce generiche.
+Sia $q$ un punto in $\mathbb{R}^n$ e $\varphi : \mathbb{R}^n \longrightarrow \mathbb{R}$ funzione liscia. Chiameremo \emph{1-jet} in $q$ di $\varphi$, etichettato come $J^1_q (\varphi)$, il polinomio di Taylor di $\varphi$ troncato al prim'ordine
 \[
-    \mu \wedge \nu = (-1)^{\deg \mu \deg \nu} \nu \wedge \mu
+    J^1_q(\varphi) = \varphi(q) + \pdv{\varphi}{x^i} (q) x^i
 \]
+dove $ q = (x^1, \dots, x^n) \in \mathbb{R}^n $.
+
+La nozione di 1-jet in $q$ di $\varphi$ è in relazione 1-1 con un punto di $\mathbb{R}^{2n + 1}$.
+In questo modo si arriva ad una nozione di \emph{struttura di contatto} naturale per lo spazio degli 1-jets.
+Data una funzione liscia $\varphi$, il suo differenziale induce una sottovarietà Legendriana: consideriamo l'\emph{1-grafico} di una funzione $\varphi$, detto anche \emph{prolungamneto di ordine 1}
+\[
+    \Gamma(\varphi) = \left\{ \left( q, \varphi(q), \pdv{\varphi}{x}(q) \right) \right\} \subset J^1(\mathbb{R}^n, \mathbb{R})
+\]
+dove $ J^1(\mathbb{R}^n, \mathbb{R}) $ è l'insieme degli 1-grafici delle funzioni $ \mathbb{R}^n \longrightarrow \mathbb{R} $
+
+L'1-forma $\alpha = \odif{y} - p \odif{x} $, dove $y$ è la coordinata $(n + 1)$-esima - corrispondente a $\varphi(q)$ - viene \emph{pullback-ed} a zero su tutti gli 1-grafici dalla mappa di immersione $i: \Gamma(\varphi) \longrightarrow J^1(\mathbb{R}^n, \mathbb{R})$
+\[
+    i^* \alpha = i^\alpha (\odif{y} - p \odif{x}) = \odif{\varphi} - \pdv{\varphi}{x} \odif{x} = 0
+\]
+Quindi, gli 1-grafici di funzioni lisce sono sottovarietà Legendriane.
+
+\subsection{Fibrato cotangente proiettivizzato}
+
+Data una qualsiasi varietà liscia $ (n + 1) $-dim $B^{n + 1}$, si può creare una varietà di contatto tramite la seguente costruzione: un \emph{elemento di contatto} in un punto $p \in B$ è un iperpiano $H_p$ nello spazio tangente $T_p B$.
+Si può pensare all'elemento di contatto come l'individuazione del set di $n$ derivate parziali di un 1-jet dell'esempio precedente.
+
+La nozione di iperpiano $H_p$ è equivalente ad una \emph{classe di equivalenza} di covettori $\alpha_p \in T_p^* B$ che annulla ogni vettore in $H_p$.
+La relazione di equivalenza è ottenuta usando il fatto che due vettori linearmente dipendenti spannano lo stesso iperpiano: ciò elimina la ridondanza che rendeva problematico associare ad un iperpiano un set di covettori, indipendentemente dalla loro "magnitudine".
+
+\begin{remark}
+    Ricordiamo che, come espresso precedentemente da \cite[Capitolo 2, Foundations of Special Relativity]{misner-wheeler-thorne_gravitation} Misner, Thorne, Wheeler, la norma di un covettore rappresenta la densità del fascio di piani ortogonali al vettore tangente che formano la nozione intuitiva di covettori.
+\end{remark}
+
+Quindi, gli elementi di contatto in $p \in B$ sono anche classi di equivalenza di covettori in $T_p^* B$.
+Lo spazio di tutti gli elementi di contatto al punto $p$, per ogni $p \in B$, può essere rappresentato come il \emph{fibrato cotangente proiettivizzato} $\mathbb{P}T_p^* B$.
+Tale spazio ha struttura di fibrato dove una fibra esemplificatica in $p$ è lo spazio dei raggi in $T_p^* B$.
+
+\begin{remark}
+    \begin{enumerate}
+        \item un raggio è una retta vettoriale (i.e. un sottospazio 1-dim)
+        \item la proiettivizzazione è la formalizzazione più rigorosa di ciò che abbiamo eseguito tramite l'associazione ad una "direzione" di covettori tutti i covettori che giaciono su di essa
+    \end{enumerate}
+\end{remark}
+Scegliendo una rappresentazione, un punto di $\mathbb{P}T_p^* B$ è scrivibile come $(u, x^1, \dots, x^n, p^1, \dots, p^n)$ dove $u, x^1, \dots,x^n$ sono coordinate per B e $p^1, \dots, p^n$ sono le coordinate nella base per i covettori.
+Riprendenso l'esempio degli 1-jets, $u$ sono i possibili valori di una funzione di $x^1, \dots, x^n$ a valori reali e $p^1, \dots, p^n$ i possibili valori delle derivate parziali della funzione ripsetto alle $x^i$ in quel punto di $B$.
+
+\subsection{Meccanica hamiltoniana}
+
+Passiamo ad un'applicazione decisamente più nota.
