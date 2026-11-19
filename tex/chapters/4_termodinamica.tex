@@ -1,1 +1,67 @@
 \chapter{Termodinamica}
+
+In questo capitolo mostriamo come la geometria di contatto descrive naturalmente la termodinamica.
+
+\section{Costruzione di sottovarietà legendriane}
+
+Ceerchiamo modi alternativi alle funzioni lisce (vd. 1-jet) per costruire delle sottovarietà legendriane su $\mathbb{R}^{2n + 1}$.
+
+\begin{proposition}
+    Sia $(\mathbb{R}^{2n + 1}, \alpha)$ la varietà di contatto con \( (x^1, y^1, \dots, x^n, y^n, z) \) e \( \alpha = \odif{z} - y_i \odif{x^i} \).
+    Sia $I \sqcup J$ una partizione disgiunta di $\{1, \dots, n\}$ con $i \in I$ e $j \in J$, per cui $\left( x^I, x^J, y_I, y_J \right) \in \mathbb{R}^{2n + 1}$ sono equivalenti alle precedenti coordinate.
+    Supponiamo che $f(x^J, y_I)$ sia una funzione liscia delle sole $n$ coordinate $p = (x^J, y_I)$ -- detta \emph{funzione generatrice}; definiamo un embedding liscio $\varphi : \mathbb{R}^n \longrightarrow \mathbb{R}^{2n + 1}$ dove $\varphi(p) = \left( x^I (p), x^J, y_I, y_J (p), z(p) \right)$ in questo modo:
+    \begin{equation}\label{eq:legendre}
+        x^i(p) = - \pdv{f}{y^i}(p), \qquad y_j(p) = \pdv{f}{x^j}(p), \qquad z(p) = f(p) - y_i \pdv{f}{y_i}(p)
+    \end{equation}
+    Allora, vale che l'immagine di $\varphi$, $\operatorname{Im}(\varphi) = L \subset \mathbb{R}^{2n + 1}$ è una sottovarietà legendriana.
+\end{proposition}
+
+\begin{remark}
+    Sia $\{ 1, \dots, n \}$ l'insieme degli indici delle $n$ coppie di coordinate coniugate $(x^a, y_a)$.
+    Scegliere una partizione disgiunta $I \sqcup J$ di $\{ 1, \dots, n \}$ significa suddividere gli indici in due sottoinsiemi $I$ e $J$ tali che $I \cap J = \varnothing$ e $I \cup J = \{ 1, \dots, n \}$.
+    Se $\operatorname{card}I = k$, allora $\operatorname{card}J = n - k$:
+    \begin{itemize}
+        \item $x^I$ e $y_I$ contengono rispettivamente le $k$ coordinate $x^i$ e le $k$ coordinate $y_i$ con $i \in I$;
+        \item $x^J$ e $y_J$ contengono rispettivamente le $n - k$ coordinate $x^j$ e le $n - k$ coordinate $y_j$ con $j \in J$;
+        \item $z$ è l'ultima coordinata.
+    \end{itemize}
+    Il numero totale di componenti rimane $2n + 1$ in $\left( x^I, x^J, y_I, y_J, z \right)$ e la forma di contatto standard si separa in due somme:
+    \[
+        \alpha = \odif{z} - y_a \odif{x^a} = \odif{z} - y_i \odif{x^i} - y_j \odif{x} \qquad (i \in I, j \in J)
+    \]
+    Lo scopo della partizione è selezionare un insieme di $n$ variabili indipendenti $p = (x^J, y_I) \in \mathbb{R}^n$ scegliendo esattamente una coordinata per ogni coppia coniugata (l'esempio degli 1-jet è compreso in questa proposizione nel caso $I = \varnothing$).
+\end{remark}
+
+\begin{proof}
+    Bisogna dimostrare tre fatti distinti per provare che l'immagine $L = \varphi(\mathbb{R}^n)$ sia una sottovarietà legendriana:
+    \begin{enumerate}
+        \item $L$ è una sottovarietà immersa di $\mathbb{R}^{2n + 1}$,
+        \item $\dim L = n$,
+        \item $L$ è isotropa
+    \end{enumerate}
+    1) e 2) valgono immediatamente dalla definizione di $\varphi$ come un embedding liscio:
+    \begin{enumerate}
+        \item Poiché $f$ è liscia, lo sono anche le sue derivate parziali e quindi anche $\varphi$ è liscia; la matrice Jacobiana di $\varphi$ rispetto alle $n$ variabili $p = (x^J, y_I)$ ha dimensione $(2n + 1) \times n$ e contiene come blocco la matrice identità $n \times n$ ($\mathbb{1}_n$) generata dalle derivate $\frac{\partial x^J}{\partial x^J}$ e $\frac{\partial y_I}{\partial y_I}$; il rango è dunque massimo in ongi punto quindi $\odif{\varphi}$ è iniettivo ovunque, da cui si ottiene l'immersione \checkmark
+        \item $\varphi$ è continua e biettiva da $\mathbb{R}^n$ su $L$; inoltre anche la sua inversa $\varphi^{-1} : L \longrightarrow \mathbb{R}^n$ è continua, perché coincide con la restrizione a $L$ della proiezione sulle coordinate $\pi(x^I, x^J, y_I, y_J, z)= (x^J, y_I)$, che è liscia. \checkmark
+    \end{enumerate}
+    Quindi $L = \varphi(\mathbb{R}^n)$ è una sottovarietà liscia \emph{embedded} (da cui anche immersa) di $\mathbb{R}^{2n + 1}$ con $\dim L = \dim \mathbb{R}^n = n$. \checkmark
+
+    Una generica sottovarietà liscia di $n$-dimensionale in $\mathbb{R}^{2n + 1}$ non è tangente alla distribuzione di contatto $\xi = \ker \alpha$.
+    Per l'isotropia dobbiamo verificare che $i^* \alpha = 0$: formalmente, sostituendo le espressioni di $\left( x^I (p), y_J(p), z(p)\right)$ dentro $\alpha$, stiamo calcolando il pullback $\varphi^* \alpha$ sul dominio $\mathbb{R}^n$; dato che $\varphi$ è un embedding, essa si fattorizza come $i \circ \tilde\varphi$, dove $\tilde\varphi : \mathbb{R}^n \longrightarrow L$ è un diffeomorfismo.
+    Il pullback garantisce, essendo $\tilde\varphi^*$ un isomorfismo, che valga l'equivalenza:
+    \[
+        \varphi^* \alpha = 0 \qquad \Longleftrightarrow \qquad i^* \alpha = 0
+    \]
+    Eseguiamo quindi il calcolo esplicito su $\alpha = \odif{z} - y_i \odif{x^i} - y_j \odif{x^j}$:
+    \begin{align*}
+        \varphi^* \alpha & = \odif{\left( f - y_i \pdv{f}{y_i} \right)} - y_i \odif{\left( - \pdv{f}{y_i} \right)} - \pdv{f}{x^j} \odif{x^j}                                                                         \\
+                         & = \odif{f} - \odif{y_i \pdv{f}{y_i}} - y_i \odif{\left( - \pdv{f}{y_i} \right)} - \pdv{f}{x^j} \odif{x^j}                                                                                 \\
+                         & = \pdv{f}{x^j} \odif{x^j} + \pdv{f}{y_i} \odif{y_i} - \pdv{f}{y_i} \odif{y_i} - y_i \odif{\left( \pdv{f}{y_i} \right)} + y_i \odif{\left( \pdv{f}{y_i} \right)} - \pdv{f}{x^j} \odif{x^j} \\
+                         & = 0 \checkmark
+    \end{align*}
+    Quindi, abbiamo che $L = \varphi(\mathbb{R}^n)$ è una sottovarietà immersa, isotropa e $n$-dimensionale, per cui è una sottovarietà legendriana.
+\end{proof}
+
+La formula \eqref{eq:legendre} definisce una trasformazione di Legendre tra due differenti \emph{potenziali termodinamici}, costruendo $z$ da $f$.
+Data una \emph{funzione generatrice}, la sua sottovarietà legendriana associata è lo \emph{spazio degli statii all'equilibrio} dove tutte le equazioni di stato sono soddisfatte.
+Formalizziamo questi ultimi concetti tramite una struttura di contatto per la termodinamica.
