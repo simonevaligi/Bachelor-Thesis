@@ -1,7 +1,7 @@
 \chapter{Geometria di contatto}
 
 In questo capitolo tratteremo la \emph{geometria di contatto}: essa rappresenta il cardine formale di tutta la trattazione dell'elaborato \cite{jiang_thermodynamics}.
-Daremo delle definizioni per inquadrarne la struttura rispetto alle nozioni descritte nei capitoli precedenti; si mostrerà la relazione con la sua "sorella", la \emph{geometria simplettica}, definita per varietà a dimensioni pari; si cercherà di completare la descrizione di esempi che rendano più intuitivi i concetti: si vedrà come la struttura di geometria di contatto ha applicazioni in analisi matematica e meccanica hamiltoniana.
+Daremo delle definizioni per inquadrarne la struttura rispetto alle nozioni descritte nei capitoli precedenti; si mostrerà la relazione con la sua «sorella», la \emph{geometria simplettica}, definita per varietà a dimensioni pari; si cercherà di completare la descrizione di esempi che rendano più intuitivi i concetti: si vedrà come la struttura di geometria di contatto ha applicazioni in analisi matematica e meccanica hamiltoniana.
 
 \section{Forme di contatto}
 
@@ -14,20 +14,20 @@ Daremo delle definizioni per inquadrarne la struttura rispetto alle nozioni desc
 \]
 
 \begin{definition}
-    Sia $\mathcal{M}$ una varietà liscia $(2n + 1)$-dimensionale, una \textbf{struttura di contatto} è una distribuzione liscia $\xi$ di iperpiani, $\xi \subset T \mathcal{M}$ tale che qualsiasi 1-forma differenziale $\alpha$ \emph{definente} soddisfa la condizione di \textbf{non-integrabilità massimale}.
+    Sia $\mathcal{M}$ una varietà liscia $(2n + 1)$-dimensionale, una \textbf{struttura di contatto} è una distribuzione liscia $\xi$ di iperpiani, $\xi \subset T \mathcal{M}$ tale che qualsiasi 1-forma differenziale $\alpha$ che definisce $\xi$ soddisfa la condizione di \textbf{non-integrabilità massimale}.
 
     \begin{equation}
-        \alpha \wedge (\odif{\alpha})^n \neq 0 \tag*{Condizione di non-integrabilità massimale}
+        \alpha \wedge (\odif{\alpha})^n \neq 0 \tag*{\textbf{Condizione di non-integrabilità massimale}}
     \end{equation}
 
     dove $ (\odif{\alpha})^n = \bigwedge^n \odif{\alpha}$.
     Una 1-forma $\alpha$ \emph{globale} è detta \textbf{forma di contatto} e $(\mathcal{M}, \xi)$ è una \textbf{varietà di contatto}.
 \end{definition}
 
-Prestiamo attenzione a due aspetti. Con $\alpha$ \emph{definente} si intende che la 1-forma $\alpha$ determina la distribuzione di iperpiani $\xi$ nel senso che per ogni $p \in \mathcal{M}$, l'iperpiano $\xi$ è composto esclusivamente da tutti i vettori tangenti tali che $\alpha (X) = 0$, i.e. $\xi = \ker \alpha$.
-Da questo si vede che se $\mathcal{N}$ sottovarietà tangente a $\xi$, allora \( \alpha^* : T^*(\mathcal{M}) \rightarrow T^*(\mathcal{M})\)
+Prestiamo attenzione a due aspetti. Con $\alpha$ che definisce la distribuzione di iperpiani $\xi$ si intende che per ogni $p \in \mathcal{M}$, l'iperpiano $\xi$ è composto esclusivamente da tutti i vettori tangenti tali che $\alpha (X) = 0$, cioè $\xi = \ker \alpha$.
+Da questo si vede che se $\mathcal{N}$ è una sottovarietà tangente a $\xi$, allora \( \alpha^* : T^*(\mathcal{M}) \rightarrow T^*(\mathcal{M})\)
 
-Inoltre, una forma di contatto $\alpha$ non è univocamente determinata: possiamo moltiplicare una qualsiasi $\alpha$ per una funzione liscia non-nulla e si ottene una forma di contatto.
+Inoltre, una forma di contatto $\alpha$ non è univocamente determinata: possiamo moltiplicare una qualsiasi $\alpha$ per una funzione liscia non-nulla e si ottiene una forma di contatto.
 Ne diamo una piccola ``dimostrazione'':
 \begin{enumerate}
     \item $\ker \alpha = \ker (f\alpha)$
@@ -62,7 +62,7 @@ Ne diamo una piccola ``dimostrazione'':
 \end{enumerate}
 
 \begin{lemma}
-    Sia $(\mathcal{M}, \xi)$ una varietà di contatton supponiamo \(\alpha_1, \alpha_2\) forme di contatto della distribuzione di iperpiani $\xi$, allora
+    Sia $(\mathcal{M}, \xi)$ una varietà di contatto, supponiamo \(\alpha_1, \alpha_2\) forme di contatto della distribuzione di iperpiani $\xi$, allora
     \[
         \alpha_1 = f \alpha_2
     \]
@@ -70,12 +70,12 @@ Ne diamo una piccola ``dimostrazione'':
 \end{lemma}
 
 \begin{proof}
-    Poiché \(\alpha_1, \alpha_2\) son forme di contatto per $\xi$, vale che $\ker(\alpha_1) = \xi = \ker(\alpha_2)$.
-    $\alpha_1, \alpha_2$ possono essere viste come covettori nello spazio cotangente che stanno uno multiplo dell'altro tramite prodotto per scalare.
+    Poiché \(\alpha_1, \alpha_2\) sono forme di contatto per $\xi$, vale che $\ker(\alpha_1) = \xi = \ker(\alpha_2)$.
+    $\alpha_1, \alpha_2$ possono essere viste come covettori nello spazio cotangente che sono uno multiplo dell'altro tramite prodotto per scalare.
     Costruiamo $f$: sia $p \in \mathcal{M}$, scegliamo un generico vettore non-nullo $v_p \in T_p \mathcal{M} \setminus \ker \alpha_{1}|_p$.
     Definiamo $f : M \to \mathbb{R}$ puntuale come:
     \begin{equation*}
-        f(P) = \frac{\alpha_{1}|_p(v_p)}{\alpha_{2}|_p(v_p)}
+        f(p) = \frac{\alpha_{1}|_p(v_p)}{\alpha_{2}|_p(v_p)}
     \end{equation*}
 
     $f$ è indipendente dal vettore scelto nel sottospazio vettoriale 1-dimensionale $T_p \mathcal{M} \setminus \ker \alpha_{1}|_p$ perché qualsiasi vettore $U_p$ non-nullo nel sottospazio è risultato del riscalamento di $v_p$.
@@ -111,7 +111,7 @@ Vediamo come ottenere la distribuzione valutando il $\ker \alpha$: cerchiamo tut
     V_0 = A \partial_x + B \partial_y + A y \partial_z = B(\partial_y) + A(\partial_x + y \partial_z) \quad \Longrightarrow \quad \ker \alpha = \text{span}\{\partial_y, y \partial_z + \partial_x\} \quad \checkmark
 \end{equation*}
 
-Verifichiamo la condiz. di max. non-integrabilità:
+Verifichiamo la condizione di non-integrabilità massimale:
 \begin{align*}
     \odif{\alpha} & = - \sum_{i=1}^{n} \odif{(y^i \odif{x^i})}      \\
                   & = - \sum_{i=1}^{n} \odif{y^i} \wedge \odif{x^i}
@@ -128,10 +128,10 @@ Verifichiamo la condiz. di max. non-integrabilità:
 \begin{equation*}
     \left(\sum_{j=1}^{n} \odif{y^j} \wedge \odif{x^j}\right)^n = \sum_{\sum^r k_j = n} \binom{n}{k_1, \dots, k_r} \prod_{j=1}^{n} (\odif{y^j} \wedge \odif{x^j})^{k_j}
 \end{equation*}
-valutiamo il primo caso non banale e.g. $k_j = 2$: $(\odif{y^j} \wedge \odif{x^j})^2 = \odif{y^j} \wedge \odif{x^j} \wedge \odif{y^j} \wedge \odif{x^j} = - \odif{y^j} \wedge \odif{x^j} \wedge \odif{x^j} \wedge \odif{y^j} = 0$, grazie all'anticommutatività del prodotto wedge \(\omega \wedge \nu = - \nu \wedge \omega \Longrightarrow \omega \wedge \omega = 0\).
+valutiamo il primo caso non banale ad es. $k_j = 2$: $(\odif{y^j} \wedge \odif{x^j})^2 = \odif{y^j} \wedge \odif{x^j} \wedge \odif{y^j} \wedge \odif{x^j} = - \odif{y^j} \wedge \odif{x^j} \wedge \odif{x^j} \wedge \odif{y^j} = 0$, grazie all'anticommutatività del prodotto wedge \(\omega \wedge \nu = - \nu \wedge \omega \Longrightarrow \omega \wedge \omega = 0\).
 
 Quindi per $k_j \ge 2$ il termine $(\odif{y^j} \wedge \odif{x^j})^{k_j} = 0$.
-Allora esiste una sola possibilità tale per cui non si annulla, cioè il caso $k_j = 1, \: \forall j $, da cui si vede $\sum^n_j k_j = n$.
+Allora esiste una sola possibilità tale per cui non si annulli, cioè il caso $k_j = 1, \: \forall j $, da cui si vede $\sum^n_j k_j = n$.
 
 \begin{align*}
     \left(\sum_{j=1}^{n} \odif{y^j} \wedge \odif{x^j}\right)^n & = \binom{n}{1,1,\dots,1} \prod_{j=1}^{n} (\odif{y^j} \wedge \odif{x^j})               \\
@@ -154,20 +154,20 @@ in cui quest'ultima è una forma non-nulla su $\mathbb{R}^{2n+1}$. \checkmark
 La forma \( \alpha = \odif{z} - \sum_{i=1}^{n} y^i \odif{x^i} \) è detta \textbf{struttura di contatto standard} su $\mathbb{R}^{2n+1}$.
 
 \begin{definition}
-    Sia ($\mathcal{M}, \xi$) una varietà di contatto; una sottovarietà immersa $L$ di ($\mathcal{M}, \xi$) è detta \textbf{isotropa} se $T_p L \subset \xi_p, \; \forall p \in L \subset \mathcal{M}$, i.e. ogni spazio tangente è contenuto nella distribuzione.
+    Sia ($\mathcal{M}, \xi$) una varietà di contatto; una sottovarietà immersa $L$ di ($\mathcal{M}, \xi$) è detta \textbf{isotropa} se $T_p L \subset \xi_p, \; \forall p \in L \subset \mathcal{M}$, cioè ogni spazio tangente è contenuto nella distribuzione.
 \end{definition}
 
-Possiamo ottenere un risultato molto importante sulle sottovarietà isotrope: $L$ è isotropa \(\iff i^* \alpha = 0\) dove \(i : L \longrightarrow \mathcal{M}\) è detta \emph{immersione canonica} i.e. la funzione che mappa un punto di una sottovarietà in se stesso sulla varietà madre
+Possiamo ottenere un risultato molto importante sulle sottovarietà isotrope: $L$ è isotropa \(\iff i^* \alpha = 0\) dove \(i : L \longrightarrow \mathcal{M}\) è detta \emph{immersione canonica} cioè la funzione che mappa un punto di una sottovarietà in se stesso sulla varietà madre
 \[
     p \in L \mapsto p \in \mathcal{M}, \quad i(p) = p
 \]
 
-Se prendiamo il \emph{pushfprward} dell'immersione canonica, $\odif{i_p}$ prende un vettore $v \in T_p L$ e lo inietta formalmente in $T_p \mathcal{M}$, il che permette di passarlo in input ad $\alpha$ per riconoscerlo; il \emph{pullback} $i_p^*$ trasporta la 1-forma $\alpha : T\mathcal{M} \longrightarrow \mathbb{R}$ e ne restringe l'azione esclusivamente ad $L$. L'azione di queste due costruzioni si valuta tramite
+Se prendiamo il \emph{pushforward} dell'immersione canonica, $\odif{i_p}$ prende un vettore $v \in T_p L$ e lo inietta formalmente in $T_p \mathcal{M}$, il che permette di passarlo in input ad $\alpha$ per riconoscerlo; il \emph{pullback} $i_p^*$ trasporta la 1-forma $\alpha : T\mathcal{M} \longrightarrow \mathbb{R}$ e ne restringe l'azione esclusivamente ad $L$. L'azione di queste due costruzioni si valuta tramite
 \[
     (i^* \alpha )_p (v) = \alpha_p (\odif{i_p} v)
 \]
 
-Tramite quest'ultime possiamo ottenere la giustificazione della condizione necessaria e sufficiente tra isotropia e l'annullamento del pullback della forma di contatto, infatti per ogni $v \in T_p L$,
+Tramite queste ultime possiamo ottenere la giustificazione della condizione necessaria e sufficiente tra isotropia e l'annullamento del pullback della forma di contatto, infatti per ogni $v \in T_p L$,
 \[
     (i^* \alpha )_p (v) = \alpha_p (\odif{i_p} v) = 0 \quad \iff \quad v \in \xi_p
 \]
@@ -178,7 +178,7 @@ che vale perché $\xi = \ker \alpha$, quindi l'azione di $\alpha_p ( \odif{i_p}v
 La geometria di contatto è strettamente legata alla sua controparte su dimensioni pari, detta \emph{geometria simplettica}, poiché una forma di contatto induce un \emph{tensore simplettico} su ogni iperpiano di contatto
 
 \begin{definition}
-    Un 2-covettore $\omega$ che agisce su uno spazio vettoriale finito dimensionale $\mathbb{V}$ è detto \textbf{non-degenere} o \textbf{tensore simplettico} o \textbf{forma bilineare simplettica} se
+    Un 2-covettore $\omega$ che agisce su uno spazio vettoriale finito-dimensionale $\mathbb{V}$ è detto \textbf{non-degenere} o \textbf{tensore simplettico} o \textbf{forma bilineare simplettica} se
     \begin{equation*}
         \omega^n \neq 0 \tag*{Condizione di non-degenerazione}
     \end{equation*}
@@ -276,15 +276,15 @@ La geometria di contatto è strettamente legata alla sua controparte su dimensio
     Dunque vale III), cioè I) $\Longrightarrow$ III).
 \end{proof}
 
-Tornando alla definizione di tensore simplettico, possiamo notare una cosa importante: la parità (nel senso che il numero è pari) della dimensione di $\mathbb{V}$ può essere ottenuta dalla condizione di non-degenerazione.
+Tornando alla definizione di tensore simplettico, possiamo notare una cosa importante: il fatto che dimensione di $\mathbb{V}$ sia pari può essere ottenuto dalla condizione di non-degenerazione.
 Infatti un 2-covettore è un tensore covariante di rango 2 che agisce su $\mathbb{V} \times \mathbb{V}$, quindi è rappresentabile come una matrice $k \times k$.
-È importante ricordare che una $k$-forma differenziale $\omega \in \Omega^k(\mathcal{M})$ asswega ad ogni punto $p \in \mathcal{M}$ un tensore alternante $\omega_p \in \Lambda^k(T_p \mathcal{M})$.
+È importante ricordare che una $k$-forma differenziale $\omega \in \Omega^k(\mathcal{M})$ assegna a ogni punto $p \in \mathcal{M}$ un tensore alternante $\omega_p \in \Lambda^k(T_p \mathcal{M})$.
 $\omega_p$, per definizione, è una mappa multilineare che prende due vettori dello spazio tangente $T_p \mathcal{M}$ e restituisce un numero reale la 2-forma \(\omega_p : T_p \mathcal{M} \times T_p\mathcal{M} \longrightarrow \mathbb{R}\).
 Scegliendo una base \( \{ \mathbf{e}_i \} \) per $T_p \mathcal{M}$, un generico vettore si scrive $v = v^i e_i$; calcolando l'azione della 2-forma su due vettori tangenti generici $v$ e $w$
 \[
     \omega_p(v, w) = \omega(v^i e_i, w^j e_j) = v^i w^j \omega(e_i, e_j)
 \]
-I termini \(\omega_{ij} = \omega(e_i, e_j)\) sono i coefficienti della forma nella base scelta i.e. tale che valga
+I termini \(\omega_{ij} = \omega(e_i, e_j)\) sono i coefficienti della forma nella base scelta cioè tale che valga
 \[
     \omega = \frac{1}{2} \omega_{ij} e^i \wedge e^j
 \]
@@ -300,28 +300,28 @@ Valutiamo i due casi: \begin{itemize}
 \end{itemize}
 
 
-Adesso possiamo estendere tali definizioni delle forme bilineari simplettiche su spazi vettoriali ad una \emph{struttura simplettica} su varietà lisce.
+Adesso possiamo estendere tali definizioni delle forme bilineari simplettiche su spazi vettoriali a una \emph{struttura simplettica} su varietà lisce.
 \begin{definition}
-    \cite{lee_manifolds} Sia $\mathcal{M}$ una varietà liscia, una 2-forma non-degenere su $\mathcal{M}$ è una 2-forma $\omega$ tale che $\omega_p$ è un 2-covettore non degenere su $T_p \mathcal{M}$ per ogni $p \in \mathcal{M}$ (che rende $T_p \mathcal{M}$ uno spazio vettoriale simplettico).
+    \cite{lee_manifolds} Sia $\mathcal{M}$ una varietà liscia, una 2-forma non-degenere su $\mathcal{M}$ è una 2-forma $\omega$ tale che $\omega_p$ è un 2-covettore non-degenere su $T_p \mathcal{M}$ per ogni $p \in \mathcal{M}$ (che rende $T_p \mathcal{M}$ uno spazio vettoriale simplettico).
     La 2-forma $\omega$ è detta \textbf{forma simplettica} o \textbf{struttura simplettica}.
 \end{definition}
 
-Si presentano due osservazioni: dato che i suoi spazi tangenti devono essere 2m-dim, allora anche la varietà stessa sarà 2m-dim; inoltre, su una varietà di contatto (2m+1)-dim, la struttura di contatto associa un iperpiano 2m-dim in ogni spazio tangente.
+Si presentano due osservazioni: dato che i suoi spazi tangenti devono essere 2m-dimensionale, anche la varietà stessa sarà 2m-dimdimensionale; inoltre, su una varietà di contatto (2m+1)-dimensionale, la struttura di contatto associa un iperpiano 2m-dimdimensionale in ogni spazio tangente.
 La struttura di contatto induce una forma bilineare simplettica su ciascun iperpiano.
 
 \begin{lemma}
     Sia $(\mathcal{M}, \xi = \ker \alpha)$ una varietà di contatto, allora $(\xi_p, \odif{\alpha}|_{\xi_p})$ è un campo vettoriale simplettico dove $\odif{\alpha}|_{\xi_p}$ è definito come $\odif{\alpha}|_{\xi_p} : \xi_p \longrightarrow \xi_p^*$ tramite $v \mapsto \odif{\alpha}(v, \cdot)$
 \end{lemma}
 \begin{proof}
-    La condizione di non-integrabilità massimale richiede che $(\odif{\alpha})^n \neq 0$ ovunque, quindi $\odif{\alpha}|_{\xi_p}$ soddisfa anch'essa la condizionedi non-degenerazione per costruzione e sarà che $(\xi_p, \odif{\alpha}|_{\xi_p})$ è un campo vettoriale simplettico.
+    La condizione di non-integrabilità massimale richiede che $(\odif{\alpha})^n \neq 0$ ovunque, quindi $\odif{\alpha}|_{\xi_p}$ soddisfa anch'essa la condizione di non-degenerazione per costruzione e sarà che $(\xi_p, \odif{\alpha}|_{\xi_p})$ è un campo vettoriale simplettico.
 \end{proof}
 
 Notare che lo spazio viene equipaggiato con la \emph{restrizione} della 2-forma $\odif{\alpha}$, $\odif{\alpha}|_{\xi_p}$ che agisce prendendo $v \in \xi_p$ e mandandolo in un covettore $\xi_p$ applicando $\odif{\alpha}(v, \cdot)$.
 
-L'esistenza di una forma bilineare simplettiva su uno spazio vettoriale forniscve una nozione generalizzata di ortogonalità, come per il prodotto interno, con l'aggiunta che i tensori simplettici sono prodotti antisimmetrici.
+L'esistenza di una forma bilineare simplettica su uno spazio vettoriale fornisce una nozione generalizzata di ortogonalità, come per il prodotto interno, con l'aggiunta che i tensori simplettici sono prodotti antisimmetrici.
 
 \begin{definition}
-    Dato un sottospazio vattoriale $S$ di uno spazio vettoriale simplettico ($\mathbb{V}, \omega$), si definisce il \textbf{complemento simplettico}
+    Dato un sottospazio vettoriale $S$ di uno spazio vettoriale simplettico ($\mathbb{V}, \omega$), si definisce il \textbf{complemento simplettico}
     \[
         S^\perp = \{ v \in \mathbb{V} | \omega(v, w) = 0, \; \forall w \in S\}
     \]
@@ -335,7 +335,7 @@ L'esistenza di una forma bilineare simplettiva su uno spazio vettoriale forniscv
 \end{proposition}
 
 \begin{definition}
-    Se $\dim L = n$, diremo che $L$ è una sottovarietà \textbf{Legendriana} di $\mathcal{M}$.
+    Se $\dim L = n$, diremo che $L$ è una sottovarietà \textbf{legendriana} di $\mathcal{M}$.
 \end{definition}
 
 \begin{proof}
@@ -344,17 +344,17 @@ L'esistenza di una forma bilineare simplettiva su uno spazio vettoriale forniscv
     \]
     inoltre \[
         \odif{(i^*\alpha)} = 0 \quad \Longrightarrow \quad i^* (\odif{\alpha}) = 0
-    \] Quindi \( \forall u,v \in T_p L \), vale \( \odif{\alpha}|_{\xi|_p} (u,v) = 0 \). L'ultimo Lemma garantisce che, se dotato di $\odif{a}|_{\xi_p}$, $\xi_p$ è un campo vettoriale simplettico, quindi posso definire il complemento simplettico di $T_p L$:
+    \] Quindi \( \forall u,v \in T_p L \), vale \( \odif{\alpha}|_{\xi|_p} (u,v) = 0 \). L'ultimo Lemma garantisce che, se dotato di $\odif{\alpha}|_{\xi_p}$, $\xi_p$ è un campo vettoriale simplettico, quindi possiamo definire il complemento simplettico di $T_p L$:
     \[
-        (T_p L)^\perp = \{ v \in \xi_p | \odif{a}|_{\xi_p} (u,v)= 0, \; \forall u \in T_p L \}
+        (T_p L)^\perp = \{ v \in \xi_p | \odif{\alpha}|_{\xi_p} (u,v)= 0, \; \forall u \in T_p L \}
     \]
-    Dato che \(  \odif{a}|_{\xi_p} (u,v)= 0, \; \forall u, v \in T_p L  \), allora
+    Dato che \(  \odif{\alpha}|_{\xi_p} (u,v)= 0, \; \forall u, v \in T_p L  \), allora
     \[
         T_p L \subset (T_p L)^\perp \quad \Longrightarrow \quad \dim T_p L \leq \dim (T_p L)^\perp
     \]
     Costruiamo una mappa lineare \( \varphi : \xi_p \longrightarrow T_p^* L \), definita tramite \( \varphi (v)(w) = \odif{\alpha} (v, w)\) dove $v \in \xi_p$ e $w \in T_p L$.
 
-    Dato che $\odif{\alpha}|_{\xi_p}$ è non-degenere, la mappa è un isomorfisomo lineare suriettivo tale che
+    Dato che $\odif{\alpha}|_{\xi_p}$ è non-degenere, la mappa è un isomorfismo lineare suriettivo tale che
     \[
         \varphi(T_p L) \simeq T_p L \quad \Longrightarrow \quad \ker \varphi = (T_p L)^\perp
     \]
@@ -371,14 +371,14 @@ L'esistenza di una forma bilineare simplettiva su uno spazio vettoriale forniscv
     \end{align*}
 \end{proof}
 
-Questa proposizione e la sua dimostrazione mostrano due concetti chiave: per prima cosa, la distribuzione di iperpiani $\xi$ \emph{non} ammette una \emph{varietà integrale} dove definiamo \cite[Chapter 19]{lee_manifolds} quest'ultima come una sottovarietà $\mathcal{N} \subseteq \mathcal{M}$ non-vuota immersa tale che
+Questa proposizione e la sua dimostrazione mostrano due concetti chiave: per prima cosa, la distribuzione di iperpiani $\xi$ \emph{non} ammette \emph{varietà integrali}, definite \cite[Chapter 19]{lee_manifolds} come delle sottovarietà $\mathcal{N} \subseteq \mathcal{M}$ non-vuote immerse tali che
 \[
     T_p \mathcal{N} = D_p, \; \forall p \in \mathcal{N}
 \]
 in cui $D$ è la distribuzione liscia $D \subseteq T \mathcal{M}$.
 Quindi, la distribuzione di iperpiani $\xi$ non ammette una sottovarietà immersa $S$ che soddisfi $T_p S = \xi_p, \; \forall p \in S$.
 
-Infatti le sottovarietà tangenti immerse hanno dimensione alpiù metà di quella della distribuzione.
+Infatti le sottovarietà tangenti immerse hanno dimensione al più metà di quella della distribuzione.
 
 Oltre a ciò, tale proposizione mostra come la geometria di contatto è strettamente legata alla geometria simplettica; si può utilizzare la nozione di varietà simplettica per creare una varietà di contatto.
 
@@ -388,7 +388,7 @@ Sia data una varietà differenziabile $\mathcal{M}$, $X$ campo vettoriale liscio
 \[
     F^X : \mathbb{R} \times \mathcal{M} \longrightarrow \mathcal{M} \; \text{ tale che } \; F^X(t, p) \coloneqq F^X_t(p) = \gamma_p (t)
 \]
-con $\gamma$ \emph{curva integrale} di X i.e.
+con $\gamma$ \emph{curva integrale} di X cioè
 \[
     \gamma : I \subseteq \mathbb{R} \longrightarrow \mathcal{M} \; \text{ tale che } \; X(\gamma(t_0))=\dot\gamma (t_0)
 \]
@@ -398,13 +398,13 @@ Allora \cite{lee_manifolds}, per un generico campo vettoriale $Y$ su $\mathcal{M
 \end{equation}
 
 \begin{definition}
-    \cite{geiges_contact} Sia ($\mathcal{M}, \omega$) varietà simplettica (2n+2)-dim, i.e. $\omega$ è una 2-forma su $\mathcal{M}$ chiusa ($\odif{\omega} = 0$) e non-degenere ($\omega^{n+1} \neq 0$). Un campo vettoriale $X$ è detto \textbf{di Liouville} se
+    \cite{geiges_contact} Sia ($\mathcal{M}, \omega$) varietà simplettica (2n+2)-dimensionale, cioè $\omega$ è una 2-forma su $\mathcal{M}$ chiusa ($\odif{\omega} = 0$) e non-degenere ($\omega^{n+1} \neq 0$). Un campo vettoriale $X$ è detto \textbf{di Liouville} se
     \begin{equation}
         \mathcal{L}_X \omega = \omega
     \end{equation}
 \end{definition}
 
-Possiamo riscrivere la condizione di Liouvile, tramite la \emph{formula di Cartan}
+Possiamo riscrivere la condizione di Liouville, tramite la \emph{formula di Cartan}
 \begin{equation}
     \mathcal{L}_X = \operatorname{d} \circ \iota_X + \iota_X \circ \operatorname{d}
 \end{equation}
@@ -417,11 +417,11 @@ dove bisogna prestare attenzione al fatto che $\iota_X$ è la \emph{contrazione}
 \end{align*}
 
 Allora la 1-forma $\alpha = \iota_X \omega$ definisce una \emph{forma di contatto} su qualsiasi $\xi$ in $\mathcal{M}$ trasversa a $X$.
-Infatti, valutando la condizione di non-integrabilità massimale e sostiutendo dentro
+Infatti, valutando la condizione di non-integrabilità massimale e sostituendo dentro
 \[
     \alpha \wedge (\odif{\alpha})^n = \iota_X \omega \wedge \left(\odif{(\iota_X \omega)}\right)^n = \iota_X \omega \wedge \omega^n
 \]
-Diamo adesso un paio di proprietà che saranno utili a seguire.
+Diamo adesso un paio di proprietà che saranno utili in seguito.
 \begin{property}
     Date due forme differenziali $\mu, \nu$ vale che
     \begin{equation}
@@ -438,11 +438,11 @@ Prendiamo la forma \( \iota_X (\omega \wedge \omega^n) = (\iota_X \omega) \wedge
 \end{align*}
 usiamo la seconda proprietà
 \begin{align*}
-    \iota_X (\omega^{n+1}) & = \iota_X (\omega \wedge \omega^n) =                                                                                                         \\
-                           & = (\iota_X \omega) \wedge \omega^n + (-1)^{\deg \omega} \omega \wedge \iota_X \omega^n =                                                     \\
-                           & = (\iota_X \omega) \wedge \omega^n + \omega \wedge \iota_X(\omega^n) =                                                                       \\
-                           & = (\iota_X \omega) \wedge \omega^n + \omega \wedge \iota_X (\omega \wedge \omega^{n-1}) =                                                    \\
-                           & = (\iota \omega) \wedge \omega^n + \omega \wedge \left[ (\iota_X \omega) \wedge \omega^{n-1} + \omega \wedge \iota_X (\omega^{n-2})\right] = \\
+    \iota_X (\omega^{n+1}) & = \iota_X (\omega \wedge \omega^n) =                                                                                                           \\
+                           & = (\iota_X \omega) \wedge \omega^n + (-1)^{\deg \omega} \omega \wedge \iota_X \omega^n =                                                       \\
+                           & = (\iota_X \omega) \wedge \omega^n + \omega \wedge \iota_X(\omega^n) =                                                                         \\
+                           & = (\iota_X \omega) \wedge \omega^n + \omega \wedge \iota_X (\omega \wedge \omega^{n-1}) =                                                      \\
+                           & = (\iota_X \omega) \wedge \omega^n + \omega \wedge \left[ (\iota_X \omega) \wedge \omega^{n-1} + \omega \wedge \iota_X (\omega^{n-2})\right] = \\
                            & = (\iota_X \omega) \wedge \omega^n + \omega \wedge (\iota_X \omega) \wedge \omega^{n-1} + \omega \wedge \omega \wedge \iota_X (\omega^{n-2})
 \end{align*}
 notiamo che nell'ultima espressione vale che
@@ -465,17 +465,17 @@ Forniamo un metodo per confrontare due strutture e valutare se sono o meno la st
     \[
         \odif{f}(\xi_1) = \xi_2 \quad \text{dove} \quad \odif{f} \coloneqq f_* : T\mathcal{M}_1 \longrightarrow T\mathcal{M}_2
     \]
-    Se $ \xi_i = \ker \alpha $ per $ i = 1, 2 $, allora $f$ è detta \textbf{trasformazione di contatto} o \textbf{contattomorfismo}, e ciò equivale all'esistenza di una funzione liscia non-nulla $\lambda : \mathcal{M}_1 : \longrightarrow \mathbb{R}$ tale che
+    Se $ \xi_i = \ker \alpha $ per $ i = 1, 2 $, allora $f$ è detta \textbf{trasformazione di contatto} o \textbf{contattomorfismo}, e ciò equivale all'esistenza di una funzione liscia non-nulla $\lambda : \mathcal{M}_1 \longrightarrow \mathbb{R}$ tale che
     \[
         f^* \alpha_2 = \lambda \alpha_1 \quad \text{dove} \quad f^* : T^*\mathcal{M}_1 \longrightarrow T^*\mathcal{M}_2
     \]
     Infine, se $\lambda = 1$, diremo che il contattomorfismo è \textbf{esatto}.
 \end{definition}
 
-\subsection{i-jets e 1-grafici}
-Introduciamo un paio di esempi che chiariscano l'utilità delle strutture simplettica e di contatto discusse fin qua.
+\subsection{1-jet e 1-grafici}
+Introduciamo un paio di esempi che chiariscano l'utilità delle strutture simplettica e di contatto discusse fin qui.
 
-Possiamo usare le funzioni lisce su una varietà per creare una varietà di contatto: poniamo ci nello spazio Euclideo per semplicità, ma potremmo generalizzarlo a varietà lisce generiche.
+Possiamo usare le funzioni lisce su una varietà per creare una varietà di contatto: poniamoci nello spazio euclideo per semplicità, ma potremmo generalizzarlo a varietà lisce generiche.
 Sia $q$ un punto in $\mathbb{R}^n$ e $\varphi : \mathbb{R}^n \longrightarrow \mathbb{R}$ funzione liscia. Chiameremo \emph{1-jet} in $q$ di $\varphi$, etichettato come $J^1_q (\varphi)$, il polinomio di Taylor di $\varphi$ troncato al prim'ordine
 \[
     J^1_q(\varphi) = \varphi(q) + \pdv{\varphi}{x^i} (q) x^i
@@ -483,26 +483,26 @@ Sia $q$ un punto in $\mathbb{R}^n$ e $\varphi : \mathbb{R}^n \longrightarrow \ma
 dove $ q = (x^1, \dots, x^n) \in \mathbb{R}^n $.
 
 La nozione di 1-jet in $q$ di $\varphi$ è in relazione 1-1 con un punto di $\mathbb{R}^{2n + 1}$.
-In questo modo si arriva ad una nozione di \emph{struttura di contatto} naturale per lo spazio degli 1-jets.
-Data una funzione liscia $\varphi$, il suo differenziale induce una sottovarietà Legendriana: consideriamo l'\emph{1-grafico} di una funzione $\varphi$, detto anche \emph{prolungamneto di ordine 1}
+In questo modo si arriva a una nozione di \emph{struttura di contatto} naturale per lo spazio degli 1-jet.
+Data una funzione liscia $\varphi$, il suo differenziale induce una sottovarietà legendriana: consideriamo l'\emph{1-grafico} di una funzione $\varphi$, detto anche \emph{prolungamento di ordine 1}
 \[
     \Gamma(\varphi) = \left\{ \left( q, \varphi(q), \pdv{\varphi}{x}(q) \right) \right\} \subset J^1(\mathbb{R}^n, \mathbb{R})
 \]
 dove $ J^1(\mathbb{R}^n, \mathbb{R}) $ è l'insieme degli 1-grafici delle funzioni $ \mathbb{R}^n \longrightarrow \mathbb{R} $
 
-L'1-forma $\alpha = \odif{y} - p \odif{x} $, dove $y$ è la coordinata $(n + 1)$-esima - corrispondente a $\varphi(q)$ - viene \emph{pullback-ed} a zero su tutti gli 1-grafici dalla mappa di immersione $i: \Gamma(\varphi) \longrightarrow J^1(\mathbb{R}^n, \mathbb{R})$
+L'1-forma $\alpha = \odif{y} - p \odif{x} $, dove $y$ è la coordinata $(n + 1)$-esima, corrispondente a $\varphi(q)$, e si annulla per pull back su tutti gli 1-grafici dalla mappa di immersione $i: \Gamma(\varphi) \longrightarrow J^1(\mathbb{R}^n, \mathbb{R})$
 \[
     i^* \alpha = i^\alpha (\odif{y} - p \odif{x}) = \odif{\varphi} - \pdv{\varphi}{x} \odif{x} = 0
 \]
-Quindi, gli 1-grafici di funzioni lisce sono sottovarietà Legendriane.
+Quindi, gli 1-grafici di funzioni lisce sono sottovarietà legendriane.
 
 \subsection{Fibrato cotangente proiettivizzato}
 
-Data una qualsiasi varietà liscia $ (n + 1) $-dim $B^{n + 1}$, si può creare una varietà di contatto tramite la seguente costruzione: un \emph{elemento di contatto} in un punto $p \in B$ è un iperpiano $H_p$ nello spazio tangente $T_p B$.
-Si può pensare all'elemento di contatto come l'individuazione del set di $n$ derivate parziali di un 1-jet dell'esempio precedente.
+Data una qualsiasi varietà liscia $ (n + 1) $-dimensionale $B^{n + 1}$, si può creare una varietà di contatto tramite la seguente costruzione: un \emph{elemento di contatto} in un punto $p \in B$ è un iperpiano $H_p$ nello spazio tangente $T_p B$.
+Si può pensare all'elemento di contatto come l'individuazione dell'insieme di $n$ derivate parziali di un 1-jet dell'esempio precedente.
 
-La nozione di iperpiano $H_p$ è equivalente ad una \emph{classe di equivalenza} di covettori $\alpha_p \in T_p^* B$ che annulla ogni vettore in $H_p$.
-La relazione di equivalenza è ottenuta usando il fatto che due vettori linearmente dipendenti spannano lo stesso iperpiano: ciò elimina la ridondanza che rendeva problematico associare ad un iperpiano un set di covettori, indipendentemente dalla loro "magnitudine".
+La nozione di iperpiano $H_p$ è equivalente a una \emph{classe di equivalenza} di covettori $\alpha_p \in T_p^* B$ che annulla ogni vettore in $H_p$.
+La relazione di equivalenza è ottenuta usando il fatto che due vettori linearmente dipendenti generano lo stesso iperpiano: ciò elimina la ridondanza che rendeva problematico associare a un iperpiano un insieme di covettori, indipendentemente dalla loro "magnitudine".
 
 \begin{remark}
     Ricordiamo che, come espresso precedentemente da \cite[Capitolo 2, Foundations of Special Relativity]{misner-wheeler-thorne_gravitation} Misner, Thorne, Wheeler, la norma di un covettore rappresenta la densità del fascio di piani ortogonali al vettore tangente che formano la nozione intuitiva di covettori.
@@ -510,17 +510,66 @@ La relazione di equivalenza è ottenuta usando il fatto che due vettori linearme
 
 Quindi, gli elementi di contatto in $p \in B$ sono anche classi di equivalenza di covettori in $T_p^* B$.
 Lo spazio di tutti gli elementi di contatto al punto $p$, per ogni $p \in B$, può essere rappresentato come il \emph{fibrato cotangente proiettivizzato} $\mathbb{P}T_p^* B$.
-Tale spazio ha struttura di fibrato dove una fibra esemplificatica in $p$ è lo spazio dei raggi in $T_p^* B$.
+Tale spazio ha struttura di fibrato dove una fibra esemplificativa in $p$ è lo spazio dei raggi in $T_p^* B$.
 
 \begin{remark}
     \begin{enumerate}
-        \item un raggio è una retta vettoriale (i.e. un sottospazio 1-dim)
-        \item la proiettivizzazione è la formalizzazione più rigorosa di ciò che abbiamo eseguito tramite l'associazione ad una "direzione" di covettori tutti i covettori che giaciono su di essa
+        \item un raggio è una retta vettoriale (cioè un sottospazio 1-dimensionale)
+        \item la proiettivizzazione è la formalizzazione più rigorosa di ciò che abbiamo eseguito tramite l'associazione a una "direzione" di covettori tutti i covettori che giacciono su di essa
     \end{enumerate}
 \end{remark}
-Scegliendo una rappresentazione, un punto di $\mathbb{P}T_p^* B$ è scrivibile come $(u, x^1, \dots, x^n, p^1, \dots, p^n)$ dove $u, x^1, \dots,x^n$ sono coordinate per B e $p^1, \dots, p^n$ sono le coordinate nella base per i covettori.
-Riprendenso l'esempio degli 1-jets, $u$ sono i possibili valori di una funzione di $x^1, \dots, x^n$ a valori reali e $p^1, \dots, p^n$ i possibili valori delle derivate parziali della funzione ripsetto alle $x^i$ in quel punto di $B$.
+Scegliendo una rappresentazione, un punto di $\mathbb{P}T_p^* B$ è scrivibile come
+\[
+    (u, x^1, \dots, x^n, p^1, \dots, p^n)
+\]
+dove $u, x^1, \dots,x^n$ sono coordinate per B e $p^1, \dots, p^n$ sono le coordinate nella base per i covettori.
+Riprendendo l'esempio degli 1-jet, $u$ sono i possibili valori di una funzione di $x^1, \dots, x^n$ a valori reali e $p^1, \dots, p^n$ i possibili valori delle derivate parziali della funzione rispetto alle $x^i$ in quel punto di $B$.
 
 \subsection{Meccanica hamiltoniana}
 
-Passiamo ad un'applicazione decisamente più nota.
+Queste strutture descritte fino a qui emergono in vari modi in fisica: uno dei modi più noti è la formulazione lagrangiana della meccanica classica.
+Assumiamo che i sistemi siano descritti da un'azione $S$, definita come
+\[
+    S[\gamma(t)] = \int_\gamma \mathcal{L} (q, \dot q, t) \odif{t}
+\]
+dove $S$ è un funzionale di un cammino $\gamma$ nello spazio delle fasi e $q$ sono le coordinate generalizzate; la soluzione classica delle equazioni del moto è il percorso $\gamma(t)$ che estremizza l'azione $S$ ed è ottenibile risolvendo le equazioni di Eulero-Lagrange.
+La formulazione hamiltoniana è collegata a quella lagrangiana tramite la trasformata di Legendre: sia $H(q, p, t)$ l'hamiltoniana del sistema, dove $p$ sono i momenti coniugati $\frac{\mathcal{L}}{\dot q}$, allora, data la relativa lagrangiana $\mathcal{L}(q, \dot q, t)$, scriveremo
+\[
+    H(q, p, t) = p \dot q - \mathcal{L}(q, \dot q, t) \qquad \text{quindi} \qquad S = \int_\gamma (p \dot q - H) \odif{t}
+\]
+
+Supponiamo che il pullback agisca sulle forme differenziali di $\mathcal{M}$ riportandole su $\mathbb{R}$, dove $\mathbb{R}$ è la varietà di partenza del tempo con vettori tangenti $\odv{}{t}$ e $\mathcal{M}$, la varietà di arrivo, è lo spazio delle fasi hamiltoniano $\{ (q, p, t) \}$: consideriamo $\gamma : \mathbb{R} \longrightarrow \mathcal{M}$ che parametrizza le traiettorie in $\mathcal{M}$ tramite la coordinata temporale.
+Quindi
+\[
+    (\gamma^* \alpha) (v) = \alpha (\odif{\gamma}(v))
+\]
+
+Valutiamo
+\begin{equation}
+    \alpha = p \odif{q} - H \odif{t} \tag*{\textbf{Forma di Poincaré-Cartan}}
+\end{equation}
+Poniamo $v = \odv{}{t}$, quindi il vettore
+\begin{align*}
+    \odif{\gamma} \left( \odv{}{t} \right) & = \odv{q}{t} \pdv{}{q} + \odv{p}{t} \pdv{}{p} + \odv{t}{t} \pdv{}{t} = \\
+                                           & = \dot q \pdv{}{q} + \dot p \pdv{}{p} + \pdv{}{t}
+\end{align*}
+da cui, $\alpha (\odif{\gamma}(v))$ :
+\begin{align*}
+    \alpha\left(\odif{\gamma}\left(\odv{}{t}\right)\right) & = (p \odif{q} - H \odif{t}) \left( \dot q \pdv{}{q} + \dot p \pdv{}{p} + \pdv{}{t} \right) =                                                                            \\
+                                                           & = p \dot q \odif{q} \pdv{}{q} - H \dot q \odif{t} \pdv{}{q} + \dot p p \odif{q} \pdv{}{p} - H \dot p \odif{t} \pdv{}{p} + p \odif{q} \pdv{}{t} - H \odif{t} \pdv{}{t} =
+\end{align*}
+
+\begin{remark}
+    Sappiamo che vale $\odif{x^i}(\partial x_j) = \delta^i_j$
+\end{remark}
+Otteniamo
+\begin{align*}
+    \alpha \left( \odif{\gamma} \left( \odv{}{t} \right) \right)                   & = p \dot q - H                                     \\
+    \Longrightarrow \qquad \left( \gamma^* \alpha \right) \left( \odv{}{t} \right) & = p \dot q - H                                     \\
+                                                                                   & = (p \dot q - H) \odif{t} \left( \odv{}{t} \right) \\
+    \Longrightarrow \qquad \left( \gamma^* \alpha \right)                          & = (p \dot q - H) \odif{t}
+\end{align*}
+sostituendo, si ottiene infine:
+\begin{equation}
+    S = \int_\gamma \gamma^* \alpha
+\end{equation}

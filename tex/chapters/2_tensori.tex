@@ -39,11 +39,11 @@ Prendiamo ora in considerazione una classe molto importante di tensori: sia $\si
     $\rho \in T^k\mathbb{V}$ è detto \textbf{simmetrico} se
     \[
         \rho(\mathbf{v}_1, \dots, \mathbf{v}_k) = \rho(\sigma(\mathbf{v}_1), \dots, \sigma(\mathbf{v}_k)),
-    \]oppure, se
+    \]
+    oppure, \textbf{a simmetria alterna} se
     \[
         \rho(\mathbf{v}_1, \dots, \mathbf{v}_k) = \operatorname{sgn}(\sigma)\rho(\sigma(\mathbf{v}_1), \dots, \sigma(\mathbf{v}_k))
     \]
-    sarà detto \textbf{a simmetria alterna}.
     Gli insiemi di tensori simmetrici e a simmetria alterna saranno rispettivamente indicati da $\Sigma^k\mathbb{R}$ e $\Lambda^k\mathbb{V}$.
 \end{definition}
 Dato un generico tensore covariante $\rho \in T^k\mathbb{V}$, esistono due mappe per ottenerne uno simmetrico o alternante simmetrico:
@@ -80,7 +80,7 @@ Potrà essere utile scrivere un elemento di $\Lambda^k\mathbb{V}$ come
 \[
     \omega = \frac{1}{k!}\omega_{i_1, \dots, i_k} \bm{\beta}_{i_1} \wedge \cdots \wedge \bm{\beta}_{i_k}
 \]
-in cui non è più importante l'ordinamento degli indici richiesto alla proposizione precedente, a causa del quale compare il fattore $1/k!$ e i coefficienti $\omega_{i_1, \dots, i_k}$ sono completamente \emph{antisimmetrici}. La struttura che abbiamo dato fin'ora di tensori simmetrici e simmetrici alternanti è una generalizzazione delle matrici simmetriche e antisimmetriche.
+in cui non è più importante l'ordinamento degli indici richiesto alla proposizione precedente, a causa del quale compare il fattore $1/k!$ e i coefficienti $\omega_{i_1, \dots, i_k}$ sono completamente \emph{antisimmetrici}. La struttura che abbiamo dato finora di tensori simmetrici e simmetrici alternanti è una generalizzazione delle matrici simmetriche e antisimmetriche.
 
 Consideriamo ora un esempio per chiarire: sia $\Lambda^2\mathbb{R}^3$ con $\{ \mathbf{e}_i \}$ base canonica e $\{ \bm{\epsilon}^j \}$ base duale. Sia $\omega \in \Lambda^2\mathbb{R}^3$
 \[
@@ -105,36 +105,36 @@ ma stiamo tralasciando una particolarità importante: riprendiamo l'esempio del 
     \alpha \otimes \beta \coloneqq \alpha_i \beta_j \bm{\beta}^i \otimes \bm{\beta}^j
 \]
 cioè di un tensore scrivibile come combinazione lineare dei prodotti tensoriali tra covettori diversi della base duale.
-Ma non tutti i tensori sono decomponibili, e.g.
+Ma non tutti i tensori sono decomponibili, ad es.
 \[
     \bm{\epsilon}^1 \otimes \bm{\epsilon}^2 + 2 \bm{\epsilon}^2 \otimes \bm{\epsilon}^2 \quad \in T^2\mathbb{R}^2
 \]
 non è rappresentabile nella forma $\alpha \otimes \beta$ con $\alpha, \beta \in (\mathbb{R}^2)^*$.
 
 Diamo ora una trattazione più formale: sia $S$ un generico insieme di elementi; cerchiamo di creare una sorta di combinazione lineare a prescindere dalla natura dei suoi elementi.
-Prendiamo le \emph{combinazioni lineari formali} di elementi di $S$, i.e. $\sum_i a_i x_i$ con $a_i \in \mathbb{R}, x_i \in S$.
+Prendiamo le \emph{combinazioni lineari formali} di elementi di $S$, cioè $\sum_i a_i x_i$ con $a_i \in \mathbb{R}, x_i \in S$.
 Formalmente diremo che una combinazione lineare formale è una funzione $f : S \longrightarrow \mathbb{R}$ nulla dappertutto a meno di un sottoinsieme \emph{finito} di $S$.
 Identifichiamo con $x^*$ la funzione nulla su tutto $S - \{ x_i \}$ con $x_i$ insieme dei punti di $S$ in cui $f \neq 0$, e poniamo $x^* (x_i)= 1$ vale allora che $f= \sum_i a_i x_i^*$.
-La struttura qua descritta rappresenta la nozione di \emph{spazio vettoriale libero}, detto $\mathbb{R} \langle S \rangle$, ossia l'insieme di tutte le combinazioni lineari formali da elementi di un insieme $S$.
+La struttura qui descritta rappresenta la nozione di \emph{spazio vettoriale libero}, detto $\mathbb{R} \langle S \rangle$, ossia l'insieme di tutte le combinazioni lineari formali da elementi di un insieme $S$.
 
 Adesso possiamo dare una nozione di prodotto tensore tra spazi più rigorosa.
 Siano $\mathbb{V}$ e $\mathbb{W}$ spazi vettoriali finito-dimensionali e ne costruiamo un altro fatto dalle combinazioni lineari formali di oggetti del tipo $(\alpha, \mu) \in \mathbb{V}^* \times \mathbb{W}^*$, visti come mappe multilineari $\mathbb{V}^* \times \mathbb{W}^* \longrightarrow \mathbb{R}$.
-Sia $I$ il sottospazio \emph{spannato} da tutti gli elementi del tipo
+Sia $I$ il sottospazio generato da tutti gli elementi del tipo
 \begin{align*}
     a(\alpha, \mu) - (                 & a \alpha, \mu)        \\
     a(\alpha, \mu) - (                 & \alpha, a \mu)        \\
     (\alpha + \alpha', \mu) - (\alpha, & \mu) - (\alpha', \mu) \\
     (\alpha, \mu + \mu') - (\alpha,    & \mu) - (\alpha, \mu')
 \end{align*}
-Notare che questi elementi a priori non sono uguali fra loro, perché non è garantita la bilinearità non sapendo la natura degli oggetti presenti in negli spazi duali.
+Notare che questi elementi a priori non sono uguali fra loro, perché non è garantita la bilinearità non sapendo la natura degli oggetti presenti negli spazi duali.
 \begin{definition}
     Ora definiamo il \textbf{prodotto tensore} tra $\mathbb{V}^*$ e $\mathbb{W}^*$ come
     \begin{equation}
         \mathbb{V}^* \otimes \mathbb{W}^* \coloneqq \mathbb{R}\left \langle \mathbb{V}^* \times \mathbb{W}^* \right \rangle / I
     \end{equation}
 \end{definition}
-Dove $A/B$ è l'operazione insiemistica del quoziente con la quale si chiede di creare un insieme di elementi di $A$ in cui gli elementi di $B$ sono considerati \emph{nulli}.
-Infatti, abbiamo chiesto che il prodotto tensore sia lo spazio vettoriale libero di elementi di $\mathbb{V}^* \times \mathbb{W}^*$, prendendo nulli gli elementi che spannano $I$: quindi, otteniamo automaticamente le formule di bilinearità
+dove $A/B$ è l'operazione insiemistica del quoziente con la quale si chiede di creare un insieme di elementi di $A$ in cui gli elementi di $B$ sono considerati \emph{nulli}.
+Infatti, abbiamo chiesto che il prodotto tensore sia lo spazio vettoriale libero di elementi di $\mathbb{V}^* \times \mathbb{W}^*$, prendendo nulli gli elementi che generano $I$: quindi, otteniamo automaticamente le formule di bilinearità
 \begin{align}
     a(\alpha \otimes \mu) = (a \alpha) \otimes \mu = \alpha \otimes (a \beta) \\
     \begin{cases}
@@ -157,7 +157,7 @@ Infatti, abbiamo chiesto che il prodotto tensore sia lo spazio vettoriale libero
 % \item
 % \end{itemize}
 Si enunciano, ora, un paio di risultati che mostrano come uno spazio tensoriale abbia proprietà di isomorfismo molto precise.
-In particolare, si può trovare un \emph{isomorfismo canonico}, detto anche \emph{naturale}, cioè un isomorfismo che relaziona esattamente gli oggetti di due spazi distinti, ma indipendentemente dalla scelta delle basi che li descrivono.
+In particolare, si può trovare un \emph{isomorfismo canonico}, detto anche \emph{naturale}, cioè un isomorfismo che mette in relazione esattamente gli oggetti di due spazi distinti, ma indipendentemente dalla scelta delle basi che li descrivono.
 Un isomorfismo generico cambierebbe la sua forma esplicita al variare delle basi dei due spazi, quello canonico no, per cui risulta che i due spazi sono intrinsecamente identici.
 Da un punto di vista simbolico, si passa da $\simeq$ a $=$ tra i due spazi.
 \begin{proposition}
@@ -173,7 +173,7 @@ La corrispondenza nel rango tra $T^k_{p+1}$ e le mappe multilineari definite sop
 In realtà bisogna prestare attenzione all'output delle funzioni: esse restituiscono un vettore, mentre un tensore è definito come una mappa che mappa nel campo dei reali.
 In questo modo stiamo creando una corrispondenza tra quelle mappe e uno spazio tensoriale che contiene un covettore in più (il "+1") che manderà l'output delle mappe in uno scalare.
 Per esempio un endomorfismo su uno spazio vettoriale è una matrice $\mathbb{V} \longrightarrow \mathbb{V}$.
-Per renderla un tensore dovrà restituire uno scalare, quindi apparterrà allo spazio tensoriale $T^1_1\mathbb{V}$, i.e. avrà rango totale 2.
+Per renderla un tensore dovrà restituire uno scalare, quindi apparterrà allo spazio tensoriale $T^1_1\mathbb{V}$, cioè avrà rango totale 2.
 
 \section{Fibrati tensoriali}
 Cerchiamo ora di rendere le strutture di spazi tensoriali covarianti, controvarianti e misti, dei fibrati \emph{tensoriali}.
@@ -208,7 +208,7 @@ Questo risultato è generalizzabile a un generico campo tensoriale, per cui un c
 Possiamo dare un risultato ancora più generale:
 \begin{lemma}
     Una mappa che sia o $\left( \bigtimes^k \mathcal{X}(\mathcal{M}) \right) \times \left( \bigtimes^r \Omega^1(\mathcal{M}) \right) \longrightarrow \mathcal{C}^\infty (\mathcal{M})$ \\
-    oppure $\left(\bigtimes^k \mathcal{X}(\mathcal{M})\right) \times \left(\bigtimes^{r-1} \Omega^1(\mathcal{M})\right) \longrightarrow \mathcal{X}(\mathcal{M}),$ è indotta da un campo tensoriale misto di rango (k,r) \textbf{se e solo se} essa è \textbf{multilineare} su $\mathcal{C}^\infty (\mathcal{M})$.
+    oppure $\left(\bigtimes^k \mathcal{X}(\mathcal{M})\right) \times \left(\bigtimes^{r-1} \Omega^1(\mathcal{M})\right) \longrightarrow \mathcal{X}(\mathcal{M})$ è indotta da un campo tensoriale misto di rango (k,r) \textbf{se e solo se} essa è \textbf{multilineare} su $\mathcal{C}^\infty (\mathcal{M})$.
 \end{lemma}
 Prestare attenzione a come si ripropone la questione degli indici tra un numero e il successivo ($r-1$ e $r$) a seconda della definizione della funzione e della natura del suo output: la prima mappa in una funzione reale liscia sulla varietà, la seconda mappa nello spazio vettoriale dato dalla sezione globale della varietà.
 %ORSO: lo spazio vettoriale X(M) è una sorta di covettore che mangia le funzioni lisce?
@@ -230,7 +230,7 @@ con $X_1, \dots, X_k$ campi vettoriali su $\mathcal{M}$.
 
 \section{Forme esterne e forme differenziali}
 
-Come descritto in letteratura da Arnold \cite{arnold_meccanica}, definiamo le forme esterne e ne diamo alcuni esempi.
+Come descritto in letteratura da Arnold~\cite{arnold_meccanica}, definiamo le forme esterne e ne diamo alcuni esempi.
 
 \begin{definition}
     Chiameremo \textbf{forma esterna di ordine k} o \textbf{k-forma} una funzione definita su k vettori, k-volte lineare e antisimmetrica.
@@ -248,11 +248,11 @@ Come descritto in letteratura da Arnold \cite{arnold_meccanica}, definiamo le fo
         \end{cases}
     \]
 \end{definition}
-Prendiamo qualche esempio, sempre da \cite{arnold_meccanica}.
-Sia dato un campo di forze $\mathbf{F}$ nello spazio euclideo $\mathbb{R}^3$, il lavoro ad esso definito $W$ per uno spostamento $\mathbf{\xi}$ è un' \textit{1-forma} definita su $\xi$.
+Prendiamo qualche esempio, sempre da Arnold~\cite{arnold_meccanica}.
+Sia dato un campo di forze $\mathbf{F}$ nello spazio euclideo $\mathbb{R}^3$, allora il lavoro ad esso definito $W$ per uno spostamento $\mathbf{\xi}$ è una \textit{1-forma} definita su $\xi$.
 
 Vediamo ora una \textit{2-forma}.
-Sia \textbf{v} campo uniforme di velocità di un liquido in uno spazio euclideo tridimensionale, il flusso del liquido attraverso la superficie di un parallelogramma, definito dai vettori $\xi_1$ e $\xi_2$, è una funzione bilineare, antisimmetrica su $\xi_1, \xi_2$, i.e. la 2-forma $\omega^2(\xi_1, \xi_2) = (v, \xi_1, \xi_2)$.
+Sia \textbf{v} campo uniforme di velocità di un liquido in uno spazio euclideo tridimensionale, allora il flusso del liquido attraverso la superficie di un parallelogramma, definito dai vettori $\xi_1$ e $\xi_2$, è una funzione bilineare, antisimmetrica su $\xi_1, \xi_2$, cioè la 2-forma $\omega^2(\xi_1, \xi_2) = (v, \xi_1, \xi_2)$.
 
 Sia dato un parallelepipedo di lati $\xi_1, \dots, \xi_n$ in $\mathbb{R}^n$ euclideo. Per tale oggetto si può definire il suo \textit{volume orientato} come una \textit{n-forma}
 \[
@@ -302,7 +302,7 @@ o alternativamente
 dove con $[j, i_1, \dots, i_k]$ si intende che si prendono gli indici completamente antisimmetrici.
 \begin{property} Si elencano le proprietà di questo operatore, detto anche \emph{derivata esterna}
     \begin{itemize}
-        \item d è ben definita indipendentemente dalla scelta delle coordinate
+        \item d è ben definito indipendentemente dalla scelta delle coordinate
         \item d è lineare su $\mathbb{R}$
         \item d$^2 = 0$
         \item dati $\omega \in \Omega^k(\mathcal{M})$ e $\rho \in \Omega^n(\mathcal{M})$, vale che $\odif{(\omega \wedge \rho)} = \odif{\omega} \wedge \rho + (-1)^k \omega \wedge \odif{\rho}$
