@@ -5,18 +5,18 @@ In questo capitolo si introducono le fondamenta concettuali della geometria diff
 \section{Varietà topologiche e varietà lisce}
 % \subsection{Spazi topologici}
 Si consideri la struttura di topologia $\tau$ come collezione di sottoinsiemi, detti \emph{aperti}, di un insieme $X$, detto \emph{supporto della topologia}.
-Questa collezione, per essere una topologia, è formata dal supporto, dal vuoto e dagli aperti; dovrà contenere l'unione arbitraria di aperti e l'intersezione \textit{finita} di aperti.
+Questa collezione, per essere una topologia, è formata dal supporto, dall'insieme vuoto e dagli aperti; dovrà contenere l'unione arbitraria di aperti e l'intersezione \textit{finita} di aperti.
 La coppia $(X, \tau)$ è detta \emph{spazio topologico}.
 
 L'idea di una topologia e degli aperti è quella di fornire una nozione più spendibile di distanza e distinguibilità tra oggetti di un insieme.
 
 Notare come la nozione di una topologia contiene la definizione assiomatica di aperto che non è una caratteristica intrinseca di un insieme.
-Inoltre, un'ipotetica descrizione di una specifica topologia dovrebbe comprendere tutti gli aperti che la compongono: risulta immediato che se l'insieme ne contiene «molti» o infiniti, questa descrizione diventa difficoltosa o impossibile.
+Inoltre, un'ipotetica descrizione di una specifica topologia dovrebbe comprendere tutti gli aperti che la compongono: risulta immediato che se l'insieme ne contiene infiniti, questa descrizione diventa difficoltosa o impossibile.
 
 Da ciò si introduce la nozione di \textit{base per una topologia}: l'idea è quella di trovare una sotto-collezione $\beta$ che garantisca che per ogni aperto e per ogni elemento dell'aperto di $\tau$, esista un aperto di $\beta$ che contenga il punto (l'elemento dell'aperto) e sia contenuto nell'aperto generico della topologia.
 Esiste un metodo che verifica e garantisce che una sotto-collezione sia di fatto una base di una topologia: il supporto deve essere dato dall'unione di tutti gli elementi della sotto-collezione candidata e, per ogni coppia di aperti e un punto nella loro intersezione, esiste un elemento della base che contenga il punto.
 
-Definita una base, definiamo uno spazio topologico \emph{secondo numerabile} se esiste una base per la topologia che sia numerabile.
+Data una base, definiamo uno spazio topologico \emph{secondo numerabile} se esiste una base per la topologia che sia numerabile.
 Oltre a ciò, vogliamo dotarci di una \emph{nozione di separabilità} tra punti: diciamo che uno spazio topologico è \emph{di Hausdorff} o \emph{separato} se la scelta della topologia fornisce la capacità di distinguere \emph{topologicamente} punti distinti. Più formalmente, se per ogni coppia di elementi dello spazio possiamo trovare una coppia di aperti \emph{disgiunti} associati rispettivamente ai due punti.
 
 % \subsection{Varietà topologiche}
@@ -24,10 +24,10 @@ Si cerca ora di formalizzare la nozione di «somiglianza» locale allo spazio eu
 Si prenda la nozione di continuità per funzioni su spazi topologici emulando quella dell'analisi matematica: $f: X_1 \rightarrow X_2$ è continua in $x \in X_1$ se, per ogni intorno $U_2$ di $f(x)$, (cioè un aperto contenente $f(x)$) esiste un aperto $U_1 \in X_1$ tale che $f(U_1) \subset U_2$.
 Da ciò si può formalizzare l'equivalenza topologica tra insiemi tramite omeomorfismi.
 \begin{definition}
-    Dati due spazi topologici $X$ e $Y$, si dicono \textbf{omeomorfi} se esiste una funzione tra essi che sia $\mathcal{C}^0$ (nel senso definito sopra), biettiva e con inversa $\mathcal{C}^0$. \\
+    Dati due spazi topologici $X$ e $Y$, si dicono \textbf{omeomorfi} se esiste una funzione tra essi che sia continua, biettiva e con inversa continua. \\
     La funzione così definita è detta \textbf{omeomorfismo}.
 \end{definition}
-\begin{definition}[Spazio localmente euclideo]
+\begin{definition}
     Sia $M$ spazio topologico, esso è detto \textbf{localmente euclideo} di dimensione $n$, se $\forall p \in M$, $\exists U $ intorno di $p$ omeomorfo a un aperto di $\mathbb{R}^n$.
 \end{definition}
 \begin{definition}
@@ -35,12 +35,11 @@ Da ciò si può formalizzare l'equivalenza topologica tra insiemi tramite omeomo
     Se $\varphi(p) = 0$, si dice che la carta è centrata in $p$.
 \end{definition}
 Si può, finalmente, dare la definizione di varietà topologica.
-\begin{definition}[Varietà topologica]
+\begin{definition}
     Sia $\mathcal{M}$ uno spazio topologico. $\mathcal{M}$ si dice \textbf{varietà topologica} se è: di Hausdorff, secondo numerabile e localmente euclideo.
 \end{definition}
 Alcuni esempi che possiedono la struttura di varietà topologica sono la sfera $S^n$ immersa in $\mathbb{R}^{n+1}$ e lo spazio proiettivo $\mathbb{RP}^n$ (insieme delle rette passanti per l'origine in $\mathbb{R}^{n+1}$).
 
-% \subsection{Varietà lisce}
 Si prova ora a dare un'idea di funzione liscia: si potrebbe ingenuamente definire $f : \mathcal{M} \rightarrow \mathbb{R}$ \emph{liscia} in $p \in \mathcal{M}$ se
 \[
     \hat f_\varphi \coloneqq f \circ \varphi^{-1} : \mathbb{R}^n \rightarrow \mathbb{R}
@@ -53,7 +52,11 @@ Per ovviare a questa dipendenza si introducono gli \emph{atlanti}.
 \begin{definition}
     Un \textbf{diffeomorfismo} è una mappa $U \subset \mathbb{R}^n \rightarrow V \subset \mathbb{R}^m$ liscia, biettiva e con inversa liscia.
 \end{definition}
-Due carte di coordinate $(U_i, \varphi_i)$ e $(U_j, \varphi_j)$ si dicono \emph{$\mathcal{C}^\infty$-compatibili} se \mbox{$U_{ij} = U_i \bigcap U_j = \varnothing$} o se la \emph{mappa di transizione} $\varphi_{ij}$ è un diffeomorfismo, dove la mappa di transizione è la mappa composta
+Due carte di coordinate $(U_i, \varphi_i)$ e $(U_j, \varphi_j)$ si dicono \emph{$\mathcal{C}^\infty$-compatibili} se
+\[
+    U_{ij} = U_i \bigcap U_j = \varnothing
+\]
+o se la \emph{mappa di transizione} $\varphi_{ij}$ è un diffeomorfismo, dove la mappa di transizione è la mappa composta
 \[
     \varphi_{ij} \coloneqq \varphi_j \circ \varphi_i^{-1} : \varphi_i (U_{ij}) \rightarrow \varphi_j (U_{ij})
 \]
@@ -64,7 +67,7 @@ Due carte di coordinate $(U_i, \varphi_i)$ e $(U_j, \varphi_j)$ si dicono \emph{
 La struttura di atlante, verificata tramite la regolarità delle funzioni di transizione, rimuove l'ambiguità della definizione di funzione liscia su $\mathcal{M}$: $f$ sarà liscia se le sue composizioni con le inverse degli omeomorfismi dell'atlante sono tutte lisce.
 
 Adesso si ha tutto ciò che serve per definire le varietà lisce.
-\begin{definition}[Varietà lisce]
+\begin{definition}
     Data $\mathcal{M}$ varietà topologica dotata di un atlante massimale, allora $\mathcal{M}$ è detta \textbf{varietà liscia} o \textbf{differenziabile}.
 \end{definition}
 Allora risulta immediato che una funzione su $\mathcal{M}$ sarà liscia se, per ogni carta dell'atlante massimale, vale che $f \circ \varphi^{-1}$ è liscia.
@@ -119,11 +122,15 @@ Si consideri $\mathbb{R}^n$ dotato di base canonica $\{ \mathbf{e}_i\}_{i=1}^n$ 
 \begin{corollary}
     $\{ \left.\partial_i \right|_{p} \}$ è una base per $T_p\mathbb{R}^n$.
 \end{corollary}
-Si può quindi fornire una definizione di spazio vettoriale «alternativa» a quella standard: un campo vettoriale liscio $X$ su $U \in \mathbb{R}^n$ è una funzione $p \in U \rightarrow X_p \in T_p\mathbb{R}^n$, ogni elemento è rappresentabile da $X = a^i(\mathbf{x}) \partial_i$.
-In particolare vale che:
-\[
-    \forall p \in U, \quad (X \cdot f)(p) = X_p \cdot f = a^i(p) \left.\partial_i \right|_p f
-\]
+Si può quindi fornire una definizione di campo vettoriale «alternativa» a quella standard.
+
+\begin{definition}\label{def:campo_vettoriale}
+    Un campo \textbf{vettoriale liscio} $X$ su $U \in \mathbb{R}^n$ è una funzione $p \in U \rightarrow X_p \in T_p\mathbb{R}^n$, ogni elemento è rappresentabile da $X = a^i(\mathbf{x}) \partial_i$.
+    In particolare vale che:
+    \[
+        \forall p \in U, \quad (X \cdot f)(p) = X_p \cdot f = a^i(p) \left.\partial_i \right|_p f
+    \]
+\end{definition}
 Risulta immediata la generalizzazione della derivazione alle varietà.
 \begin{definition}
     Una mappa lineare $X_p : \mathcal{C}^\infty \rightarrow \mathbb{R}$, detta $X_p \cdot f$ che soddisfi la \ref{eq:leibniz}, è chiamata \textbf{derivazione} in $p$.
@@ -205,7 +212,7 @@ Un lemma chiarisce la natura geometrica dei vettori tangenti:
 \end{lemma}
 
 \section{Fibrati vettoriali: fibrati tangente e cotangente}
-Vogliamo estendere la nozione di campo vettoriale su $\mathbb{R}^n$ a una varietà differenziabile generica $\mathcal{M}$, ovvero ottenere una mappa liscia che prenda un qualsiasi elemento $p \in \mathcal{M}$ e restituisca un elemento di $T_p\mathcal{M}$. Possiamo realizzarlo tramite la nozione di \emph{fibrato vettoriale}. L'idea di fondo è che la varietà in esame può avere globalmente una geometria «strana», ma localmente è appiattibile in un intorno.
+Vogliamo estendere la nozione di campo vettoriale (\ref{def:campo_vettoriale}) su $\mathbb{R}^n$ a una varietà differenziabile generica $\mathcal{M}$, ovvero ottenere una mappa liscia che prenda un qualsiasi elemento $p \in \mathcal{M}$ e restituisca un elemento di $T_p\mathcal{M}$. Possiamo realizzarlo tramite la nozione di \emph{fibrato vettoriale}. L'idea di fondo è che la varietà in esame può avere globalmente una geometria «strana», ma localmente è appiattibile in un intorno.
 \begin{definition} % ORSO: la definizione di fibrato vettoriale suona male, occhio al SE
     Siano $\mathcal{M}$ e $\mathcal{E}$ varietà differenziabili e sia $\pi : \mathcal{E} \rightarrow \mathcal{M}$ una mappa suriettiva liscia. Se:
     \begin{itemize}
@@ -220,7 +227,7 @@ Notare come l'emergere dell'isomorfismo tra $\{ p \} \times \mathbb{R}^k$ e $\ma
 \begin{definition}
     Una \textbf{sezione} locale di un fibrato vettoriale è una mappa liscia $\sigma : U \subset \mathcal{M} \rightarrow \mathcal{E}$ tale che $\pi \circ \sigma = \operatorname{id}_U$.
     Se $U=\mathcal{M}$ viene detta sezione \textbf{globale} $\Gamma(\mathcal{E})$.\\
-    Un insieme di sezioni locali (globali) $\{ \sigma_1, \dots, \sigma_k \}$ è detto \textbf{riferimento} locale (globale) se $\forall p \in U$ (o $\mathcal{M}$) esso è una base per $\mathcal{E}_p$.
+    Un insieme di sezioni locali (globali) $\{ \sigma_1, \dots, \sigma_k \}$ è detto \textbf{frame} locale (globale) se $\forall p \in U$ (o $\mathcal{M}$) esso è una base per $\mathcal{E}_p$.
 \end{definition}
 Ingenuamente si potrebbe pensare che $\sigma$ sia l'inversa di $\pi$: la controimmagine di $\pi$ è definita come $\mathcal{E}_p$ che è uno spazio vettoriale, la \emph{fibra} appunto, per cui a ogni $p$ viene associato un insieme di vettori; $\sigma$ invece restituisce un unico vettore.
 In pratica $\sigma(p) \in \pi^{-1}(p)$.
